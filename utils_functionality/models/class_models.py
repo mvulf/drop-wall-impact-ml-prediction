@@ -1,4 +1,5 @@
 from featurewiz import featurewiz
+import pandas as pd
 
 
 class FeatureWizModel:
@@ -17,14 +18,19 @@ class FeatureWizModel:
 
 
 class CreateSamples:
-    def __init__(self, df, train, test, target, features=None, use_featurewiz=False, corr_limit=0.7, verbose=0):
+    def __init__(self, df, train, test, target, features=None, dummies=False, use_featurewiz=False, corr_limit=0.7, verbose=0):
         self.target_columns = ['splashing',
                                'breaking_up', 'net_impact', 'rebound']
         self.target = target
+        self.features = features
         drop_columns = list(set(self.target_columns) -
                             set([target])) + ['test']
-        self.df = df.drop(columns=drop_columns, axis=1).copy()
-        self.features = features
+        obj_columns = df.select_dtypes(include=['object']).columns
+        if dummies:
+            self.df = pd.get_dummies(df, columns=obj_columns)[
+                features+[target]]
+        else:
+            self.df = df.drop(columns=drop_columns, axis=1).copy()
         if use_featurewiz:
             fwiz = FeatureWizModel(
                 df=self.df, verbose=verbose, target=target, target_columns=self.target_columns,
