@@ -20,7 +20,7 @@ class FeatureWizModel:
 class CreateSamples:
     def __init__(self, df, train, test, target, features=None, dummies=False, use_featurewiz=False, corr_limit=0.7, verbose=0):
         self.target_columns = ['splashing',
-                               'breaking_up', 'net_impact', 'rebound']
+                               'breaking_up', 'net_impact', 'rebound', 'one_drop']
         self.target = target
         self.features = features
         drop_columns = list(set(self.target_columns) -

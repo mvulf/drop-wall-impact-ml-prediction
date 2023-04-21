@@ -39,7 +39,8 @@ def _create_profiler(df, train=True):
 def get_class_results(
         train,
         test,
-        target_columns=['splashing', 'breaking_up', 'net_impact', 'rebound']
+        target_columns=['splashing', 'breaking_up',
+                        'net_impact', 'rebound', 'one_drop']
 ):
     display(HTML(f'<h2>Train shape:\t{train.shape}</h2>'))
     display(HTML(f'<h2>Test shape:\t{test.shape}</h2>'))

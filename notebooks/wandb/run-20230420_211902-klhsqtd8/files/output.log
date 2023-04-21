@@ -1,0 +1,48 @@
+F1 Train:	73.09% (std: 8.03%)
+F1 Test:	75.71% (std: 9.80%)
+############################################################################################
+############       F A S T   F E A T U R E  E N G G    A N D    S E L E C T I O N ! ########
+# Be judicious with featurewiz. Don't use it to create too many un-interpretable features! #
+############################################################################################
+featurewiz has selected 0.7 as the correlation limit. Change this limit to fit your needs...
+Skipping feature engineering since no feature_engg input...
+Skipping category encoding since no category encoders specified in input...
+#### Single_Label Binary_Classification problem ####
+    Loaded train data. Shape = (372, 23)
+#### Single_Label Binary_Classification problem ####
+No test data filename given...
+#######################################################################################
+######################## C L A S S I F Y I N G  V A R I A B L E S  ####################
+#######################################################################################
+        No variables were removed since no ID or low-information variables found in data set
+#######################################################################################
+#####  Searching for Uncorrelated List Of Variables (SULOV) in 19 features ############
+#######################################################################################
+    there are no null values in dataset...
+    Removing (7) highly correlated variables:
+    ['We_Re', 'height', 'particle_droplet_diameter_ratio', 'roughness_binary', 'velocity', 'viscosity', 'volume_fraction_binary']
+    Following (12) vars selected: ['droplet_diameter', 'inclination', 'long_impulse_duration', 'particle_liquid_density_ratio', 'surface_tension', 'voltage', 'Re', 'We', 'liquid_density', 'roughness', 'volume_fraction', 'particle_mean_diameter']
+Completed SULOV. 12 features selected
+Time taken for SULOV method = 0 seconds
+Finally 15 vars selected after SULOV
+Converting all features to numeric before sending to XGBoost...
+    there were no mixed data types or object columns that errored. Data is all numeric...
+Shape of train data after adding missing values flags = (372, 16)
+#######################################################################################
+#####    R E C U R S I V E   X G B O O S T : F E A T U R E   S E L E C T I O N  #######
+#######################################################################################
+Current number of predictors before recursive XGBoost = 15
+Number of booster rounds = 100
+            selecting 6 features in this iteration
+            selecting 5 features in this iteration
+            selecting 4 features in this iteration
+            selecting 2 features in this iteration
+            selecting 1 features in this iteration
+    Completed XGBoost feature selection in 0 seconds
+#######################################################################################
+#####          F E A T U R E   S E L E C T I O N   C O M P L E T E D            #######
+#######################################################################################
+Selected 10 important features:
+['surface_tension', 'particle_liquid_density_ratio', 'We', 'roughness', 'long_impulse_duration', 'Re', 'long_impulse_dur_binary', 'liquid_density', 'volume_fraction', 'wettability']
+Total Time taken for featurewiz selection = 1 seconds
+Output contains a list of 10 important features and a train dataframe

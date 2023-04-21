@@ -3,19 +3,24 @@ from sklearn.metrics import (
     classification_report,
     precision_recall_curve,
     roc_curve, accuracy_score,
-    roc_auc_score
+    roc_auc_score, f1_score
 )
 import matplotlib.pyplot as plt
 import shap
 import pandas as pd
+from IPython.display import display, HTML
 
 
-def get_classification_report(y_train, y_test, y_preds, y_preds_proba):
-    from IPython.display import display, HTML
-    display(HTML(f'<h2>ROC AUC: {roc_auc_score(y_test, y_preds):.4f}</h2>'))
+def get_classification_report(y_train, y_test, y_preds, y_preds_proba, return_metrics=True):
+    roc = roc_auc_score(y_test, y_preds)
+    acc = accuracy_score(y_test, y_preds)
+    f1 = f1_score(y_test, y_preds)
+    display(HTML(f'<h2>ROC AUC: {roc:.4f}</h2>'))
     crep = pd.DataFrame(classification_report(
         y_test, y_preds, output_dict=True)).T
     display(HTML(crep.to_html()))
+    if return_metrics:
+        return roc, acc, f1
 
 
 def get_shap_interpretation(model, X_train):
