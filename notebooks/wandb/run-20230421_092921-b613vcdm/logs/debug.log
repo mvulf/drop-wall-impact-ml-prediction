@@ -18,3 +18,23 @@ config: {}
 2023-04-21 09:29:21,215 INFO    MainThread:2304 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 0
 2023-04-21 09:29:21,215 INFO    MainThread:2304 [wandb_run.py:_restore():2109] restore
 2023-04-21 09:29:21,215 INFO    MainThread:2304 [wandb_run.py:_restore():2115] restore done
+2023-04-21 09:29:27,296 INFO    MainThread:2304 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-04-21 09:29:27,296 INFO    MainThread:2304 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-04-21 09:29:27,306 INFO    MainThread:2304 [wandb_run.py:_footer_sync_info():3434] logging synced files
+2023-04-21 09:29:27,610 INFO    MainThread:2304 [wandb_init.py:init():595] starting backend
+2023-04-21 09:29:27,610 INFO    MainThread:2304 [wandb_init.py:init():599] setting up manager
+2023-04-21 09:29:27,619 INFO    MainThread:2304 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-04-21 09:29:27,619 INFO    MainThread:2304 [wandb_init.py:init():605] backend started and connected
+2023-04-21 09:29:27,626 INFO    MainThread:2304 [wandb_run.py:_label_probe_notebook():1237] probe notebook
+2023-04-21 09:29:27,626 INFO    MainThread:2304 [wandb_run.py:_label_probe_notebook():1247] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-04-21 09:29:27,626 INFO    MainThread:2304 [wandb_init.py:init():695] updated telemetry
+2023-04-21 09:29:27,698 INFO    MainThread:2304 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-04-21 09:29:29,069 INFO    MainThread:2304 [wandb_run.py:_on_init():2176] communicating current version
+2023-04-21 09:29:29,711 INFO    MainThread:2304 [wandb_run.py:_on_init():2185] got version response upgrade_message: "wandb version 0.15.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-04-21 09:29:29,711 INFO    MainThread:2304 [wandb_init.py:init():782] starting run threads in backend
+2023-04-21 09:29:29,930 INFO    MainThread:2304 [wandb_run.py:_console_start():2157] atexit reg
+2023-04-21 09:29:29,930 INFO    MainThread:2304 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.WRAP_RAW
+2023-04-21 09:29:29,930 INFO    MainThread:2304 [wandb_run.py:_redirect():2077] Wrapping output streams.
+2023-04-21 09:29:29,930 INFO    MainThread:2304 [wandb_run.py:_redirect():2102] Redirects installed.
+2023-04-21 09:29:29,931 INFO    MainThread:2304 [wandb_init.py:init():824] run started, returning control to user process
