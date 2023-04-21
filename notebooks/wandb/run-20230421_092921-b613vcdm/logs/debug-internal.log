@@ -1,0 +1,5 @@
+2023-04-21 09:29:28,309 INFO    StreamThr :6056 [internal.py:wandb_internal():86] W&B internal server running at pid: 6056, started at: 2023-04-21 09:29:28.302010
+2023-04-21 09:29:28,309 DEBUG   HandlerThread:6056 [handler.py:handle_request():144] handle_request: status
+2023-04-21 09:29:28,315 INFO    WriterThread:6056 [datastore.py:open_for_write():85] open: d:\ÔÒèÀÄ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230421_092921-b613vcdm\run-b613vcdm.wandb
+2023-04-21 09:29:28,315 DEBUG   SenderThread:6056 [sender.py:send():375] send: header
+2023-04-21 09:29:28,315 DEBUG   SenderThread:6056 [sender.py:send():375] send: run
