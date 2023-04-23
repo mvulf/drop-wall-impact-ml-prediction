@@ -1,0 +1,449 @@
+2023-04-23 19:31:26,914 INFO    StreamThr :13804 [internal.py:wandb_internal():86] W&B internal server running at pid: 13804, started at: 2023-04-23 19:31:26.913373
+2023-04-23 19:31:26,917 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status
+2023-04-23 19:31:26,923 INFO    WriterThread:13804 [datastore.py:open_for_write():85] open: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\run-r2zjup5v.wandb
+2023-04-23 19:31:26,924 DEBUG   SenderThread:13804 [sender.py:send():375] send: header
+2023-04-23 19:31:26,975 DEBUG   SenderThread:13804 [sender.py:send():375] send: run
+2023-04-23 19:31:27,434 INFO    SenderThread:13804 [dir_watcher.py:__init__():219] watching files in: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files
+2023-04-23 19:31:27,435 INFO    SenderThread:13804 [sender.py:_start_run_threads():1124] run started: r2zjup5v with start time 1682267486.915374
+2023-04-23 19:31:27,435 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: summary_record
+2023-04-23 19:31:27,436 INFO    SenderThread:13804 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 19:31:27,438 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: check_version
+2023-04-23 19:31:27,438 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: check_version
+2023-04-23 19:31:27,650 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: run_start
+2023-04-23 19:31:27,662 DEBUG   HandlerThread:13804 [system_info.py:__init__():31] System info init
+2023-04-23 19:31:27,663 DEBUG   HandlerThread:13804 [system_info.py:__init__():46] System info init done
+2023-04-23 19:31:27,663 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:31:27,663 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:31:27,663 INFO    HandlerThread:13804 [system_monitor.py:probe():201] Collecting system info
+2023-04-23 19:31:27,670 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:31:27,670 DEBUG   HandlerThread:13804 [system_info.py:probe():195] Probing system
+2023-04-23 19:31:27,670 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:31:27,672 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:31:27,679 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:31:27,680 DEBUG   HandlerThread:13804 [system_info.py:_probe_git():180] Probing git
+2023-04-23 19:31:27,776 DEBUG   HandlerThread:13804 [system_info.py:_probe_git():188] Probing git done
+2023-04-23 19:31:27,776 DEBUG   HandlerThread:13804 [system_info.py:probe():240] Probing system done
+2023-04-23 19:31:27,776 DEBUG   HandlerThread:13804 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.11', 'heartbeatAt': '2023-04-23T16:31:27.670036', 'startedAt': '2023-04-23T16:31:26.897315', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mvulf/Drop_wall_impact.git', 'commit': '53b272d3a8fdadf4f501ab614f3d0f73c8e48bf3'}, 'email': 'dimahzharikov10@gmail.com', 'root': 'D:/‘“Ë¿ƒ/vkr_gh/Drop_wall_impact', 'host': 'HUAWEI', 'username': 'dimaz', 'executable': 'C:\\Users\\dimaz\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2300.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'total': 341.22753524780273, 'used': 14.223186492919922}, 'memory': {'total': 15.733024597167969}}
+2023-04-23 19:31:27,776 INFO    HandlerThread:13804 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-23 19:31:27,776 INFO    HandlerThread:13804 [system_monitor.py:probe():214] Publishing system info
+2023-04-23 19:31:27,776 DEBUG   HandlerThread:13804 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-23 19:31:27,777 DEBUG   HandlerThread:13804 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-23 19:31:27,777 INFO    HandlerThread:13804 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-23 19:31:27,795 DEBUG   SenderThread:13804 [sender.py:send():375] send: files
+2023-04-23 19:31:27,795 INFO    SenderThread:13804 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-23 19:31:27,811 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:31:27,812 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:31:27,820 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:31:27,820 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:31:27,820 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:31:27,820 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:31:27,820 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:31:27,821 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:31:27,821 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:31:27,821 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:31:27,822 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:31:27,822 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:31:27,953 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:31:27,953 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:31:27,953 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:31:27,954 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:31:27,963 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:31:27,965 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:31:27,965 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:31:27,975 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:31:28,043 DEBUG   SenderThread:13804 [sender.py:send():375] send: telemetry
+2023-04-23 19:31:28,043 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:31:28,379 INFO    wandb-upload_0:13804 [upload_job.py:push():137] Uploaded file C:\Users\dimaz\AppData\Local\Temp\tmppf6reaavwandb\9pf0ptbf-wandb-metadata.json
+2023-04-23 19:31:28,451 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-metadata.json
+2023-04-23 19:31:28,451 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-summary.json
+2023-04-23 19:31:28,452 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\requirements.txt
+2023-04-23 19:31:29,520 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-23 19:31:29,521 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:31:29,521 DEBUG   SenderThread:13804 [sender.py:send():375] send: history
+2023-04-23 19:31:29,521 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:31:29,521 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: summary_record
+2023-04-23 19:31:29,522 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:31:29,523 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:31:29,523 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:31:29,523 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:31:29,523 INFO    SenderThread:13804 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 19:31:29,524 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:31:29,524 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:31:29,524 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:31:29,525 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:31:29,525 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:31:29,647 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:31:29,647 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:31:29,647 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:31:29,647 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:31:29,653 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:31:29,654 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:31:29,654 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:31:29,662 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:31:30,468 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-summary.json
+2023-04-23 19:31:32,549 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:31:36,532 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:31:38,361 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:31:38,547 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:31:42,819 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:31:42,820 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:31:44,004 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:31:44,137 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:31:44,137 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:31:44,137 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:31:44,137 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:31:44,138 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:31:44,138 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:31:44,138 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:31:44,138 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:31:44,138 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:31:44,140 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:31:44,140 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:31:44,269 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:31:44,270 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:31:44,270 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:31:44,270 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:31:44,281 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:31:44,283 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:31:44,284 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:31:44,303 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:31:46,403 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:31:46,404 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:31:46,404 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:31:46,404 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:31:46,404 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:31:46,405 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:31:46,405 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:31:46,405 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:31:46,405 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:31:46,406 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:31:46,407 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:31:46,650 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:31:49,428 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:31:54,483 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:31:57,826 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:31:57,827 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:31:58,314 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:31:58,314 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:31:58,314 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:31:58,315 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:31:58,322 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:31:58,323 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:31:58,325 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:31:58,333 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:32:00,021 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:00,796 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\config.yaml
+2023-04-23 19:32:05,808 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:06,869 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:32:10,862 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:12,130 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:32:12,131 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:32:12,131 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:32:12,131 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:32:12,131 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:32:12,131 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:32:12,131 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:32:12,132 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:32:12,132 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:32:12,132 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:32:12,821 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:32:12,822 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:32:14,962 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:32:16,033 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:21,091 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:26,136 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:27,834 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:32:27,835 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:32:32,041 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:37,085 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:42,143 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:42,838 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:32:42,838 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:32:48,062 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:53,114 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:32:57,838 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:32:57,839 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:32:59,029 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:04,077 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:09,127 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:12,849 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:33:12,851 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:33:15,053 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:20,089 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:25,084 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:33:25,084 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:33:25,084 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:33:25,085 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:33:25,093 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:33:25,095 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:33:25,095 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:25,098 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:33:25,110 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:33:25,622 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:33:25,622 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:33:25,622 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:33:25,622 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:33:25,622 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:33:25,623 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:33:25,623 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:33:25,623 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:33:25,623 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:33:25,623 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:33:25,624 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:33:27,727 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:33:27,852 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:33:27,854 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:33:31,056 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:36,114 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:41,178 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:42,858 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:33:42,858 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:33:45,019 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:33:45,019 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:33:45,019 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:33:45,020 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:33:45,027 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:33:45,028 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:33:45,031 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:33:45,039 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:33:45,611 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:33:45,611 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:33:45,611 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:33:45,611 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:33:45,612 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:33:45,612 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:33:45,612 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:33:45,612 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:33:45,612 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:33:45,612 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:33:45,613 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:33:46,615 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:46,943 INFO    Thread-16 :13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:33:50,403 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:33:50,405 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:33:50,405 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:33:50,405 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:33:50,412 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:33:50,413 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:33:50,413 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:33:50,413 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:33:50,414 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:33:50,414 WARNING HandlerThread:13804 [interfaces.py:finish():207] Failed to finish disk monitoring: cannot join thread before it is started
+2023-04-23 19:33:50,414 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:33:50,415 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:33:50,415 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:33:50,415 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:33:50,416 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:33:52,428 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:57,485 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:33:57,873 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:33:57,874 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:34:00,549 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:34:00,549 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:34:00,549 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:34:00,550 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:34:00,558 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:34:00,559 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:34:00,559 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:34:00,569 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:34:00,569 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:34:00,569 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:34:00,569 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:34:00,570 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:34:00,570 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:34:00,570 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:34:00,570 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:34:00,571 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:34:00,571 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:34:00,571 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:34:00,571 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:34:02,580 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:07,643 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:12,682 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:12,827 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:34:12,827 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:34:12,827 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:34:12,829 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:34:12,836 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:34:12,837 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:34:12,838 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:34:12,848 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:34:12,866 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:34:12,866 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:34:12,866 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:34:12,866 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:34:12,866 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:34:12,867 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:34:12,868 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:34:12,868 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:34:12,868 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:34:12,868 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:34:12,868 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:34:12,869 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:34:13,050 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:34:16,902 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:34:16,902 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:34:16,902 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:34:16,903 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:34:16,909 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:34:16,910 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:34:16,911 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:34:16,920 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:34:16,921 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 19:34:16,921 INFO    HandlerThread:13804 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 19:34:16,921 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:34:16,921 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:34:16,921 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:34:16,921 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:34:16,921 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:34:16,922 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:34:16,922 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:34:16,922 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:34:18,101 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:23,159 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:27,877 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:34:27,877 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:34:29,048 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:34,096 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:39,150 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:42,893 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:34:42,894 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:34:45,123 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:50,176 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:55,236 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:57,907 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 19:34:57,907 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 19:34:58,727 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 19:34:58,727 INFO    HandlerThread:13804 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 19:34:58,728 INFO    HandlerThread:13804 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 19:34:58,728 INFO    SystemMonitor:13804 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 19:34:58,735 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 19:34:58,736 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 19:34:58,737 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 19:34:58,747 INFO    SystemMonitor:13804 [interfaces.py:start():190] Started network monitoring
+2023-04-23 19:34:58,749 DEBUG   SenderThread:13804 [sender.py:send():375] send: telemetry
+2023-04-23 19:34:58,751 DEBUG   SenderThread:13804 [sender.py:send():375] send: exit
+2023-04-23 19:34:58,751 INFO    SenderThread:13804 [sender.py:send_exit():598] handling exit code: 0
+2023-04-23 19:34:58,751 INFO    SenderThread:13804 [sender.py:send_exit():600] handling runtime: 33
+2023-04-23 19:34:58,754 INFO    SenderThread:13804 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 19:34:58,754 INFO    SenderThread:13804 [sender.py:send_exit():606] send defer
+2023-04-23 19:34:58,755 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,755 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-23 19:34:58,755 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,755 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-23 19:34:58,755 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 1
+2023-04-23 19:34:58,755 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,755 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-23 19:34:58,756 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,756 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-23 19:34:58,756 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 2
+2023-04-23 19:34:58,757 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,757 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-23 19:34:58,757 INFO    HandlerThread:13804 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 19:34:58,757 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 19:34:58,757 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 19:34:58,757 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 19:34:58,758 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 19:34:58,758 DEBUG   SystemMonitor:13804 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 19:34:58,758 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 19:34:58,759 INFO    HandlerThread:13804 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 19:34:58,761 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,761 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-23 19:34:58,761 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 3
+2023-04-23 19:34:58,761 DEBUG   SenderThread:13804 [sender.py:send():375] send: stats
+2023-04-23 19:34:58,761 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,762 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-23 19:34:58,762 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,762 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-23 19:34:58,762 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 4
+2023-04-23 19:34:58,762 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,762 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-23 19:34:58,763 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,763 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-23 19:34:58,763 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 5
+2023-04-23 19:34:58,763 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,763 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-23 19:34:58,764 DEBUG   SenderThread:13804 [sender.py:send():375] send: summary
+2023-04-23 19:34:58,764 INFO    SenderThread:13804 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 19:34:58,764 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,765 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-23 19:34:58,765 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 6
+2023-04-23 19:34:58,765 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,765 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-23 19:34:58,765 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,765 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-23 19:34:58,768 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 19:34:58,971 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 7
+2023-04-23 19:34:58,972 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:58,972 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-23 19:34:58,972 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:58,972 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-23 19:34:59,306 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 8
+2023-04-23 19:34:59,307 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:59,307 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-23 19:34:59,307 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:59,307 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-23 19:34:59,309 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 9
+2023-04-23 19:34:59,310 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:59,310 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-23 19:34:59,310 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:59,310 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-23 19:34:59,310 INFO    SenderThread:13804 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-23 19:34:59,726 INFO    SenderThread:13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-summary.json
+2023-04-23 19:34:59,727 INFO    SenderThread:13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\config.yaml
+2023-04-23 19:34:59,727 INFO    SenderThread:13804 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:34:59,727 INFO    SenderThread:13804 [dir_watcher.py:finish():395] scan: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files
+2023-04-23 19:34:59,729 INFO    SenderThread:13804 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\config.yaml config.yaml
+2023-04-23 19:34:59,729 INFO    SenderThread:13804 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log output.log
+2023-04-23 19:34:59,730 INFO    SenderThread:13804 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\requirements.txt requirements.txt
+2023-04-23 19:34:59,733 INFO    SenderThread:13804 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-metadata.json wandb-metadata.json
+2023-04-23 19:34:59,733 INFO    SenderThread:13804 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-summary.json wandb-summary.json
+2023-04-23 19:34:59,736 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 10
+2023-04-23 19:34:59,739 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:34:59,740 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-23 19:34:59,742 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:34:59,742 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-23 19:34:59,742 INFO    SenderThread:13804 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-23 19:34:59,755 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 19:34:59,756 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 19:35:00,285 INFO    wandb-upload_1:13804 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\output.log
+2023-04-23 19:35:00,350 INFO    wandb-upload_0:13804 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\config.yaml
+2023-04-23 19:35:00,382 INFO    wandb-upload_3:13804 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\wandb-summary.json
+2023-04-23 19:35:00,764 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 19:35:00,764 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 19:35:00,853 INFO    wandb-upload_2:13804 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\files\requirements.txt
+2023-04-23 19:35:01,059 INFO    Thread-15 (_thread_body):13804 [sender.py:transition_state():626] send defer: 11
+2023-04-23 19:35:01,060 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:35:01,060 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-23 19:35:01,061 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:35:01,062 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-23 19:35:01,062 INFO    SenderThread:13804 [file_pusher.py:join():173] waiting for file pusher
+2023-04-23 19:35:01,062 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 12
+2023-04-23 19:35:01,063 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:35:01,063 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-23 19:35:01,064 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:35:01,064 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-23 19:35:01,720 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 13
+2023-04-23 19:35:01,721 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:35:01,721 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-23 19:35:01,722 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:35:01,722 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-23 19:35:01,722 INFO    SenderThread:13804 [sender.py:transition_state():626] send defer: 14
+2023-04-23 19:35:01,722 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 19:35:01,722 INFO    HandlerThread:13804 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-23 19:35:01,723 DEBUG   SenderThread:13804 [sender.py:send():375] send: final
+2023-04-23 19:35:01,723 DEBUG   SenderThread:13804 [sender.py:send():375] send: footer
+2023-04-23 19:35:01,723 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: defer
+2023-04-23 19:35:01,723 INFO    SenderThread:13804 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-23 19:35:01,725 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 19:35:01,726 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 19:35:01,727 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: server_info
+2023-04-23 19:35:01,727 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-23 19:35:01,727 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-23 19:35:01,729 DEBUG   SenderThread:13804 [sender.py:send_request():402] send_request: server_info
+2023-04-23 19:35:02,063 DEBUG   HandlerThread:13804 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-23 19:35:02,063 INFO    HandlerThread:13804 [handler.py:finish():845] shutting down handler
+2023-04-23 19:35:02,735 INFO    WriterThread:13804 [datastore.py:close():298] close: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_193126-r2zjup5v\run-r2zjup5v.wandb
+2023-04-23 19:35:03,063 INFO    SenderThread:13804 [sender.py:finish():1550] shutting down sender
+2023-04-23 19:35:03,063 INFO    SenderThread:13804 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-23 19:35:03,063 INFO    SenderThread:13804 [file_pusher.py:join():173] waiting for file pusher

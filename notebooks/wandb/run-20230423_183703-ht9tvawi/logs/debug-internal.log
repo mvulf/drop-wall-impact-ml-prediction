@@ -1,0 +1,269 @@
+2023-04-23 18:37:08,274 INFO    StreamThr :18860 [internal.py:wandb_internal():86] W&B internal server running at pid: 18860, started at: 2023-04-23 18:37:08.274035
+2023-04-23 18:37:08,278 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: status
+2023-04-23 18:37:08,282 INFO    WriterThread:18860 [datastore.py:open_for_write():85] open: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\run-ht9tvawi.wandb
+2023-04-23 18:37:08,284 DEBUG   SenderThread:18860 [sender.py:send():375] send: header
+2023-04-23 18:37:08,284 DEBUG   SenderThread:18860 [sender.py:send():375] send: run
+2023-04-23 18:37:08,764 INFO    SenderThread:18860 [dir_watcher.py:__init__():219] watching files in: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files
+2023-04-23 18:37:08,767 INFO    SenderThread:18860 [sender.py:_start_run_threads():1124] run started: ht9tvawi with start time 1682264227.35766
+2023-04-23 18:37:08,768 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: summary_record
+2023-04-23 18:37:08,769 INFO    SenderThread:18860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 18:37:08,772 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: check_version
+2023-04-23 18:37:08,772 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: check_version
+2023-04-23 18:37:09,002 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: run_start
+2023-04-23 18:37:09,018 DEBUG   HandlerThread:18860 [system_info.py:__init__():31] System info init
+2023-04-23 18:37:09,018 DEBUG   HandlerThread:18860 [system_info.py:__init__():46] System info init done
+2023-04-23 18:37:09,019 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:09,019 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:09,020 INFO    HandlerThread:18860 [system_monitor.py:probe():201] Collecting system info
+2023-04-23 18:37:09,025 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:09,026 DEBUG   HandlerThread:18860 [system_info.py:probe():195] Probing system
+2023-04-23 18:37:09,027 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:09,029 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:09,043 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:09,045 DEBUG   HandlerThread:18860 [system_info.py:_probe_git():180] Probing git
+2023-04-23 18:37:09,153 DEBUG   HandlerThread:18860 [system_info.py:_probe_git():188] Probing git done
+2023-04-23 18:37:09,153 DEBUG   HandlerThread:18860 [system_info.py:probe():240] Probing system done
+2023-04-23 18:37:09,153 DEBUG   HandlerThread:18860 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.11', 'heartbeatAt': '2023-04-23T15:37:09.026910', 'startedAt': '2023-04-23T15:37:03.137909', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mvulf/Drop_wall_impact.git', 'commit': '53b272d3a8fdadf4f501ab614f3d0f73c8e48bf3'}, 'email': 'dimahzharikov10@gmail.com', 'root': 'D:/‘“Ë¿ƒ/vkr_gh/Drop_wall_impact', 'host': 'HUAWEI', 'username': 'dimaz', 'executable': 'C:\\Users\\dimaz\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2300.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'total': 341.22753524780273, 'used': 14.220207214355469}, 'memory': {'total': 15.733024597167969}}
+2023-04-23 18:37:09,153 INFO    HandlerThread:18860 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-23 18:37:09,153 INFO    HandlerThread:18860 [system_monitor.py:probe():214] Publishing system info
+2023-04-23 18:37:09,153 DEBUG   HandlerThread:18860 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-23 18:37:09,154 DEBUG   HandlerThread:18860 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-23 18:37:09,155 INFO    HandlerThread:18860 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-23 18:37:09,156 DEBUG   SenderThread:18860 [sender.py:send():375] send: files
+2023-04-23 18:37:09,156 INFO    SenderThread:18860 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-23 18:37:09,174 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-23 18:37:09,174 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: stop_status
+2023-04-23 18:37:09,182 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 18:37:09,182 INFO    HandlerThread:18860 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 18:37:09,182 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:09,183 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:09,183 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:09,183 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:09,184 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:09,184 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:09,184 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:09,184 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:09,429 DEBUG   SenderThread:18860 [sender.py:send():375] send: telemetry
+2023-04-23 18:37:09,429 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:09,558 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 18:37:09,558 INFO    HandlerThread:18860 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 18:37:09,558 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:09,559 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:09,564 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:09,565 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:09,566 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:09,575 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:09,663 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-23 18:37:09,664 DEBUG   SenderThread:18860 [sender.py:send():375] send: history
+2023-04-23 18:37:09,664 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: summary_record
+2023-04-23 18:37:09,664 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 18:37:09,665 INFO    HandlerThread:18860 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 18:37:09,665 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:09,665 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:09,665 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:09,665 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:09,666 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:09,666 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:09,666 INFO    SenderThread:18860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 18:37:09,666 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:09,666 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:09,668 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:09,761 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-metadata.json
+2023-04-23 18:37:09,761 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-summary.json
+2023-04-23 18:37:09,761 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\requirements.txt
+2023-04-23 18:37:09,896 INFO    wandb-upload_0:18860 [upload_job.py:push():137] Uploaded file C:\Users\dimaz\AppData\Local\Temp\tmpaixtpdykwandb\y1kpc8kb-wandb-metadata.json
+2023-04-23 18:37:09,954 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 18:37:09,954 INFO    HandlerThread:18860 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 18:37:09,954 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:09,956 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:09,962 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:09,962 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:09,963 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:09,972 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:10,760 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\output.log
+2023-04-23 18:37:10,852 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 18:37:10,852 INFO    HandlerThread:18860 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 18:37:10,852 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:10,853 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:10,853 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:10,853 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:10,853 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:10,854 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:10,853 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:10,854 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:10,855 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:11,283 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 18:37:11,283 INFO    HandlerThread:18860 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 18:37:11,283 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:11,284 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:11,291 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:11,292 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:11,293 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:11,310 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:11,767 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:11,767 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:11,767 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:11,767 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:11,767 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:11,767 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:12,114 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 18:37:12,114 INFO    HandlerThread:18860 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 18:37:12,114 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:12,115 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:12,121 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:12,122 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:12,123 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:12,138 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:12,144 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: pause
+2023-04-23 18:37:12,144 INFO    HandlerThread:18860 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-23 18:37:12,144 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:12,144 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:12,144 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:12,144 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:12,144 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:12,144 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:12,144 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:12,148 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:12,151 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:12,586 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: resume
+2023-04-23 18:37:12,586 INFO    HandlerThread:18860 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-23 18:37:12,586 INFO    HandlerThread:18860 [system_monitor.py:start():181] Starting system monitor
+2023-04-23 18:37:12,586 INFO    SystemMonitor:18860 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-23 18:37:12,588 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started cpu monitoring
+2023-04-23 18:37:12,588 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started disk monitoring
+2023-04-23 18:37:12,588 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started memory monitoring
+2023-04-23 18:37:12,601 INFO    SystemMonitor:18860 [interfaces.py:start():190] Started network monitoring
+2023-04-23 18:37:12,622 DEBUG   SenderThread:18860 [sender.py:send():375] send: telemetry
+2023-04-23 18:37:12,625 DEBUG   SenderThread:18860 [sender.py:send():375] send: exit
+2023-04-23 18:37:12,625 INFO    SenderThread:18860 [sender.py:send_exit():598] handling exit code: 0
+2023-04-23 18:37:12,625 INFO    SenderThread:18860 [sender.py:send_exit():600] handling runtime: 1
+2023-04-23 18:37:12,626 INFO    SenderThread:18860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 18:37:12,626 INFO    SenderThread:18860 [sender.py:send_exit():606] send defer
+2023-04-23 18:37:12,626 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,626 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-23 18:37:12,626 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,626 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 1
+2023-04-23 18:37:12,628 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-23 18:37:12,628 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 2
+2023-04-23 18:37:12,628 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined disk monitor
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined memory monitor
+2023-04-23 18:37:12,628 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-23 18:37:12,628 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-23 18:37:12,628 DEBUG   SystemMonitor:18860 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [interfaces.py:finish():202] Joined network monitor
+2023-04-23 18:37:12,628 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 3
+2023-04-23 18:37:12,628 DEBUG   SenderThread:18860 [sender.py:send():375] send: stats
+2023-04-23 18:37:12,628 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,628 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-23 18:37:12,628 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-23 18:37:12,628 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 4
+2023-04-23 18:37:12,638 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,638 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-23 18:37:12,638 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,638 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-23 18:37:12,638 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 5
+2023-04-23 18:37:12,638 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,638 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-23 18:37:12,638 DEBUG   SenderThread:18860 [sender.py:send():375] send: summary
+2023-04-23 18:37:12,638 INFO    SenderThread:18860 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-23 18:37:12,644 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,644 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-23 18:37:12,644 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 6
+2023-04-23 18:37:12,644 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,644 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-23 18:37:12,644 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,644 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-23 18:37:12,653 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: status_report
+2023-04-23 18:37:12,793 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-summary.json
+2023-04-23 18:37:12,794 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\output.log
+2023-04-23 18:37:12,914 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 7
+2023-04-23 18:37:12,915 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:12,915 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-23 18:37:12,916 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:12,916 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-23 18:37:13,631 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 18:37:13,798 INFO    Thread-73 :18860 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\config.yaml
+2023-04-23 18:37:14,365 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 8
+2023-04-23 18:37:14,365 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 18:37:14,368 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:14,368 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-23 18:37:14,368 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:14,368 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-23 18:37:14,368 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 9
+2023-04-23 18:37:14,368 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:14,368 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-23 18:37:14,368 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:14,368 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-23 18:37:14,368 INFO    SenderThread:18860 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-23 18:37:14,643 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 18:37:14,807 INFO    SenderThread:18860 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\output.log
+2023-04-23 18:37:14,807 INFO    SenderThread:18860 [dir_watcher.py:finish():395] scan: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files
+2023-04-23 18:37:14,812 INFO    SenderThread:18860 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\config.yaml config.yaml
+2023-04-23 18:37:14,812 INFO    SenderThread:18860 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\output.log output.log
+2023-04-23 18:37:14,819 INFO    SenderThread:18860 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\requirements.txt requirements.txt
+2023-04-23 18:37:14,825 INFO    SenderThread:18860 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-metadata.json wandb-metadata.json
+2023-04-23 18:37:14,826 INFO    SenderThread:18860 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-summary.json wandb-summary.json
+2023-04-23 18:37:14,830 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 10
+2023-04-23 18:37:14,830 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 18:37:14,830 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:14,830 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-23 18:37:14,830 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:14,830 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-23 18:37:14,830 INFO    SenderThread:18860 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-23 18:37:15,367 INFO    wandb-upload_1:18860 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\output.log
+2023-04-23 18:37:15,428 INFO    wandb-upload_0:18860 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\config.yaml
+2023-04-23 18:37:15,504 INFO    wandb-upload_2:18860 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\requirements.txt
+2023-04-23 18:37:15,539 INFO    wandb-upload_3:18860 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\files\wandb-summary.json
+2023-04-23 18:37:15,652 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 18:37:15,653 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 18:37:15,744 INFO    Thread-72 (_thread_body):18860 [sender.py:transition_state():626] send defer: 11
+2023-04-23 18:37:15,745 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:15,745 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-23 18:37:15,746 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:15,746 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-23 18:37:15,748 INFO    SenderThread:18860 [file_pusher.py:join():173] waiting for file pusher
+2023-04-23 18:37:15,748 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 12
+2023-04-23 18:37:15,748 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:15,749 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-23 18:37:15,750 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:15,750 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-23 18:37:15,989 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 13
+2023-04-23 18:37:15,990 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:15,990 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-23 18:37:15,991 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:15,991 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-23 18:37:15,991 INFO    SenderThread:18860 [sender.py:transition_state():626] send defer: 14
+2023-04-23 18:37:15,992 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: defer
+2023-04-23 18:37:15,993 DEBUG   SenderThread:18860 [sender.py:send():375] send: final
+2023-04-23 18:37:15,993 INFO    HandlerThread:18860 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-23 18:37:15,993 DEBUG   SenderThread:18860 [sender.py:send():375] send: footer
+2023-04-23 18:37:15,993 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: defer
+2023-04-23 18:37:15,994 INFO    SenderThread:18860 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-23 18:37:15,995 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-23 18:37:15,996 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: poll_exit
+2023-04-23 18:37:15,998 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: server_info
+2023-04-23 18:37:15,998 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-23 18:37:15,998 DEBUG   SenderThread:18860 [sender.py:send_request():402] send_request: server_info
+2023-04-23 18:37:15,998 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-23 18:37:16,348 DEBUG   HandlerThread:18860 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-23 18:37:16,348 INFO    HandlerThread:18860 [handler.py:finish():845] shutting down handler
+2023-04-23 18:37:17,005 INFO    WriterThread:18860 [datastore.py:close():298] close: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230423_183703-ht9tvawi\run-ht9tvawi.wandb
+2023-04-23 18:37:17,348 INFO    SenderThread:18860 [sender.py:finish():1550] shutting down sender
+2023-04-23 18:37:17,348 INFO    SenderThread:18860 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-23 18:37:17,349 INFO    SenderThread:18860 [file_pusher.py:join():173] waiting for file pusher
