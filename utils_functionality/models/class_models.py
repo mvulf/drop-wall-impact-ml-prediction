@@ -1,5 +1,6 @@
 from featurewiz import featurewiz
 import pandas as pd
+from sklearn.preprocessing import PolynomialFeatures
 
 
 class FeatureWizModel:
@@ -27,6 +28,7 @@ class CreateSamples:
         corr_limit=0.7,
         strange_columns=None,
         drop_duplicates=False,
+        get_pf=False,
         verbose=0,
     ):
         self.train, self.test = train.copy(), test.copy()
@@ -57,6 +59,8 @@ class CreateSamples:
             self.X = self.df.drop(to_drop, axis=1)
         else:
             self.X = self.df.drop(target, axis=1)
+        if get_pf:
+            self.get_polynomials()
         self.X_train, self.y_train = (
             self.X.loc[self.train.index],
             self.y.loc[self.train.index],
@@ -75,3 +79,16 @@ class CreateSamples:
 
     def get_samples(self):
         return self.X_train, self.X_test, self.y_train, self.y_test
+
+    def get_polynomials(self):
+        self.X["Re_1/4"] = self.X["Re"] ** (1 / 4)
+        self.X["We_1/4"] = self.X["We"] ** (1 / 4)
+        poly = PolynomialFeatures()
+        poly.fit(self.X[["Re_1/4", "We_1/4"]])
+        df_t = pd.DataFrame(
+            data=poly.transform(self.X[["Re_1/4", "We_1/4"]]),
+            columns=poly.get_feature_names_out(),
+        )
+        df_t = df_t.iloc[:, 3:]
+        for column in df_t.columns:
+            self.X[column] = df_t[column]

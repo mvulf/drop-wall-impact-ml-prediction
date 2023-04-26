@@ -1,0 +1,81 @@
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Configure stats pid to 14824
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dimaz\.config\wandb\settings
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\settings
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-04-26 02:21:47,336 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:_log_setup():507] Logging user logs to d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_022147-hk67jpk9\logs\debug.log
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:_log_setup():508] Logging internal logs to d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_022147-hk67jpk9\logs\debug-internal.log
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:_jupyter_setup():453] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001DA3D5F2C50>
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:init():547] calling init triggers
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {}
+2023-04-26 02:21:47,337 INFO    MainThread:14824 [wandb_init.py:init():571] re-initializing run, found existing run on stack: fzo9x3g2
+2023-04-26 02:21:47,339 INFO    MainThread:14824 [wandb_run.py:_finish():1892] finishing run dstech/drop-wall-impact-clfr/fzo9x3g2
+2023-04-26 02:21:47,340 INFO    MainThread:14824 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 0
+2023-04-26 02:21:47,340 INFO    MainThread:14824 [wandb_run.py:_restore():2109] restore
+2023-04-26 02:21:47,340 INFO    MainThread:14824 [wandb_run.py:_restore():2115] restore done
+2023-04-26 02:21:52,706 INFO    MainThread:14824 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-04-26 02:21:52,706 INFO    MainThread:14824 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-04-26 02:21:52,712 INFO    MainThread:14824 [wandb_run.py:_footer_sync_info():3434] logging synced files
+2023-04-26 02:21:52,776 INFO    MainThread:14824 [wandb_init.py:init():595] starting backend
+2023-04-26 02:21:52,776 INFO    MainThread:14824 [wandb_init.py:init():599] setting up manager
+2023-04-26 02:21:52,779 INFO    MainThread:14824 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-04-26 02:21:52,780 INFO    MainThread:14824 [wandb_init.py:init():605] backend started and connected
+2023-04-26 02:21:52,785 INFO    MainThread:14824 [wandb_run.py:_label_probe_notebook():1237] probe notebook
+2023-04-26 02:21:52,786 INFO    MainThread:14824 [wandb_run.py:_label_probe_notebook():1247] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-04-26 02:21:52,786 INFO    MainThread:14824 [wandb_init.py:init():695] updated telemetry
+2023-04-26 02:21:52,822 INFO    MainThread:14824 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-04-26 02:21:54,280 INFO    MainThread:14824 [wandb_run.py:_on_init():2176] communicating current version
+2023-04-26 02:21:54,481 INFO    MainThread:14824 [wandb_run.py:_on_init():2185] got version response 
+2023-04-26 02:21:54,482 INFO    MainThread:14824 [wandb_init.py:init():782] starting run threads in backend
+2023-04-26 02:21:54,580 INFO    MainThread:14824 [wandb_run.py:_console_start():2157] atexit reg
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [wandb_run.py:_redirect():2012] redirect: SettingsConsole.WRAP_RAW
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [wandb_run.py:_redirect():2077] Wrapping output streams.
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [wandb_run.py:_redirect():2102] Redirects installed.
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [wandb_init.py:init():824] run started, returning control to user process
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:21:54,581 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:21:54,626 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:21:54,627 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:21:54,628 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:21:54,694 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:21:54,709 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:21:54,709 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:21:54,770 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:21:54,789 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:21:54,789 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:21:54,850 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:22:07,787 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:22:07,787 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:22:07,870 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:22:07,881 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:22:07,881 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:22:07,931 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:22:07,934 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:22:07,934 INFO    MainThread:14824 [wandb_init.py:_pause_backend():418] pausing backend
+2023-04-26 02:22:07,985 INFO    MainThread:14824 [wandb_init.py:_resume_backend():423] resuming backend
+2023-04-26 02:22:07,996 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Configure stats pid to 14824
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from C:\Users\dimaz\.config\wandb\settings
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\settings
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_init.py:_log_setup():507] Logging user logs to d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_022207-zsgujojf\logs\debug.log
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_init.py:_log_setup():508] Logging internal logs to d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_022207-zsgujojf\logs\debug-internal.log
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_init.py:init():547] calling init triggers
+2023-04-26 02:22:07,997 INFO    MainThread:14824 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {}
+2023-04-26 02:22:07,998 INFO    MainThread:14824 [wandb_init.py:init():571] re-initializing run, found existing run on stack: hk67jpk9
+2023-04-26 02:22:07,999 INFO    MainThread:14824 [wandb_run.py:_finish():1892] finishing run dstech/drop-wall-impact-clfr/hk67jpk9
+2023-04-26 02:22:07,999 INFO    MainThread:14824 [jupyter.py:save_history():445] not saving jupyter history
+2023-04-26 02:22:07,999 INFO    MainThread:14824 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-04-26 02:22:07,999 INFO    MainThread:14824 [wandb_init.py:_jupyter_teardown():435] cleaning up jupyter logic
+2023-04-26 02:22:07,999 INFO    MainThread:14824 [wandb_run.py:_atexit_cleanup():2126] got exitcode: 0
+2023-04-26 02:22:08,000 INFO    MainThread:14824 [wandb_run.py:_restore():2109] restore
+2023-04-26 02:22:08,000 INFO    MainThread:14824 [wandb_run.py:_restore():2115] restore done
+2023-04-26 02:22:13,138 INFO    MainThread:14824 [wandb_run.py:_footer_history_summary_info():3476] rendering history
+2023-04-26 02:22:13,138 INFO    MainThread:14824 [wandb_run.py:_footer_history_summary_info():3508] rendering summary
+2023-04-26 02:22:13,148 INFO    MainThread:14824 [wandb_run.py:_footer_sync_info():3434] logging synced files
