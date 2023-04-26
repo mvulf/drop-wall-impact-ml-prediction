@@ -1,0 +1,1141 @@
+2023-04-26 12:26:47,384 INFO    StreamThr :7688 [internal.py:wandb_internal():86] W&B internal server running at pid: 7688, started at: 2023-04-26 12:26:47.383372
+2023-04-26 12:26:47,388 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status
+2023-04-26 12:26:47,391 INFO    WriterThread:7688 [datastore.py:open_for_write():85] open: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\run-1aayrfi1.wandb
+2023-04-26 12:26:47,394 DEBUG   SenderThread:7688 [sender.py:send():375] send: header
+2023-04-26 12:26:47,395 DEBUG   SenderThread:7688 [sender.py:send():375] send: run
+2023-04-26 12:26:47,924 INFO    SenderThread:7688 [dir_watcher.py:__init__():219] watching files in: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files
+2023-04-26 12:26:47,927 INFO    SenderThread:7688 [sender.py:_start_run_threads():1124] run started: 1aayrfi1 with start time 1682501206.469362
+2023-04-26 12:26:47,924 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: check_version
+2023-04-26 12:26:47,927 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 12:26:47,928 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:26:47,929 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: check_version
+2023-04-26 12:26:48,204 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: run_start
+2023-04-26 12:26:48,224 DEBUG   HandlerThread:7688 [system_info.py:__init__():31] System info init
+2023-04-26 12:26:48,224 DEBUG   HandlerThread:7688 [system_info.py:__init__():46] System info init done
+2023-04-26 12:26:48,224 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:26:48,226 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:26:48,227 INFO    HandlerThread:7688 [system_monitor.py:probe():201] Collecting system info
+2023-04-26 12:26:48,233 DEBUG   HandlerThread:7688 [system_info.py:probe():195] Probing system
+2023-04-26 12:26:48,233 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:26:48,234 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:26:48,235 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:26:48,255 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:26:48,257 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():180] Probing git
+2023-04-26 12:26:48,342 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():188] Probing git done
+2023-04-26 12:26:48,342 DEBUG   HandlerThread:7688 [system_info.py:probe():240] Probing system done
+2023-04-26 12:26:48,342 DEBUG   HandlerThread:7688 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.11', 'heartbeatAt': '2023-04-26T09:26:48.233003', 'startedAt': '2023-04-26T09:22:51.888630', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mvulf/Drop_wall_impact.git', 'commit': '85f6575b0654e99398387aa98d14b5b830dc3faf'}, 'email': 'dimahzharikov10@gmail.com', 'root': 'D:/‘“Ë¿ƒ/vkr_gh/Drop_wall_impact', 'host': 'HUAWEI', 'username': 'dimaz', 'executable': 'C:\\Users\\dimaz\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2300.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'total': 341.22753524780273, 'used': 14.2203369140625}, 'memory': {'total': 15.733024597167969}}
+2023-04-26 12:26:48,342 INFO    HandlerThread:7688 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-26 12:26:48,342 INFO    HandlerThread:7688 [system_monitor.py:probe():214] Publishing system info
+2023-04-26 12:26:48,342 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-26 12:26:48,343 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-26 12:26:48,344 INFO    HandlerThread:7688 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-26 12:26:48,344 DEBUG   SenderThread:7688 [sender.py:send():375] send: files
+2023-04-26 12:26:48,344 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-26 12:26:48,357 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:26:48,358 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:26:48,360 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-26 12:26:48,360 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:26:48,361 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:26:48,361 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:26:48,361 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:26:48,361 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:26:48,361 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:26:48,361 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:26:48,362 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:26:48,362 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:26:48,362 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:26:48,424 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:26:48,424 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:26:48,424 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:26:48,425 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:26:48,430 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:26:48,430 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:26:48,431 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:26:48,431 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:26:48,430 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:26:48,431 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:26:48,431 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:26:48,432 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:26:48,432 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:26:48,432 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:26:48,517 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:26:48,517 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:26:48,517 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:26:48,518 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:26:48,522 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:26:48,524 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:26:48,524 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:26:48,535 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:26:48,538 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:26:48,538 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:26:48,538 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:26:48,538 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:26:48,539 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:26:48,539 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:26:48,539 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:26:48,539 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:26:48,539 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:26:48,540 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:26:48,609 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:26:48,609 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:26:48,609 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:26:48,610 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:26:48,614 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:26:48,615 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:26:48,616 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:26:48,621 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:26:48,628 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 12:26:48,628 DEBUG   SenderThread:7688 [sender.py:send():375] send: history
+2023-04-26 12:26:48,628 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 12:26:48,629 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:26:48,630 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:26:48,630 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:26:48,630 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:26:48,632 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:26:48,632 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:26:48,632 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:26:48,632 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:26:48,632 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:26:48,632 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:26:48,632 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:26:48,633 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:26:48,633 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:26:48,633 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:26:48,719 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:26:48,719 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:26:48,719 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:26:48,719 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:26:48,724 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:26:48,725 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:26:48,726 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:26:48,736 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:26:48,938 INFO    Thread-101:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-summary.json
+2023-04-26 12:26:48,941 INFO    Thread-101:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\requirements.txt
+2023-04-26 12:26:48,941 INFO    Thread-101:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:48,941 INFO    Thread-101:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-metadata.json
+2023-04-26 12:26:50,963 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:52,479 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:26:52,987 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:55,013 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:57,039 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:57,502 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:26:59,063 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:26:59,765 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:26:59,765 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:26:59,765 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:27:01,090 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:02,639 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:03,108 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:03,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:27:03,373 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:27:05,135 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:07,156 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:07,645 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:09,182 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:11,211 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:12,199 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:27:12,199 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:27:12,199 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:27:12,854 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:13,236 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:15,261 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:17,287 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:18,003 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:18,288 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\config.yaml
+2023-04-26 12:27:18,381 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:27:18,382 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:27:19,302 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:21,328 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:23,352 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:23,394 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:25,376 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:25,906 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:27:25,907 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:27:25,907 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:27:25,907 INFO    wandb-upload_0:7688 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\ssl.py", line 1071, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\ssl.py", line 1342, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: EOF occurred in violation of protocol (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\wandb\sdk\internal\internal_api.py", line 2094, in upload_file
+    response = self._upload_file_session.put(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 647, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 563, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\wandb\sdk\internal\internal_api.py", line 2123, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\wandb\sdk\internal\internal_api.py", line 2094, in upload_file
+    response = self._upload_file_session.put(
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 647, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\dimaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 563, in send
+    raise SSLError(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2023-04-26 12:27:27,402 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:28,607 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:29,422 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:31,449 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:33,382 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:27:33,382 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:27:33,475 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:33,840 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:35,498 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:37,524 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:39,010 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:39,552 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:41,579 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:42,000 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:27:42,000 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:27:42,000 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:27:43,601 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:44,241 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:45,626 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:47,645 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:48,378 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:27:48,379 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:27:48,738 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:27:48,738 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:27:49,297 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:49,662 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:51,686 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:53,713 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:54,386 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:55,741 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:57,745 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:27:59,477 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:27:59,774 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:01,691 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:01,691 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:28:01,691 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:01,795 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:03,380 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:28:03,380 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:28:03,824 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:04,515 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:05,841 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:07,865 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:09,542 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:09,890 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:11,910 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:13,759 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:28:13,759 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:28:13,759 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:28:13,759 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:28:13,759 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:28:13,759 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:28:13,759 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:28:13,760 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:28:13,760 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:28:13,761 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:28:13,833 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:28:13,833 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:28:13,833 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:28:13,834 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:28:13,838 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:28:13,839 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:28:13,840 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:28:13,849 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:28:13,850 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:28:13,850 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:28:13,850 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:28:13,850 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:28:13,850 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:28:13,851 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:28:13,851 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:28:13,851 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:28:13,851 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:28:13,852 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:28:13,852 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:28:13,901 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:28:13,902 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:28:13,902 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:28:13,902 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:28:13,907 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:28:13,908 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:28:13,908 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:28:13,908 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:28:13,908 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:28:13,908 WARNING HandlerThread:7688 [interfaces.py:finish():207] Failed to finish disk monitoring: cannot join thread before it is started
+2023-04-26 12:28:13,908 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:28:13,908 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:28:13,908 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:28:13,908 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:28:13,909 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:28:13,939 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:13,962 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:28:13,962 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:28:13,962 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:28:13,963 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:28:13,968 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:28:13,969 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:28:13,970 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:28:13,977 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:28:13,981 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 12:28:13,981 DEBUG   SenderThread:7688 [sender.py:send():375] send: exit
+2023-04-26 12:28:13,982 INFO    SenderThread:7688 [sender.py:send_exit():598] handling exit code: 0
+2023-04-26 12:28:13,982 INFO    SenderThread:7688 [sender.py:send_exit():600] handling runtime: 85
+2023-04-26 12:28:13,982 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:28:13,982 INFO    SenderThread:7688 [sender.py:send_exit():606] send defer
+2023-04-26 12:28:13,982 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,982 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-26 12:28:13,983 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,983 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-26 12:28:13,983 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 1
+2023-04-26 12:28:13,983 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,983 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-26 12:28:13,983 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,983 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-26 12:28:13,983 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 2
+2023-04-26 12:28:13,983 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,984 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-26 12:28:13,984 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:28:13,984 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:28:13,984 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:28:13,984 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:28:13,984 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:28:13,984 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:28:13,984 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:28:13,985 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:28:13,985 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,985 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-26 12:28:13,985 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 3
+2023-04-26 12:28:13,985 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:28:13,985 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,985 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-26 12:28:13,985 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,986 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-26 12:28:13,986 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 4
+2023-04-26 12:28:13,986 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,986 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-26 12:28:13,986 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,986 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-26 12:28:13,986 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 5
+2023-04-26 12:28:13,986 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,986 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-26 12:28:13,986 DEBUG   SenderThread:7688 [sender.py:send():375] send: summary
+2023-04-26 12:28:13,987 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:28:13,987 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,987 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-26 12:28:13,987 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 6
+2023-04-26 12:28:13,987 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:13,987 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-26 12:28:13,988 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:13,988 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-26 12:28:13,991 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:14,238 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 7
+2023-04-26 12:28:14,238 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:14,238 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-26 12:28:14,239 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:14,239 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-26 12:28:14,942 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\config.yaml
+2023-04-26 12:28:14,942 INFO    Thread-101:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-summary.json
+2023-04-26 12:28:14,988 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:15,708 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 8
+2023-04-26 12:28:15,709 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:15,710 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:15,710 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-26 12:28:15,710 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:15,710 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-26 12:28:15,711 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 9
+2023-04-26 12:28:15,711 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:15,711 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-26 12:28:15,711 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:15,711 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-26 12:28:15,711 INFO    SenderThread:7688 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-26 12:28:15,958 INFO    SenderThread:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:28:15,959 INFO    SenderThread:7688 [dir_watcher.py:finish():395] scan: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files
+2023-04-26 12:28:15,959 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\config.yaml config.yaml
+2023-04-26 12:28:15,960 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log output.log
+2023-04-26 12:28:15,961 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\requirements.txt requirements.txt
+2023-04-26 12:28:15,967 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-metadata.json wandb-metadata.json
+2023-04-26 12:28:15,967 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-summary.json wandb-summary.json
+2023-04-26 12:28:15,970 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 10
+2023-04-26 12:28:15,970 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:28:15,970 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-26 12:28:15,970 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:28:15,970 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-26 12:28:15,970 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 12:28:15,989 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:15,989 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:17,005 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:17,006 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:18,007 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:18,007 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:19,021 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:19,022 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:20,023 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:20,025 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:21,040 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:21,041 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:21,042 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:22,041 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:22,042 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:23,057 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:23,057 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:24,072 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:24,073 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:25,079 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:25,080 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:26,089 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:26,090 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:26,091 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:27,092 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:27,093 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:27,392 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:27,392 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:28:27,393 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:27,393 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:27,393 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:28:27,394 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:27,451 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:27,452 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:28:27,452 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:27,468 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:27,468 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:28:27,468 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:28,104 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:28,105 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:29,103 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:29,104 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:30,115 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:30,116 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:31,119 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:31,120 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:31,121 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:32,131 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:32,132 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:32,548 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:32,549 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:28:32,549 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:33,147 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:33,148 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:34,156 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:34,158 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:35,159 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:35,160 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:36,170 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:36,171 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:36,172 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:37,182 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:37,183 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:38,197 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:38,199 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:39,202 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:39,203 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:40,211 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:40,212 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:40,593 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:40,594 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:28:40,594 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:40,715 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:40,716 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:28:40,716 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:40,731 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:40,731 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:28:40,732 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:40,765 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:40,765 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:28:40,765 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:41,218 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:41,219 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:41,221 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:42,232 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:42,233 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:43,244 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:43,245 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:44,255 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:44,257 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:45,264 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:45,266 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:46,273 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:46,276 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:46,277 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:47,287 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:47,288 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:48,301 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:48,302 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:49,316 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:49,317 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:50,320 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:50,321 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:51,334 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:51,336 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:51,337 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:52,345 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:52,347 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:53,356 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:53,357 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:54,361 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:54,363 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:55,004 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:55,005 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:28:55,005 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:55,227 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:55,228 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:28:55,228 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:55,236 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:55,236 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:28:55,236 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:55,269 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:28:55,269 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:28:55,269 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:28:55,367 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:55,368 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:56,371 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:28:56,372 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:56,374 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:57,375 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:57,376 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:58,388 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:58,389 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:28:59,401 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:28:59,402 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:00,408 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:00,409 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:01,419 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:01,421 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:01,422 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:02,431 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:02,432 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:03,435 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:03,436 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:04,445 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:04,446 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:05,458 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:05,459 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:06,465 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:06,467 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:06,469 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:07,479 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:07,480 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:08,486 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:08,487 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:09,497 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:09,499 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:10,503 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:10,504 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:11,498 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:11,498 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:29:11,498 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:11,519 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:11,520 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:11,521 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:11,699 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:11,699 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:29:11,700 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:11,769 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:11,770 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:29:11,770 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:11,969 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:11,969 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:29:11,970 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:12,528 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:12,529 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:13,533 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:13,535 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:14,542 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:14,543 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:15,548 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:15,549 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:16,561 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:16,563 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:16,564 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:17,572 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:17,573 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:17,994 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:17,995 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:29:17,995 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:18,583 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:18,584 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:19,591 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:19,591 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:20,609 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:20,610 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:21,608 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:21,609 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:21,610 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:22,617 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:22,618 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:23,627 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:23,628 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:24,636 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:24,636 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:25,646 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:25,647 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:26,649 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:26,650 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:26,651 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:27,662 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:27,663 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:28,666 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:28,667 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:29,680 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:29,681 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:30,682 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:30,683 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:31,688 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:31,689 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:31,690 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:31,979 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:31,979 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:29:31,980 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:32,696 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:32,697 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:32,794 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:32,794 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:29:32,794 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:33,420 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:33,420 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:29:33,420 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:33,705 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:33,706 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:33,779 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:29:33,779 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:29:33,779 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:29:34,716 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:34,717 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:35,728 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:35,729 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:36,735 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:36,737 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:36,738 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:37,742 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:37,743 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:38,754 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:38,755 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:39,754 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:39,756 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:40,767 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:40,768 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:41,784 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:41,785 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:41,786 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:42,795 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:42,796 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:43,801 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:43,802 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:44,816 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:44,817 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:45,830 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:45,831 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:46,836 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:46,837 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:46,838 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:47,849 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:47,850 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:48,856 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:48,857 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:49,869 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:49,870 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:50,880 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:50,881 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:51,887 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:51,887 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:51,888 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:52,904 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:52,905 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:53,910 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:53,912 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:54,916 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:54,917 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:55,925 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:55,926 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:56,927 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:56,929 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:56,929 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:29:57,937 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:57,938 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:58,945 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:58,946 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:29:59,951 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:29:59,952 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:00,955 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:00,956 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:01,963 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:01,964 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:01,966 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:02,969 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:02,970 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:03,240 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/requirements.txt?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=c4oPTeYKkUaCG6UPAqZbUND%2BDnJZpalMBcfBT5HstDj0yLcSX5%2FfhH2AnjDjQ1Y4r1ZLWm01%2FpQhVGalXOjfWgS1htM%2BYT2Dch23lU6UODfE1ureBMKJgubMLdIx3TmdgiMzu5Q5A9g7iWp6%2FvLknke3Frxx%2FrJeXrgf8ZRejxOmV7RybvHcWHJszTLgwQmbq%2FUr1o7VK22PWSgSXHWqLYqur8FWXg03o8nZl%2F2W17YtfyzsTjvLBkoW0sXEEkmCy6jOwcmYBo9Qz07IV5G8UUpHaHE5EHbxx3kdvCZ%2Bcm07wrAY83XMOqA9LElNfalAt0Yfmm7Q8TQtsrycv%2BNYgw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:30:03,240 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:30:03,240 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:30:03,977 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:03,978 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:04,215 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/config.yaml?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=QTpTMZo%2B%2FcnUKklTg%2FEY0C%2FtBFW%2BSwL5uLSYN3UaorQMUz3LV2fD%2FjGgRapw463iF2kdZbm8KUy56oMPYviJpsDeEBI95Lcu64faEZ3rnmp%2FEezQrjxvtJBLax1nMErryQQg5iTxZt25cEy%2FXquwbBYUqQdK6PObLLXxP03XzPDW%2Fv35Uv%2FPaNK33Fc2qUw%2FW0QbOWY6GHM5nP1xL%2FImoRx1LJeEicbSrkxI3rke4RItno09VcIHLONk%2FU%2B17Ax%2FMIBNUJfBNsFGuzRpkBGSx%2FIMs%2FI8XSz%2F8pHrbNc5UmNdtAkGaKKW%2Fwm2eCZQldqIeOkdO8lTcIc%2FQjjxeg%2FMaQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:30:04,215 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 12:30:04,215 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:30:04,407 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-summary.json?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=TG%2BVOzcV8Nff%2F6ggL7ikeOSo4dhP9BB78EPag%2BChHJbB4mmJNg01Ygd3rmSJgjDtxh5Ntznh%2Bh3SZWgRm6zuFJmQAHQShbu%2BSHud0YcaXpsYSQYPcfXyf74JY%2BzL0KoY0u7pqVv1ZwRrPrf3%2BpQsNgi12aEFUvPUnM3mXqeMcdhVDoD9OiTrYAvZm8qVp8R45c7hXHaWQAwp8OlN2oqjdTQchboCaOWhRuZ%2BFhK33uH%2Bc%2FnULiT4%2BX4Avgr2CjgRxmQGtFlV1KR7lRUtJOVC7zwV8DJ43ZHZZxJslLf7Di7nl%2FmNT7zBY4IZC9RaJoAy7GBarfBd5VqEE9d72XY7Xg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:30:04,407 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:30:04,407 ERROR   wandb-upload_4:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:30:04,693 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/output.log?Expires=1682587695&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=KKw0UeE5vtZOmatB0VPRx0y5XlIHrxySM2To1Z%2F5AfpGilmh5Ni33Q8bTlrlgR8I%2FXFfnz%2F5aqRuZ0jQzYjeJ2fSU4rZ7KFj2ON2vlcF3inNorNd3ba%2FFabrD8YRat1qUUoVA2db%2BpBiszRkOFAdwr8Xp5uauDGvoCmv4VE64Ev0efVCOCpqhGfnPE0Lc67zbprHIV6Qn1UIn%2FVRIa2qF1krea%2B2pn2lNxeEY5JeJD4F4tD%2B%2FK0aN%2B3c%2BubL4j9UZGV2hFeVgwh58A18p32F%2F%2BIv%2BY92p4%2BLHeE2WOw2%2FTtiLrXZhT07nb%2FnGDnKpaIVaxGnwTWxW6uKSXODOL9xHA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:30:04,694 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '148961'}
+2023-04-26 12:30:04,694 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:30:04,986 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:04,987 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:05,998 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:05,999 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:07,008 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:07,008 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:07,009 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:08,014 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:08,015 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:09,025 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:09,026 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:10,034 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:10,035 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:11,043 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:11,044 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:12,049 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:12,050 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:12,050 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:13,059 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:13,060 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:14,067 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:14,068 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:15,076 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:15,077 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:16,085 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:16,085 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:17,096 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:17,098 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:17,098 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:18,102 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:18,104 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:19,106 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:19,106 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:20,112 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:20,112 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:21,123 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:21,124 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:22,136 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:22,136 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:22,137 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:23,137 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:23,138 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:24,151 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:24,152 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:25,161 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:25,162 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:26,171 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:26,172 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:27,175 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:27,176 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:27,176 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:28,179 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:28,179 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:29,192 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:29,193 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:30,198 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:30,200 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:31,205 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:31,206 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:32,216 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:32,217 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:32,218 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:33,228 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:33,229 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:34,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:34,237 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:35,253 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:35,253 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:36,264 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:36,265 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:37,273 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:37,275 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:37,276 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:38,285 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:38,286 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:39,297 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:39,298 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:40,308 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:40,309 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:41,315 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:41,316 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:42,320 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:42,321 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:42,322 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:43,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:43,332 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:44,341 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:44,342 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:45,349 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:45,350 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:46,012 INFO    wandb-upload_3:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\requirements.txt
+2023-04-26 12:30:46,363 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:46,364 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:47,222 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/1aayrfi1/wandb-metadata.json?Expires=1682587607&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=LHtDWem0w7uZfsP3ssbeNTbAKmiTK2QAVvCQqNq7q0P3nQYhGur1fvC6e43j4Xnh%2ByXlbd%2FNiWq39tsJndFP6rGjfWcnN6DEQtYhnai3EU5xr3sUFSdutQj%2FGUS7JZpxk%2BCyrup3pbt5G08KkqoUVdXFnmWEKmaraLtYZyHSVKNXHWlf7vwnXF7Xee5nIwoRb%2Bi5wcei8HcHExHRauKtlzMRZF%2FO%2BXGs8UtAaPLW0mZC%2FCNtY3OgcIR46P%2Ba11qv8ovVk4ZCm4KZwRAJBQaSleTOrnJoEBkDcbp6dK6DUBuV5%2FfdcRfZsG5nWWVg%2BsqVhBZVaBQeMv0mlCh4D57PNQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:30:47,222 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1210'}
+2023-04-26 12:30:47,222 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:30:47,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:47,374 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:47,375 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:47,406 INFO    wandb-upload_4:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\wandb-summary.json
+2023-04-26 12:30:47,736 INFO    wandb-upload_1:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\config.yaml
+2023-04-26 12:30:48,385 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:48,386 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:49,399 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:49,400 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:50,413 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:50,414 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:51,430 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:51,431 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:51,928 INFO    wandb-upload_2:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\files\output.log
+2023-04-26 12:30:52,438 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:52,439 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:52,440 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:53,447 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:53,448 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:54,455 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:54,456 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:55,465 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:55,466 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:56,480 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:56,481 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:57,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:30:57,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:57,490 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:58,504 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:58,505 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:30:59,508 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:30:59,509 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:00,512 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:00,513 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:01,518 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:01,519 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:02,533 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:02,534 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:02,535 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:03,545 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:03,546 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:04,554 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:04,554 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:05,554 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:05,555 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:06,568 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:06,569 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:07,582 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:07,583 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:07,584 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:08,591 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:08,592 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:09,604 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:09,604 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:10,612 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:10,613 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:11,622 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:11,623 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:12,631 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:12,633 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:12,634 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:13,645 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:13,646 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:14,646 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:14,648 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:15,657 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:15,658 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:16,662 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:16,663 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:17,673 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:17,674 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:17,675 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:18,676 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:18,677 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:19,682 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:19,683 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:20,688 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:20,688 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:21,696 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:21,697 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:22,699 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:22,701 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:22,702 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:23,709 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:23,710 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:24,724 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:24,725 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:25,735 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:25,736 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:26,744 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:26,745 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:27,754 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:27,754 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:27,755 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:28,758 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:28,759 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:29,766 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:29,767 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:30,779 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:30,780 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:31,794 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:31,795 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:32,804 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:32,804 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:32,805 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:33,806 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:33,807 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:34,814 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:34,815 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:35,817 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:35,819 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:36,832 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:36,833 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:37,839 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:37,840 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:37,841 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:38,851 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:38,852 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:39,861 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:39,862 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:40,862 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:40,862 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:41,865 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:41,866 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:42,878 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:42,879 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:42,880 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:43,891 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:43,891 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:44,893 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:44,894 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:45,908 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:45,910 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:46,916 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:46,917 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:47,921 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:47,921 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:47,923 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:48,933 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:48,935 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:49,949 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:49,950 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:50,951 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:50,952 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:51,956 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:51,958 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:52,963 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:52,964 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:52,965 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:53,972 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:53,973 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:54,988 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:54,989 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:55,991 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:55,992 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:56,999 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:57,000 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:58,001 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:58,001 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:31:58,002 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:31:59,006 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:31:59,006 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:00,017 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:00,018 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:01,028 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:01,029 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:02,046 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:02,047 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:03,060 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:03,061 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:03,063 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:04,063 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:04,065 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:05,071 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:05,072 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:06,084 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:06,084 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:07,093 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:07,094 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:08,106 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:08,107 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:08,107 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:09,116 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:09,118 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:10,129 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:10,130 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:11,138 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:11,139 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:12,149 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:12,150 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:13,161 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:13,162 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:13,163 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:14,173 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:14,174 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:15,177 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:15,178 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:16,192 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:16,193 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:17,199 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:17,199 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:18,206 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:18,207 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:18,208 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:19,219 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:19,220 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:20,229 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:20,230 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:21,242 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:21,243 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:22,247 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:22,248 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:23,250 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:23,251 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:23,252 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:24,254 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:24,255 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:25,259 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:25,260 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:26,264 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:26,265 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:27,272 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:27,273 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:28,282 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:28,283 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:28,283 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:29,295 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:29,296 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:30,303 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:30,304 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:31,316 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:31,316 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:32,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:32,332 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:33,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:33,332 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:33,332 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:34,338 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:34,339 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:35,348 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:35,349 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:36,364 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:36,365 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:37,377 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:37,379 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:38,394 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:38,395 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:38,396 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:39,407 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:39,409 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:40,409 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:40,410 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:41,422 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:41,423 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:42,444 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:42,445 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:43,448 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:43,449 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:43,450 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:44,451 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:44,451 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:45,453 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:45,453 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:46,468 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:46,469 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:47,480 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:47,481 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:48,493 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:48,495 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:48,496 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:49,508 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:49,509 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:50,518 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:50,519 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:51,522 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:51,523 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:52,528 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:52,529 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:53,543 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:53,544 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:53,545 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:54,559 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:54,560 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:55,568 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:55,569 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:56,581 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:56,582 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:57,594 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:57,595 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:57,877 INFO    wandb-upload_0:7688 [upload_job.py:push():137] Uploaded file C:\Users\dimaz\AppData\Local\Temp\tmptzi_tz61wandb\z5ik7gx4-wandb-metadata.json
+2023-04-26 12:32:58,092 INFO    Thread-100 (_thread_body):7688 [sender.py:transition_state():626] send defer: 11
+2023-04-26 12:32:58,094 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:32:58,095 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-26 12:32:58,096 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:32:58,097 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-26 12:32:58,097 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher
+2023-04-26 12:32:58,097 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 12
+2023-04-26 12:32:58,097 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:32:58,097 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-26 12:32:58,098 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:32:58,098 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-26 12:32:58,324 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 13
+2023-04-26 12:32:58,325 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:32:58,325 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-26 12:32:58,326 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:32:58,326 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-26 12:32:58,327 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 14
+2023-04-26 12:32:58,327 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:32:58,328 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-26 12:32:58,328 DEBUG   SenderThread:7688 [sender.py:send():375] send: final
+2023-04-26 12:32:58,329 DEBUG   SenderThread:7688 [sender.py:send():375] send: footer
+2023-04-26 12:32:58,329 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:32:58,329 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-26 12:32:58,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:32:58,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: server_info
+2023-04-26 12:32:58,332 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-26 12:32:58,332 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:32:58,332 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-26 12:32:58,332 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: server_info
+2023-04-26 12:32:58,677 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:32:58,679 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-26 12:32:58,679 INFO    HandlerThread:7688 [handler.py:finish():845] shutting down handler
+2023-04-26 12:32:59,683 INFO    WriterThread:7688 [datastore.py:close():298] close: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_122251-1aayrfi1\run-1aayrfi1.wandb
+2023-04-26 12:32:59,683 INFO    SenderThread:7688 [sender.py:finish():1550] shutting down sender
+2023-04-26 12:32:59,684 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 12:32:59,684 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher

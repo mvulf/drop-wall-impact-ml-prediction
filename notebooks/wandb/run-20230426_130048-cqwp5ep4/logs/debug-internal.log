@@ -1,0 +1,935 @@
+2023-04-26 13:01:04,871 INFO    StreamThr :7688 [internal.py:wandb_internal():86] W&B internal server running at pid: 7688, started at: 2023-04-26 13:01:04.870271
+2023-04-26 13:01:04,872 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status
+2023-04-26 13:01:04,873 INFO    WriterThread:7688 [datastore.py:open_for_write():85] open: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\run-cqwp5ep4.wandb
+2023-04-26 13:01:04,874 DEBUG   SenderThread:7688 [sender.py:send():375] send: header
+2023-04-26 13:01:04,874 DEBUG   SenderThread:7688 [sender.py:send():375] send: run
+2023-04-26 13:01:05,391 INFO    SenderThread:7688 [dir_watcher.py:__init__():219] watching files in: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files
+2023-04-26 13:01:05,394 INFO    SenderThread:7688 [sender.py:_start_run_threads():1124] run started: cqwp5ep4 with start time 1682503263.956571
+2023-04-26 13:01:05,394 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 13:01:05,395 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 13:01:05,398 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: check_version
+2023-04-26 13:01:05,399 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: check_version
+2023-04-26 13:01:05,660 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: run_start
+2023-04-26 13:01:05,665 DEBUG   HandlerThread:7688 [system_info.py:__init__():31] System info init
+2023-04-26 13:01:05,665 DEBUG   HandlerThread:7688 [system_info.py:__init__():46] System info init done
+2023-04-26 13:01:05,665 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 13:01:05,665 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 13:01:05,665 INFO    HandlerThread:7688 [system_monitor.py:probe():201] Collecting system info
+2023-04-26 13:01:05,668 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 13:01:05,669 DEBUG   HandlerThread:7688 [system_info.py:probe():195] Probing system
+2023-04-26 13:01:05,670 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 13:01:05,670 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 13:01:05,676 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 13:01:05,676 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():180] Probing git
+2023-04-26 13:01:05,734 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():188] Probing git done
+2023-04-26 13:01:05,734 DEBUG   HandlerThread:7688 [system_info.py:probe():240] Probing system done
+2023-04-26 13:01:05,734 DEBUG   HandlerThread:7688 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.11', 'heartbeatAt': '2023-04-26T10:01:05.669902', 'startedAt': '2023-04-26T10:00:48.900222', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mvulf/Drop_wall_impact.git', 'commit': '85f6575b0654e99398387aa98d14b5b830dc3faf'}, 'email': 'dimahzharikov10@gmail.com', 'root': 'D:/‘“Ë¿ƒ/vkr_gh/Drop_wall_impact', 'host': 'HUAWEI', 'username': 'dimaz', 'executable': 'C:\\Users\\dimaz\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2300.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'total': 341.22753524780273, 'used': 14.222251892089844}, 'memory': {'total': 15.733024597167969}}
+2023-04-26 13:01:05,734 INFO    HandlerThread:7688 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-26 13:01:05,734 INFO    HandlerThread:7688 [system_monitor.py:probe():214] Publishing system info
+2023-04-26 13:01:05,734 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-26 13:01:05,735 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-26 13:01:05,735 INFO    HandlerThread:7688 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-26 13:01:05,736 DEBUG   SenderThread:7688 [sender.py:send():375] send: files
+2023-04-26 13:01:05,736 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-26 13:01:05,746 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:01:05,746 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:01:05,748 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-26 13:01:05,959 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 13:01:05,960 DEBUG   SenderThread:7688 [sender.py:send():375] send: history
+2023-04-26 13:01:05,960 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 13:01:05,961 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 13:01:06,395 INFO    Thread-171:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:06,396 INFO    Thread-171:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-metadata.json
+2023-04-26 13:01:06,396 INFO    Thread-171:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\requirements.txt
+2023-04-26 13:01:06,396 INFO    Thread-171:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-summary.json
+2023-04-26 13:01:08,415 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:10,432 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:10,464 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:12,452 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:14,437 INFO    wandb-upload_0:7688 [upload_job.py:push():137] Uploaded file C:\Users\dimaz\AppData\Local\Temp\tmpj0e7ukjawandb\4fazqdqu-wandb-metadata.json
+2023-04-26 13:01:14,472 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:15,897 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:16,487 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:20,518 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:20,770 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:01:20,770 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:01:20,949 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:24,547 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:26,428 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:26,553 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:32,302 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:32,600 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:34,612 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:35,767 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:01:35,767 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:01:37,592 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:38,657 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:38,657 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\config.yaml
+2023-04-26 13:01:40,684 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:43,416 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:44,707 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:48,747 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:48,967 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:50,773 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:01:50,774 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:01:52,795 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:54,664 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:01:54,809 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:56,834 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:01:58,849 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:00,100 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:00,878 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:02,895 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:04,923 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:05,474 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:05,676 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 13:02:05,677 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:02:05,772 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:02:05,773 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:02:06,936 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:08,959 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:10,977 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:11,060 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:12,990 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:15,009 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:16,656 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:17,026 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:19,047 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:20,774 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:02:20,775 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:02:21,077 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:21,811 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:23,102 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:25,126 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:26,991 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:27,149 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:29,174 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:31,198 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:32,444 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:33,221 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:35,243 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:35,684 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:02:35,777 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:02:35,778 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:02:37,265 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:38,069 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:39,284 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:41,303 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:43,330 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:43,439 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:45,356 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:47,379 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:48,802 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:50,792 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:02:50,792 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:02:51,407 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:53,423 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:54,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:02:57,456 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:02:59,482 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:00,615 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:01,503 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:03,532 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:05,552 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:05,695 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:03:05,696 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:05,808 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:03:05,808 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:03:06,566 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:08,583 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:10,869 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:12,619 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:14,641 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:16,241 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:16,666 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:18,690 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:20,715 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:20,824 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:03:20,825 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:03:22,014 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:22,735 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:24,759 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:26,770 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:27,085 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:28,792 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:32,419 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:32,824 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:34,833 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:35,703 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:03:35,828 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:03:35,829 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:03:36,850 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:37,505 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:38,859 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:40,881 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:42,549 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:42,903 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:44,928 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:46,938 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:47,712 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:48,957 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:50,837 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:03:50,838 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:03:50,982 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:53,005 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:53,447 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:55,031 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:57,045 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:03:58,682 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:03:59,059 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:03,092 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:03,884 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:05,126 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:05,717 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:04:05,842 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:04:05,843 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:04:07,152 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:09,175 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:09,460 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:11,201 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:13,223 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:14,636 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:15,247 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:17,276 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:19,304 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:19,747 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:20,855 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:04:20,856 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:04:21,330 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:23,341 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:24,848 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:25,354 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:27,365 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:29,385 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:30,713 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:33,424 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:35,438 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:35,721 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:04:35,722 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:35,880 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:04:35,880 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:04:37,454 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:39,462 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:41,304 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:41,476 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:43,495 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:45,509 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:47,074 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:47,527 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:49,535 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:50,882 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:04:50,882 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:04:51,540 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:52,531 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:53,553 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:55,577 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:57,589 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:04:58,122 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:04:59,597 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:01,623 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:03,467 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:03,633 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:05,653 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:05,730 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:05:05,888 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:05:05,888 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:05:07,670 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:08,803 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:09,684 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:11,689 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:13,710 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:13,897 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:15,733 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:17,746 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:19,637 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:19,762 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:20,898 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:05:20,899 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:05:21,778 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:23,789 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:25,116 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:25,803 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:27,814 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:29,833 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:31,068 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:31,855 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:33,863 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:35,734 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:05:35,874 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:35,904 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:05:35,905 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:05:36,078 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:39,897 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:41,364 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:41,903 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:43,919 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:45,946 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:46,537 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:47,953 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:49,972 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:50,911 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:05:50,912 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:05:51,983 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:52,279 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:05:53,992 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:56,003 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:58,011 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:05:58,293 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:00,021 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:02,045 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:03,919 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:04,061 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:05,747 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:06:05,904 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:06:05,905 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:06:06,079 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:08,095 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:09,538 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:10,125 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:12,132 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:14,153 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:15,056 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:16,170 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:18,198 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:20,206 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:20,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:20,921 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:06:20,922 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:06:24,249 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:25,801 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:26,254 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:28,267 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:30,275 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:31,463 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:32,293 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:34,317 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:35,754 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:06:35,925 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:06:35,926 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:06:36,347 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:37,264 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:38,370 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:40,379 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:42,333 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:42,401 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:44,415 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:46,423 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:47,411 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:48,430 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:50,437 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:50,924 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:06:50,924 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:06:52,450 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:53,116 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:06:54,468 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:56,483 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:58,500 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:06:58,671 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:00,517 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:02,534 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:04,502 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:04,551 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:05,768 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:07:05,926 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:07:05,927 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:07:06,567 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:08,586 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:10,098 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:10,602 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:12,605 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:14,626 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:15,851 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:16,642 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:20,667 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:20,899 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:20,945 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:07:20,946 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:07:22,684 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:23,699 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:25,716 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:26,133 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:27,732 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:29,762 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:31,683 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:31,793 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:33,811 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:35,778 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:07:35,839 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:35,963 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:07:35,964 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:07:37,553 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:37,866 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:39,881 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:41,896 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:42,761 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:43,925 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:45,950 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:47,969 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:48,327 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:49,991 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:50,976 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:07:50,976 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:07:52,005 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:53,959 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:07:54,021 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:56,029 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:58,045 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:07:59,832 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:00,066 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:02,085 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:04,097 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:05,460 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:05,786 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:08:05,975 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:08:05,976 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:08:06,116 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:10,156 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:10,922 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:12,176 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:14,189 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:16,193 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:16,411 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:18,203 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:20,233 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:20,966 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:08:20,967 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:08:21,511 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:22,259 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:24,277 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:26,287 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:26,767 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:28,317 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:30,329 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:31,849 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:32,349 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:35,787 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:08:35,977 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:08:35,977 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:08:36,381 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:36,962 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:38,398 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:40,416 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:42,432 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:42,494 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:44,434 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:46,459 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:47,658 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:48,471 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:50,481 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:50,980 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:08:50,980 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:08:52,501 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:53,391 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:08:54,519 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:56,532 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:58,548 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:08:59,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:00,573 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:02,598 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:04,406 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:04,619 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:05,793 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:09:05,996 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:09:05,996 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:09:06,630 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:08,638 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:10,183 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:10,663 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:12,677 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:14,703 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:16,140 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:16,719 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:18,735 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:20,748 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:21,013 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:09:21,013 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:09:21,186 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:22,764 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:24,779 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:26,504 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:26,786 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:28,813 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:30,827 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:32,142 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:32,830 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:34,845 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:35,804 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:09:36,022 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:09:36,022 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:09:36,863 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:37,203 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:38,891 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:40,920 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:42,241 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:42,932 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:46,968 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:47,500 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:48,989 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:50,993 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:51,024 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:09:51,025 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:09:53,018 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:53,094 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:55,038 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:57,056 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:09:58,398 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:09:59,080 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:01,105 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:03,120 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:04,081 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:05,136 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:05,808 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:10:06,043 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:10:06,044 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:10:07,145 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:09,164 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:09,666 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:11,173 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:13,189 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:14,688 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:17,214 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:19,232 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:20,002 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:21,060 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:10:21,061 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:10:21,249 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:23,266 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:25,281 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:25,357 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:27,291 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:29,298 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:30,375 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:31,313 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:33,332 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:35,342 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:35,810 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:10:35,811 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:36,076 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:10:36,076 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:10:37,356 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:39,371 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:41,389 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:41,513 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:43,408 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:46,747 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:47,451 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:49,476 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:51,079 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:10:51,080 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:10:51,488 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:52,253 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:53,496 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:55,513 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:57,535 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:10:57,894 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:10:59,553 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:01,565 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:03,563 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:03,580 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:05,597 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:05,814 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:11:06,082 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:11:06,082 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:11:07,614 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:09,350 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:09,619 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:11,638 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:13,652 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:14,939 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:15,657 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:19,706 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:20,328 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:21,084 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:11:21,085 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:11:21,722 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:23,739 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:25,614 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:25,756 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:27,768 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:29,782 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:31,152 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:31,801 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:33,817 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:35,824 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:11:35,839 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:36,076 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:11:36,076 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:11:36,251 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:37,861 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:39,879 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:41,566 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:41,893 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:43,907 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:45,923 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:47,017 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:47,940 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:49,944 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:51,080 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:11:51,081 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:11:51,957 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:52,125 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:53,973 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:55,979 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:11:57,618 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:11:57,997 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:00,013 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:02,029 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:03,507 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:04,047 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:05,834 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:12:06,056 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:06,087 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:12:06,087 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:12:08,073 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:09,428 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:10,081 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:12,090 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:14,100 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:15,076 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:16,114 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:18,125 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:20,146 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:20,207 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:21,098 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:12:21,098 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:12:22,165 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:24,182 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:25,772 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:26,202 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:28,218 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:30,220 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:31,346 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:32,223 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:34,240 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:35,840 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:12:36,113 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:12:36,113 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:12:36,253 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:37,013 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:40,282 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:42,296 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:42,311 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:44,309 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:46,328 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:47,605 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:48,346 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:50,352 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:51,117 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:12:51,118 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:12:52,355 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:52,929 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:54,371 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:56,388 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:12:58,327 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:12:58,405 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:00,423 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:02,446 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:03,734 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:04,454 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:05,855 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:13:06,112 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:13:06,112 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:13:06,474 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:08,477 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:09,444 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:10,505 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:12,531 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:14,563 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:15,279 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:16,579 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:18,592 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:20,605 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:20,634 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:21,104 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:13:21,104 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:13:24,668 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:25,791 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:26,687 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:28,701 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:30,716 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:31,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:32,723 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:34,747 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:35,862 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:13:36,114 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:13:36,114 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:13:36,753 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:36,786 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:38,770 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:40,788 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:42,270 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:42,806 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:44,824 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:46,852 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:47,933 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:48,861 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:50,876 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:51,124 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:13:51,125 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:13:53,068 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:54,902 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:56,917 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:13:58,488 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:13:58,932 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:00,940 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:02,950 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:03,538 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:04,968 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:05,862 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:14:06,124 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:14:06,124 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:14:06,975 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:08,739 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:08,991 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:11,000 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:13,028 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:14,744 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:15,059 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:17,073 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:19,086 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:19,804 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:21,132 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 13:14:21,133 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 13:14:22,124 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:24,138 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:24,828 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:26,142 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:28,165 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:30,183 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:30,478 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:32,199 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:33,012 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 13:14:33,013 DEBUG   SenderThread:7688 [sender.py:send():375] send: exit
+2023-04-26 13:14:33,013 INFO    SenderThread:7688 [sender.py:send_exit():598] handling exit code: 0
+2023-04-26 13:14:33,013 INFO    SenderThread:7688 [sender.py:send_exit():600] handling runtime: 807
+2023-04-26 13:14:33,014 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 13:14:33,014 INFO    SenderThread:7688 [sender.py:send_exit():606] send defer
+2023-04-26 13:14:33,014 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,014 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-26 13:14:33,015 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,015 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-26 13:14:33,015 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 1
+2023-04-26 13:14:33,015 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,015 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-26 13:14:33,015 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,015 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-26 13:14:33,015 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 2
+2023-04-26 13:14:33,015 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,015 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-26 13:14:33,015 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 13:14:33,015 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 13:14:33,015 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 13:14:33,016 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 13:14:33,016 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 13:14:33,016 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 13:14:33,016 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 13:14:33,016 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,016 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-26 13:14:33,016 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 3
+2023-04-26 13:14:33,016 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 13:14:33,017 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,017 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-26 13:14:33,017 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,017 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-26 13:14:33,017 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 4
+2023-04-26 13:14:33,017 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,017 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-26 13:14:33,018 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,018 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-26 13:14:33,018 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 5
+2023-04-26 13:14:33,018 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,018 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-26 13:14:33,018 DEBUG   SenderThread:7688 [sender.py:send():375] send: summary
+2023-04-26 13:14:33,019 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 13:14:33,019 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,019 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-26 13:14:33,019 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 6
+2023-04-26 13:14:33,019 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,019 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-26 13:14:33,019 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,019 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-26 13:14:33,021 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:33,204 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:33,205 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-summary.json
+2023-04-26 13:14:33,287 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 7
+2023-04-26 13:14:33,287 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:33,287 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-26 13:14:33,287 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:33,287 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-26 13:14:34,020 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:34,220 INFO    Thread-171:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\config.yaml
+2023-04-26 13:14:34,994 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 8
+2023-04-26 13:14:34,994 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:34,995 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:34,995 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-26 13:14:34,996 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:34,996 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-26 13:14:34,996 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 9
+2023-04-26 13:14:34,997 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:34,997 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-26 13:14:34,997 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:34,997 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-26 13:14:34,997 INFO    SenderThread:7688 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-26 13:14:35,023 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:35,228 INFO    SenderThread:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:14:35,229 INFO    SenderThread:7688 [dir_watcher.py:finish():395] scan: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files
+2023-04-26 13:14:35,229 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\config.yaml config.yaml
+2023-04-26 13:14:35,230 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log output.log
+2023-04-26 13:14:35,231 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\requirements.txt requirements.txt
+2023-04-26 13:14:35,234 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-metadata.json wandb-metadata.json
+2023-04-26 13:14:35,235 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-summary.json wandb-summary.json
+2023-04-26 13:14:35,236 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 10
+2023-04-26 13:14:35,236 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:35,237 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:14:35,240 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-26 13:14:35,240 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:14:35,240 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-26 13:14:35,241 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 13:14:36,037 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:36,037 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:37,051 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:37,052 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:38,053 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:38,054 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:39,070 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:39,071 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:40,083 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:40,084 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:41,085 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:41,086 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:41,088 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:42,104 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:42,105 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:43,120 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:43,121 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:44,121 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:44,122 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:45,137 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:45,138 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:46,152 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:46,155 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:46,155 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:47,171 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:47,172 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:47,523 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/wandb-summary.json?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=rp9uNSK5pAV1stKmMGIyQN0rP9iMPmmJMEatVZb%2Ft1F8D6zbNOc9jcLDyLgpCcLfiH4COtB5Xg81%2BfEMoA4RyzxE1afH6r43TDVHjZsmRF2T6yD9MgFy549IWnJngeS9aLw840dHh5uFFkC0VTFAH2k1dcwz9lLlEIErH3H6faznHnAyq%2BqOhvT%2Bx3gAODFRfkjukCqvHKydS21NBIUr0ZZ%2FCVq7Gdd5zQkpA%2B08HexlQAOKujb%2BK8xrwVnuMdZUNJ3E6RLbYmVGNIq3CK0j97rjh43cxgX%2BAKuisCQchUSvO8XQFEBw64UOvKqx0lMquWo4neLtF3QpbmoANo6LtQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/wandb-summary.json?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=rp9uNSK5pAV1stKmMGIyQN0rP9iMPmmJMEatVZb%2Ft1F8D6zbNOc9jcLDyLgpCcLfiH4COtB5Xg81%2BfEMoA4RyzxE1afH6r43TDVHjZsmRF2T6yD9MgFy549IWnJngeS9aLw840dHh5uFFkC0VTFAH2k1dcwz9lLlEIErH3H6faznHnAyq%2BqOhvT%2Bx3gAODFRfkjukCqvHKydS21NBIUr0ZZ%2FCVq7Gdd5zQkpA%2B08HexlQAOKujb%2BK8xrwVnuMdZUNJ3E6RLbYmVGNIq3CK0j97rjh43cxgX%2BAKuisCQchUSvO8XQFEBw64UOvKqx0lMquWo4neLtF3QpbmoANo6LtQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:14:47,524 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '201'}
+2023-04-26 13:14:47,524 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:14:47,529 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/output.log?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AeYqWO6mC2Cz%2B2g7DV67BEonxB1hMcs6TKp9TgLNCY8o5QNLdrgmai5ReKbIqFjzW8mVhZap7c6orbm0aXSQJabtr0NZqBQZlaRhvKAo66OrWBRRZsT53JNXBxNMjjd2G%2Fq4gAL%2Fs%2BltZv7FM%2F3P5jStYc7oqKf5qMygDvKT53Hxx8rex09RZt8DaufPsL35O3Hy7ahtUk1WxdeL7LUC8yJ3Nqgqw52hJw7yLsP%2FaIWx%2BefYt78rpdAVAR1FSjRCYiCJsYORA5X%2BGrgdkMm4wSTakrFzRj4S4YVa1X5zs9gOKFpuGSqBb1KV%2FG6QtcNKLd0jKGOcfx6iCf37aXeR%2FQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/output.log?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AeYqWO6mC2Cz%2B2g7DV67BEonxB1hMcs6TKp9TgLNCY8o5QNLdrgmai5ReKbIqFjzW8mVhZap7c6orbm0aXSQJabtr0NZqBQZlaRhvKAo66OrWBRRZsT53JNXBxNMjjd2G%2Fq4gAL%2Fs%2BltZv7FM%2F3P5jStYc7oqKf5qMygDvKT53Hxx8rex09RZt8DaufPsL35O3Hy7ahtUk1WxdeL7LUC8yJ3Nqgqw52hJw7yLsP%2FaIWx%2BefYt78rpdAVAR1FSjRCYiCJsYORA5X%2BGrgdkMm4wSTakrFzRj4S4YVa1X5zs9gOKFpuGSqBb1KV%2FG6QtcNKLd0jKGOcfx6iCf37aXeR%2FQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:14:47,530 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '166358'}
+2023-04-26 13:14:47,530 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:14:47,571 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/config.yaml?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AJ%2BlMl1gCH9Pp3d%2B84RVpY5C0W0AxExDE%2BsnUtkiABZoGvjpKuobeTAO0jw2kwgGC1%2BUFqppz3W2KMw732YomiKqYFlmiTa4SUIfPhnWS3JDaxVprzdulA3XoQbw%2B4jR4AuuBVefTLy6vEA73DwDHVPphO9Z4Q7JQDdI%2FKtIMKPex7aD8VOfiVtW%2BIN9r1Zdsw5eqJrMYTUqZbJi8sU65kqKSVY0J2IlPkdPTK4pTPQOe4BcNauGuww0JYIHPzgsVvqJtk3Qz2tcxr3OICY0pXYyCwd1G9GldX7IGW6gPlvew85XUgsH7NNmILdCTMrfZG1T0mOyhv6dqdrRhbkChQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/config.yaml?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AJ%2BlMl1gCH9Pp3d%2B84RVpY5C0W0AxExDE%2BsnUtkiABZoGvjpKuobeTAO0jw2kwgGC1%2BUFqppz3W2KMw732YomiKqYFlmiTa4SUIfPhnWS3JDaxVprzdulA3XoQbw%2B4jR4AuuBVefTLy6vEA73DwDHVPphO9Z4Q7JQDdI%2FKtIMKPex7aD8VOfiVtW%2BIN9r1Zdsw5eqJrMYTUqZbJi8sU65kqKSVY0J2IlPkdPTK4pTPQOe4BcNauGuww0JYIHPzgsVvqJtk3Qz2tcxr3OICY0pXYyCwd1G9GldX7IGW6gPlvew85XUgsH7NNmILdCTMrfZG1T0mOyhv6dqdrRhbkChQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:14:47,571 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 13:14:47,571 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:14:47,596 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/requirements.txt?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=nrjqg9SER3LQoImQ0iQt3Y3QNVTFltnOBg60bP7qnBKI4zSx5XjK%2B3JNtA5U1p8w0d9KmdqxW7%2Fk%2BCkorio81b9hs2mp2dNKNJa0LuuvpvkufoivxTo5EaJu%2B0qDNyDNOc5c2DLjdL8%2FJ107w42a%2Bvc9I78tEcvn7ZMB%2B5973YmZMFKqviqFYSM3JyZ9uFec7tIsN8vZk0LooOFsARLaJWNMSPFQPFpI0M5BTl2JexhZmwy%2FxTgctxsRO1xGqa5uygBOqAO6vaspWsgZuYFxsPH41%2F2765jSi%2F0Pdoi4xlBJ3I%2BTq45jXXjvmyNQ0AJcCK3cnXAGVPBxISqMtuH4cw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/requirements.txt?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=nrjqg9SER3LQoImQ0iQt3Y3QNVTFltnOBg60bP7qnBKI4zSx5XjK%2B3JNtA5U1p8w0d9KmdqxW7%2Fk%2BCkorio81b9hs2mp2dNKNJa0LuuvpvkufoivxTo5EaJu%2B0qDNyDNOc5c2DLjdL8%2FJ107w42a%2Bvc9I78tEcvn7ZMB%2B5973YmZMFKqviqFYSM3JyZ9uFec7tIsN8vZk0LooOFsARLaJWNMSPFQPFpI0M5BTl2JexhZmwy%2FxTgctxsRO1xGqa5uygBOqAO6vaspWsgZuYFxsPH41%2F2765jSi%2F0Pdoi4xlBJ3I%2BTq45jXXjvmyNQ0AJcCK3cnXAGVPBxISqMtuH4cw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:14:47,597 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 13:14:47,597 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:14:48,186 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:48,187 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:49,203 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:49,204 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:50,220 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:50,221 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:51,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:51,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:51,237 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:52,254 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:52,255 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:53,270 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:53,271 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:54,287 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:54,288 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:55,302 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:55,303 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:56,319 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:14:56,320 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:56,321 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:57,337 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:57,338 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:58,353 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:58,354 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:14:59,363 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:14:59,364 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:00,371 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:00,372 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:00,773 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/wandb-summary.json?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=rp9uNSK5pAV1stKmMGIyQN0rP9iMPmmJMEatVZb%2Ft1F8D6zbNOc9jcLDyLgpCcLfiH4COtB5Xg81%2BfEMoA4RyzxE1afH6r43TDVHjZsmRF2T6yD9MgFy549IWnJngeS9aLw840dHh5uFFkC0VTFAH2k1dcwz9lLlEIErH3H6faznHnAyq%2BqOhvT%2Bx3gAODFRfkjukCqvHKydS21NBIUr0ZZ%2FCVq7Gdd5zQkpA%2B08HexlQAOKujb%2BK8xrwVnuMdZUNJ3E6RLbYmVGNIq3CK0j97rjh43cxgX%2BAKuisCQchUSvO8XQFEBw64UOvKqx0lMquWo4neLtF3QpbmoANo6LtQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/wandb-summary.json?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=rp9uNSK5pAV1stKmMGIyQN0rP9iMPmmJMEatVZb%2Ft1F8D6zbNOc9jcLDyLgpCcLfiH4COtB5Xg81%2BfEMoA4RyzxE1afH6r43TDVHjZsmRF2T6yD9MgFy549IWnJngeS9aLw840dHh5uFFkC0VTFAH2k1dcwz9lLlEIErH3H6faznHnAyq%2BqOhvT%2Bx3gAODFRfkjukCqvHKydS21NBIUr0ZZ%2FCVq7Gdd5zQkpA%2B08HexlQAOKujb%2BK8xrwVnuMdZUNJ3E6RLbYmVGNIq3CK0j97rjh43cxgX%2BAKuisCQchUSvO8XQFEBw64UOvKqx0lMquWo4neLtF3QpbmoANo6LtQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:15:00,774 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '201'}
+2023-04-26 13:15:00,774 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:15:00,774 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/requirements.txt?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=nrjqg9SER3LQoImQ0iQt3Y3QNVTFltnOBg60bP7qnBKI4zSx5XjK%2B3JNtA5U1p8w0d9KmdqxW7%2Fk%2BCkorio81b9hs2mp2dNKNJa0LuuvpvkufoivxTo5EaJu%2B0qDNyDNOc5c2DLjdL8%2FJ107w42a%2Bvc9I78tEcvn7ZMB%2B5973YmZMFKqviqFYSM3JyZ9uFec7tIsN8vZk0LooOFsARLaJWNMSPFQPFpI0M5BTl2JexhZmwy%2FxTgctxsRO1xGqa5uygBOqAO6vaspWsgZuYFxsPH41%2F2765jSi%2F0Pdoi4xlBJ3I%2BTq45jXXjvmyNQ0AJcCK3cnXAGVPBxISqMtuH4cw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/requirements.txt?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=nrjqg9SER3LQoImQ0iQt3Y3QNVTFltnOBg60bP7qnBKI4zSx5XjK%2B3JNtA5U1p8w0d9KmdqxW7%2Fk%2BCkorio81b9hs2mp2dNKNJa0LuuvpvkufoivxTo5EaJu%2B0qDNyDNOc5c2DLjdL8%2FJ107w42a%2Bvc9I78tEcvn7ZMB%2B5973YmZMFKqviqFYSM3JyZ9uFec7tIsN8vZk0LooOFsARLaJWNMSPFQPFpI0M5BTl2JexhZmwy%2FxTgctxsRO1xGqa5uygBOqAO6vaspWsgZuYFxsPH41%2F2765jSi%2F0Pdoi4xlBJ3I%2BTq45jXXjvmyNQ0AJcCK3cnXAGVPBxISqMtuH4cw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:15:00,775 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 13:15:00,775 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:15:00,813 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/output.log?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AeYqWO6mC2Cz%2B2g7DV67BEonxB1hMcs6TKp9TgLNCY8o5QNLdrgmai5ReKbIqFjzW8mVhZap7c6orbm0aXSQJabtr0NZqBQZlaRhvKAo66OrWBRRZsT53JNXBxNMjjd2G%2Fq4gAL%2Fs%2BltZv7FM%2F3P5jStYc7oqKf5qMygDvKT53Hxx8rex09RZt8DaufPsL35O3Hy7ahtUk1WxdeL7LUC8yJ3Nqgqw52hJw7yLsP%2FaIWx%2BefYt78rpdAVAR1FSjRCYiCJsYORA5X%2BGrgdkMm4wSTakrFzRj4S4YVa1X5zs9gOKFpuGSqBb1KV%2FG6QtcNKLd0jKGOcfx6iCf37aXeR%2FQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/output.log?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AeYqWO6mC2Cz%2B2g7DV67BEonxB1hMcs6TKp9TgLNCY8o5QNLdrgmai5ReKbIqFjzW8mVhZap7c6orbm0aXSQJabtr0NZqBQZlaRhvKAo66OrWBRRZsT53JNXBxNMjjd2G%2Fq4gAL%2Fs%2BltZv7FM%2F3P5jStYc7oqKf5qMygDvKT53Hxx8rex09RZt8DaufPsL35O3Hy7ahtUk1WxdeL7LUC8yJ3Nqgqw52hJw7yLsP%2FaIWx%2BefYt78rpdAVAR1FSjRCYiCJsYORA5X%2BGrgdkMm4wSTakrFzRj4S4YVa1X5zs9gOKFpuGSqBb1KV%2FG6QtcNKLd0jKGOcfx6iCf37aXeR%2FQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:15:00,814 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '166358'}
+2023-04-26 13:15:00,814 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:15:00,860 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/config.yaml?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AJ%2BlMl1gCH9Pp3d%2B84RVpY5C0W0AxExDE%2BsnUtkiABZoGvjpKuobeTAO0jw2kwgGC1%2BUFqppz3W2KMw732YomiKqYFlmiTa4SUIfPhnWS3JDaxVprzdulA3XoQbw%2B4jR4AuuBVefTLy6vEA73DwDHVPphO9Z4Q7JQDdI%2FKtIMKPex7aD8VOfiVtW%2BIN9r1Zdsw5eqJrMYTUqZbJi8sU65kqKSVY0J2IlPkdPTK4pTPQOe4BcNauGuww0JYIHPzgsVvqJtk3Qz2tcxr3OICY0pXYyCwd1G9GldX7IGW6gPlvew85XUgsH7NNmILdCTMrfZG1T0mOyhv6dqdrRhbkChQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/cqwp5ep4/config.yaml?Expires=1682590474&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=AJ%2BlMl1gCH9Pp3d%2B84RVpY5C0W0AxExDE%2BsnUtkiABZoGvjpKuobeTAO0jw2kwgGC1%2BUFqppz3W2KMw732YomiKqYFlmiTa4SUIfPhnWS3JDaxVprzdulA3XoQbw%2B4jR4AuuBVefTLy6vEA73DwDHVPphO9Z4Q7JQDdI%2FKtIMKPex7aD8VOfiVtW%2BIN9r1Zdsw5eqJrMYTUqZbJi8sU65kqKSVY0J2IlPkdPTK4pTPQOe4BcNauGuww0JYIHPzgsVvqJtk3Qz2tcxr3OICY0pXYyCwd1G9GldX7IGW6gPlvew85XUgsH7NNmILdCTMrfZG1T0mOyhv6dqdrRhbkChQ%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 13:15:00,861 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '589'}
+2023-04-26 13:15:00,861 ERROR   wandb-upload_0:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 13:15:01,379 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:15:01,380 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:01,381 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:02,383 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:02,384 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:03,396 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:03,397 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:04,403 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:04,404 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:05,418 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:05,419 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:06,423 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:15:06,425 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:06,426 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:07,429 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:07,430 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:08,441 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:08,442 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:09,451 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:09,452 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:10,452 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:10,453 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:11,466 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 13:15:11,467 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:11,468 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:12,480 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:12,481 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:13,152 INFO    wandb-upload_3:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\wandb-summary.json
+2023-04-26 13:15:13,199 INFO    wandb-upload_0:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\config.yaml
+2023-04-26 13:15:13,200 INFO    wandb-upload_2:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\requirements.txt
+2023-04-26 13:15:13,484 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:13,485 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:14,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:14,490 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:14,948 INFO    wandb-upload_1:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\files\output.log
+2023-04-26 13:15:15,148 INFO    Thread-170 (_thread_body):7688 [sender.py:transition_state():626] send defer: 11
+2023-04-26 13:15:15,149 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:15:15,149 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-26 13:15:15,150 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:15:15,150 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-26 13:15:15,151 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher
+2023-04-26 13:15:15,151 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 12
+2023-04-26 13:15:15,151 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:15:15,151 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-26 13:15:15,153 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:15:15,153 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-26 13:15:15,378 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 13
+2023-04-26 13:15:15,379 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:15:15,379 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-26 13:15:15,380 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:15:15,380 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-26 13:15:15,380 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 14
+2023-04-26 13:15:15,380 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 13:15:15,381 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-26 13:15:15,381 DEBUG   SenderThread:7688 [sender.py:send():375] send: final
+2023-04-26 13:15:15,382 DEBUG   SenderThread:7688 [sender.py:send():375] send: footer
+2023-04-26 13:15:15,382 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 13:15:15,382 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-26 13:15:15,384 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 13:15:15,385 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 13:15:15,385 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: server_info
+2023-04-26 13:15:15,386 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-26 13:15:15,387 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-26 13:15:15,387 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: server_info
+2023-04-26 13:15:15,758 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-26 13:15:15,759 INFO    HandlerThread:7688 [handler.py:finish():845] shutting down handler
+2023-04-26 13:15:16,390 INFO    WriterThread:7688 [datastore.py:close():298] close: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_130048-cqwp5ep4\run-cqwp5ep4.wandb
+2023-04-26 13:15:16,763 INFO    SenderThread:7688 [sender.py:finish():1550] shutting down sender
+2023-04-26 13:15:16,763 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 13:15:16,764 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher
