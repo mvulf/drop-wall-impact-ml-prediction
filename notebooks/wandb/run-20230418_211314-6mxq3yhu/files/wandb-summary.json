@@ -1,1 +1,0 @@
-{"model": "featurewiz + XGBoost, splashing", "accuracy": 0.8861788617886179, "ROC-AUC": 0.8536585365853658, "F1-score": 0.8157894736842105, "_timestamp": 1681841628.5664659, "_runtime": 6.09997296333313, "_step": 0, "_wandb": {"runtime": 0}}
