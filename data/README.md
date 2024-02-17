@@ -1,11 +1,12 @@
 # Data Folder
 
 ## Essential dataframes and files:
-- **df_main.xlsx** - main experimental dataset used for the final modelling (branch "modelling")
-- **Suspension Data Labeling Edited.xlsx** - dataset with correct preliminary labels. 
+- **df_main.xlsx** - main experimental dataset
+Old dataset *"old_df_main.xlsx"* - old version of the main experimental dataset, which were used for the final modelling (branch "modelling").
+- **Suspension Data Labeling_We_Re_edit.xlsx** - dataset with correct preliminary labels. 
 This dataset was used to create a final labels, such as 'splashing', 'breaking_up', 'net_impact', 'rebound'.
-See *../notebooks/EDA update.ipynb*.
-Now it can be used to expand the research results
+See *../notebooks/edit_labels.ipynb*.
+Old version is: *"old_Suspension Data Labeling Edited.xlsx"* (see *../notebooks/EDA update.ipynb*).
 
 ## Source dataframes:
 - *old/suspension_experiments.xlsx* - cut version of the original experimental dataset, with suspensions and substrates. Some unnecessary data were removed:
@@ -31,4 +32,4 @@ First two columns allow to calculate average time without mixing before the drop
 - *old/report.html* - old version of the report_edited.html
 - *old/report_edited.html* - pandas_profiling report of the *df_merged_edited.xlsx*, which was be basically the same as the *df_main.xlsx*, before editing labels.
 - *old/Suspension Data Labeling.xlsx* - old version of the Suspension Data Labeling Edited.xlsx
-
+- *_check_breaking_up_and_rebound.xlsx* - was created in *../notebooks/edit_labels.ipynb* to check correctness.
