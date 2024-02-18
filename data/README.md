@@ -43,8 +43,8 @@ In df_main.xlsx, df_modelling_*.ipynb
 # Data Folder
 
 ## Essential dataframes and files:
-- **df_main.xlsx** - main experimental dataset
-Old dataset *"archive/df_main_first_iteration.xlsx"* - old version of the main experimental dataset, which were used for the first iteration modelling (branch "modelling").
+- **df_main.xlsx** - main experimental dataset.
+Previous dataset was *"archive/df_main_first_iteration.xlsx"* - old version of the main experimental dataset, which were used for the first iteration modelling (branch "modelling").
 - **Suspension Data Labeling_We_Re_edit.xlsx** - dataset with correct preliminary labels. 
 This dataset was used to create a final labels, such as 'splashing', 'breaking_up', 'net_impact', 'rebound'.
 See *../notebooks/edit_labels.ipynb*.
