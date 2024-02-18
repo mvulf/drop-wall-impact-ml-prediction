@@ -36,6 +36,11 @@ This notebooks are introduced in the order to Run them:
 
 # Unused notebooks:
 
+- MODELLING: all first_iteration notebooks were saved in "archive":
+    - modelling*.ipynb
+    - tuning.ipynb
+    - model_interpretation.ipynb
+
 - archive/EDA update_firts_iteration.ipynb
 
     Used to find mistakes in '../data/Suspension Data Labeling.xlsx', replace them with correct values and save in '../data/Suspension Data Labeling Edited.xlsx'.
