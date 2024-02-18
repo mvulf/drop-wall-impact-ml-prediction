@@ -8,6 +8,12 @@ This dataset was used to create a final labels, such as 'splashing', 'breaking_u
 See *../notebooks/edit_labels.ipynb*.
 Old version is: *"old_Suspension Data Labeling Edited.xlsx"* (see *../notebooks/EDA update.ipynb*).
 
+FOR MODELLING:
+- **df_modelling_full.xlsx** - dataframe whith dropped droplet generation parameters ('one_drop', 'voltage', 'long_impulse_duration', 'long_impulse_dur_binary'), test number ('test'), 'splashing_spectrum', 'breaking_up', 'rebound', 'height', 'particle_diameter_cat', 'volume_fraction'. However, there are still multicorrelated parameters. **It is not recommended for use**.
+- **df_modelling_no_multicollinearity.xlsx** - df_modelling_full.xlsx with dropped 'particle_mean_diameter', 'particle_density', 'roughness', 'velocity' as highly correlated with 'particle_droplet_diameter_ratio', 'particle_liquid_density_ratio', 'roughness_binary', 'We' respectively. **Highly recommeded for use.** Normalization/Standartization required for SVM, LogReg etc.
+- **df_modelling_dimensionless.xlsx** - df_modelling_no_multicollinearity.xlsx with dropped 'liquid_density', 'surface_tension', 'viscosity', 'droplet_diameter' as dimension-features. This dataframe can be used to test the possibility to create more generalized model.
+
+
 ## Source dataframes:
 - *old/suspension_experiments.xlsx* - cut version of the original experimental dataset, with suspensions and substrates. Some unnecessary data were removed:
     - "Время установки картриджа"
