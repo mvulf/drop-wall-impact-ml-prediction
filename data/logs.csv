@@ -1,0 +1,25 @@
+,Таргет,Модель,Датасет,F1,ROC AUC
+0,splashing,CatBoost + SMOTENC + optuna,original,0.8672566371681416,0.8762599469496021
+0,splashing,CatBoost + SMOTENC + optuna,united,0.8571428571428572,0.8676392572944297
+0,splashing,CatBoost + SMOTENC + optuna,alternative,0.8828828828828829,0.8916445623342175
+0,splashing,CatBoost + SMOTENC + optuna,pf,0.8849557522123893,0.8925729442970822
+0,splashing,RandomForest + SMOTENC + optuna,original,0.8672566371681416,0.8762599469496021
+0,splashing,RandomForest + SMOTENC + optuna,united,0.8672566371681416,0.8762599469496021
+0,splashing,RandomForest + SMOTENC + optuna,alternative,0.8545454545454546,0.866710875331565
+0,splashing,RandomForest + SMOTENC + optuna,pf,0.8347826086956522,0.8445623342175067
+0,splashing,KNN + SMOTENC + optuna,original,0.8571428571428572,0.8676392572944297
+0,splashing,KNN + SMOTENC + optuna,united,0.7207207207207208,0.7448275862068966
+0,splashing,KNN + SMOTENC + optuna,alternative,0.7155963302752292,0.7438992042440319
+0,splashing,KNN + SMOTENC + optuna,pf,0.8771929824561403,0.8848806366047746
+0,net_impact,CatBoost + SMOTENC + optuna,original,0.7789473684210526,0.8475609756097562
+0,net_impact,CatBoost + SMOTENC + optuna,united,0.888888888888889,0.9329268292682927
+0,net_impact,CatBoost + SMOTENC + optuna,alternative,0.9195402298850575,0.951219512195122
+0,net_impact,CatBoost + SMOTENC + optuna,pf,0.8837209302325582,0.9207317073170732
+0,net_impact,RandomForest + SMOTENC + optuna,original,0.7499999999999999,0.8109756097560976
+0,net_impact,RandomForest + SMOTENC + optuna,united,0.8235294117647058,0.871951219512195
+0,net_impact,RandomForest + SMOTENC + optuna,alternative,0.8235294117647058,0.871951219512195
+0,net_impact,RandomForest + SMOTENC + optuna,pf,0.8372093023255814,0.8841463414634145
+0,net_impact,KNN + SMOTENC + optuna,original,0.7865168539325843,0.8475609756097561
+0,net_impact,KNN + SMOTENC + optuna,united,0.6938775510204082,0.7743902439024389
+0,net_impact,KNN + SMOTENC + optuna,alternative,0.6526315789473683,0.7378048780487805
+0,net_impact,KNN + SMOTENC + optuna,pf,0.8,0.8475609756097562

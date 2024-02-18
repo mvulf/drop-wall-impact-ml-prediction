@@ -1,0 +1,962 @@
+2023-04-26 12:33:41,279 INFO    StreamThr :7688 [internal.py:wandb_internal():86] W&B internal server running at pid: 7688, started at: 2023-04-26 12:33:41.277199
+2023-04-26 12:33:41,282 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status
+2023-04-26 12:33:41,284 INFO    WriterThread:7688 [datastore.py:open_for_write():85] open: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\run-pspd1myw.wandb
+2023-04-26 12:33:41,286 DEBUG   SenderThread:7688 [sender.py:send():375] send: header
+2023-04-26 12:33:41,286 DEBUG   SenderThread:7688 [sender.py:send():375] send: run
+2023-04-26 12:33:41,804 INFO    SenderThread:7688 [dir_watcher.py:__init__():219] watching files in: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files
+2023-04-26 12:33:41,807 INFO    SenderThread:7688 [sender.py:_start_run_threads():1124] run started: pspd1myw with start time 1682501620.36687
+2023-04-26 12:33:41,807 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 12:33:41,807 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: check_version
+2023-04-26 12:33:41,808 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:33:41,809 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: check_version
+2023-04-26 12:33:42,064 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: run_start
+2023-04-26 12:33:42,069 DEBUG   HandlerThread:7688 [system_info.py:__init__():31] System info init
+2023-04-26 12:33:42,069 DEBUG   HandlerThread:7688 [system_info.py:__init__():46] System info init done
+2023-04-26 12:33:42,069 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:42,070 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:42,070 INFO    HandlerThread:7688 [system_monitor.py:probe():201] Collecting system info
+2023-04-26 12:33:42,073 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:42,073 DEBUG   HandlerThread:7688 [system_info.py:probe():195] Probing system
+2023-04-26 12:33:42,074 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:42,075 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:33:42,081 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:33:42,082 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():180] Probing git
+2023-04-26 12:33:42,149 DEBUG   HandlerThread:7688 [system_info.py:_probe_git():188] Probing git done
+2023-04-26 12:33:42,149 DEBUG   HandlerThread:7688 [system_info.py:probe():240] Probing system done
+2023-04-26 12:33:42,150 DEBUG   HandlerThread:7688 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.11', 'heartbeatAt': '2023-04-26T09:33:42.074763', 'startedAt': '2023-04-26T09:33:09.903259', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '<python with no main file>', 'git': {'remote': 'https://github.com/mvulf/Drop_wall_impact.git', 'commit': '85f6575b0654e99398387aa98d14b5b830dc3faf'}, 'email': 'dimahzharikov10@gmail.com', 'root': 'D:/‘“Ë¿ƒ/vkr_gh/Drop_wall_impact', 'host': 'HUAWEI', 'username': 'dimaz', 'executable': 'C:\\Users\\dimaz\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2300.0, 'min': 0.0, 'max': 2300.0}, 'cpu_freq_per_core': [{'current': 2300.0, 'min': 0.0, 'max': 2300.0}], 'disk': {'total': 341.22753524780273, 'used': 14.221099853515625}, 'memory': {'total': 15.733024597167969}}
+2023-04-26 12:33:42,150 INFO    HandlerThread:7688 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-26 12:33:42,150 INFO    HandlerThread:7688 [system_monitor.py:probe():214] Publishing system info
+2023-04-26 12:33:42,150 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-26 12:33:42,151 DEBUG   HandlerThread:7688 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-26 12:33:42,151 INFO    HandlerThread:7688 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-26 12:33:42,152 DEBUG   SenderThread:7688 [sender.py:send():375] send: files
+2023-04-26 12:33:42,152 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-26 12:33:42,164 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-26 12:33:42,165 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: stop_status
+2023-04-26 12:33:42,166 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-26 12:33:42,167 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:42,167 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:42,167 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:42,167 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:42,167 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:42,168 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:42,168 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:42,168 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:42,168 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:33:42,168 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:33:42,221 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:42,221 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:42,221 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:42,221 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:42,226 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:42,226 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:42,226 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:42,226 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:42,227 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:42,227 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:42,227 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:42,227 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:42,227 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:42,227 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:42,303 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:42,303 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:42,303 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:42,304 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:42,307 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:42,308 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:42,309 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:33:42,317 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:33:42,317 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:42,317 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:42,317 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:42,317 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:42,318 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:42,318 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:42,318 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:33:42,318 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:42,318 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:33:42,318 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:42,406 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:42,406 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:42,406 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:42,406 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:42,411 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:42,412 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:42,413 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 12:33:42,413 DEBUG   SenderThread:7688 [sender.py:send():375] send: history
+2023-04-26 12:33:42,414 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: summary_record
+2023-04-26 12:33:42,414 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:33:42,414 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:33:42,422 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:33:42,422 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:42,423 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:42,423 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:42,428 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:42,428 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:42,428 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:42,428 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:42,428 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:42,429 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:42,429 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:42,429 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:33:42,429 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:42,429 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:33:42,430 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:42,518 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:42,518 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:42,518 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:42,519 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:42,523 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:42,523 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:42,525 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:33:42,533 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:33:42,818 INFO    Thread-129:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\requirements.txt
+2023-04-26 12:33:42,818 INFO    Thread-129:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-summary.json
+2023-04-26 12:33:42,818 INFO    Thread-129:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-metadata.json
+2023-04-26 12:33:42,819 INFO    Thread-129:7688 [dir_watcher.py:_on_file_created():278] file/dir created: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:44,843 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:46,302 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:33:46,873 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:48,887 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:50,330 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:50,330 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:50,331 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:50,331 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:50,331 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:50,331 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:50,331 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:50,331 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:50,331 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:33:50,332 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:33:50,332 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:50,428 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:50,428 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:50,428 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:50,429 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:50,434 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:50,434 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:50,434 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:50,434 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:50,435 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:50,435 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:50,435 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:50,435 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:50,435 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:50,435 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:50,436 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:50,510 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:50,510 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:50,510 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:50,511 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:50,517 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:50,517 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: pause
+2023-04-26 12:33:50,517 INFO    HandlerThread:7688 [handler.py:handle_request_pause():719] stopping system metrics thread or process
+2023-04-26 12:33:50,517 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:50,518 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:50,518 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:50,518 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:50,518 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:50,518 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:50,518 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:50,519 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:50,605 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: resume
+2023-04-26 12:33:50,605 INFO    HandlerThread:7688 [handler.py:handle_request_resume():710] starting system metrics thread or process
+2023-04-26 12:33:50,605 INFO    HandlerThread:7688 [system_monitor.py:start():181] Starting system monitor
+2023-04-26 12:33:50,606 INFO    SystemMonitor:7688 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-26 12:33:50,610 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started cpu monitoring
+2023-04-26 12:33:50,611 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started disk monitoring
+2023-04-26 12:33:50,612 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started memory monitoring
+2023-04-26 12:33:50,619 INFO    SystemMonitor:7688 [interfaces.py:start():190] Started network monitoring
+2023-04-26 12:33:50,622 DEBUG   SenderThread:7688 [sender.py:send():375] send: telemetry
+2023-04-26 12:33:50,623 DEBUG   SenderThread:7688 [sender.py:send():375] send: exit
+2023-04-26 12:33:50,623 INFO    SenderThread:7688 [sender.py:send_exit():598] handling exit code: 0
+2023-04-26 12:33:50,623 INFO    SenderThread:7688 [sender.py:send_exit():600] handling runtime: 7
+2023-04-26 12:33:50,623 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:33:50,624 INFO    SenderThread:7688 [sender.py:send_exit():606] send defer
+2023-04-26 12:33:50,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,624 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-26 12:33:50,624 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,624 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-26 12:33:50,624 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 1
+2023-04-26 12:33:50,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,624 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-26 12:33:50,625 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,625 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-26 12:33:50,625 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 2
+2023-04-26 12:33:50,625 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,625 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-26 12:33:50,625 INFO    HandlerThread:7688 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-26 12:33:50,625 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-26 12:33:50,625 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-26 12:33:50,625 DEBUG   SystemMonitor:7688 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-26 12:33:50,626 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-26 12:33:50,626 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined disk monitor
+2023-04-26 12:33:50,626 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined memory monitor
+2023-04-26 12:33:50,626 INFO    HandlerThread:7688 [interfaces.py:finish():202] Joined network monitor
+2023-04-26 12:33:50,626 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,626 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-26 12:33:50,626 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 3
+2023-04-26 12:33:50,627 DEBUG   SenderThread:7688 [sender.py:send():375] send: stats
+2023-04-26 12:33:50,627 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,627 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-26 12:33:50,627 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,627 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-26 12:33:50,627 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 4
+2023-04-26 12:33:50,627 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,627 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-26 12:33:50,628 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,628 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-26 12:33:50,628 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 5
+2023-04-26 12:33:50,628 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,628 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-26 12:33:50,628 DEBUG   SenderThread:7688 [sender.py:send():375] send: summary
+2023-04-26 12:33:50,629 INFO    SenderThread:7688 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-26 12:33:50,629 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,629 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-26 12:33:50,629 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 6
+2023-04-26 12:33:50,629 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,629 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-26 12:33:50,630 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,630 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-26 12:33:50,633 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:33:50,921 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-summary.json
+2023-04-26 12:33:50,921 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:50,943 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 7
+2023-04-26 12:33:50,944 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:50,944 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-26 12:33:50,944 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:50,944 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-26 12:33:51,319 INFO    wandb-upload_0:7688 [upload_job.py:push():137] Uploaded file C:\Users\dimaz\AppData\Local\Temp\tmpjsx5i1tfwandb\6ce11zqs-wandb-metadata.json
+2023-04-26 12:33:51,627 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:33:51,928 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\config.yaml
+2023-04-26 12:33:52,942 INFO    Thread-129:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:54,346 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 8
+2023-04-26 12:33:54,347 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:33:54,347 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:54,348 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-26 12:33:54,349 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:54,349 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-26 12:33:54,350 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 9
+2023-04-26 12:33:54,350 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:54,350 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-26 12:33:54,351 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:54,351 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-26 12:33:54,351 INFO    SenderThread:7688 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-26 12:33:54,963 INFO    SenderThread:7688 [dir_watcher.py:_on_file_modified():295] file/dir modified: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:33:54,964 INFO    SenderThread:7688 [dir_watcher.py:finish():395] scan: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files
+2023-04-26 12:33:54,964 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\config.yaml config.yaml
+2023-04-26 12:33:54,965 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log output.log
+2023-04-26 12:33:54,969 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\requirements.txt requirements.txt
+2023-04-26 12:33:54,973 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-metadata.json wandb-metadata.json
+2023-04-26 12:33:54,974 INFO    SenderThread:7688 [dir_watcher.py:finish():409] scan save: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-summary.json wandb-summary.json
+2023-04-26 12:33:54,979 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 10
+2023-04-26 12:33:54,979 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:33:54,980 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-26 12:33:54,982 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:33:54,983 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-26 12:33:54,983 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 12:33:55,480 INFO    wandb-upload_0:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\config.yaml
+2023-04-26 12:33:56,661 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:00,035 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:01,683 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:05,071 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:06,739 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:07,245 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:07,246 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:34:07,246 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:07,303 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:07,303 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:34:07,303 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:07,318 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:07,319 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:34:07,319 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:10,103 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:11,802 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:15,155 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:16,858 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:20,218 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:20,356 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:20,358 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:34:20,358 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:20,561 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:20,561 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:34:20,562 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:20,578 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:20,578 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:34:20,579 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:21,908 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:25,261 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:26,959 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:30,317 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:32,007 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:34,636 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:34,637 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:34:34,637 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:34,827 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:34,827 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:34:34,828 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:34,958 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:34,959 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:34:34,959 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:35,362 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:37,058 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:40,398 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:42,107 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:45,448 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:47,162 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:50,491 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:50,892 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:50,893 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:34:50,893 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:51,129 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:51,129 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:34:51,130 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:51,346 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:34:51,346 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:34:51,346 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:34:52,200 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:34:55,535 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:34:57,245 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:00,592 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:02,275 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:05,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:07,315 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:10,669 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:11,473 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:11,474 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:35:11,474 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:11,634 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:11,634 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:35:11,634 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:11,750 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:11,750 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:35:11,750 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:12,360 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:15,708 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:17,409 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:20,773 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:22,459 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:25,831 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:27,512 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:30,884 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:32,564 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:35,936 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:37,613 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:40,071 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:40,072 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:35:40,072 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:40,422 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:40,423 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:35:40,423 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:40,601 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:35:40,601 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:35:40,602 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:35:40,994 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:42,657 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:46,050 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:47,707 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:51,094 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:52,759 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:35:56,153 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:35:57,813 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:01,211 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:02,863 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:06,264 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:07,890 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:11,307 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:12,942 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:16,363 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:17,994 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:21,410 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:23,032 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:24,752 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:36:24,752 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:36:24,752 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:36:26,451 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:27,583 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:36:27,583 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:36:27,583 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:36:28,078 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:31,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:32,253 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:36:32,253 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:36:32,253 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:36:33,143 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:36,547 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:38,190 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:41,579 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:43,235 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:46,624 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:48,279 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:51,670 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:53,315 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:36:56,728 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:36:58,359 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:01,775 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:03,403 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:06,825 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:08,455 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:11,874 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:13,484 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:16,918 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:18,516 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:21,970 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:23,563 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:27,013 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:28,594 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:32,055 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:33,639 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:37,104 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:38,681 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:42,141 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:43,729 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:47,185 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:48,791 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:51,077 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:37:51,077 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:37:51,078 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:37:52,239 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:53,836 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:37:55,783 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:37:55,784 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:37:55,784 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:37:57,284 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:37:58,888 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:01,470 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:38:01,470 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:38:01,471 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:38:02,334 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:03,937 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:07,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:08,988 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:12,420 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:14,009 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:17,446 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:19,064 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:22,506 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:24,122 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:27,554 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:29,172 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:32,614 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:34,228 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:37,646 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:39,269 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:42,693 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:44,318 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:47,728 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:49,347 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:52,779 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:54,395 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:38:57,809 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:38:59,434 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:02,868 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:04,461 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:07,916 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:09,505 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:12,967 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:14,556 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:18,014 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:19,598 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:23,067 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:24,651 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:28,107 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:29,694 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:33,144 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:34,745 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:38,194 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:39,800 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:43,230 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:44,847 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:48,277 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:49,887 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:53,324 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:54,931 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:39:58,372 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:39:59,991 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:03,432 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:05,045 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:08,477 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:10,092 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:13,523 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:15,137 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:18,550 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:20,196 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:23,588 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:24,945 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:40:24,946 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:40:24,946 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:40:25,227 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:28,642 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:30,282 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:32,603 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:40:32,604 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:40:32,604 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:40:33,682 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:35,328 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:38,530 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:40:38,531 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:40:38,531 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:40:38,734 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:40,379 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:43,766 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:45,429 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:48,791 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:50,479 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:53,838 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:40:55,520 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:40:58,878 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:00,543 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:03,933 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:05,586 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:08,981 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:10,651 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:14,026 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:15,691 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:19,066 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:20,744 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:24,112 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:25,778 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:29,157 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:30,814 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:34,192 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:35,847 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:39,229 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:40,873 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:44,280 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:45,919 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:49,319 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:50,971 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:54,356 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:41:56,019 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:41:59,408 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:01,062 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:04,442 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:06,110 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:09,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:11,150 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:14,528 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:16,192 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:19,575 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:21,235 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:24,616 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:26,277 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:29,661 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:31,319 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:34,706 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:36,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:39,752 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:41,412 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:44,789 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:46,454 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:49,839 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:51,490 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:54,900 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:42:56,533 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:42:59,933 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:01,583 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:04,986 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:06,629 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:10,037 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:11,667 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:15,087 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:16,702 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:20,134 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:21,741 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:25,202 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:26,792 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:30,255 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:31,816 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:35,279 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:36,848 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:40,326 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:41,887 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:45,364 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:46,937 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:50,427 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:51,974 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:43:55,479 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:43:57,029 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:00,508 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:02,073 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:05,547 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:07,118 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:10,602 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:12,170 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:15,648 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:17,231 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:20,680 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:22,270 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:25,716 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:27,299 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:30,768 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:32,350 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:35,807 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:37,402 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:40,849 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:42,435 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:45,904 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:47,484 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:50,955 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:52,543 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:44:56,012 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:44:57,597 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:01,065 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:02,651 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:04,502 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:45:04,502 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:45:04,502 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:45:06,099 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:07,700 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:09,881 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:45:09,882 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:45:09,882 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:45:11,154 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:12,758 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:13,713 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:45:13,713 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:45:13,713 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:45:16,203 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:17,816 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:21,256 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:22,848 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:26,311 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:27,899 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:31,350 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:32,931 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:36,390 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:37,976 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:41,432 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:43,020 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:46,489 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:48,072 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:51,544 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:53,127 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:45:56,585 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:45:58,158 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:01,610 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:03,199 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:06,642 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:08,240 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:11,683 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:13,280 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:16,716 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:18,324 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:21,755 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:23,382 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:26,799 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:28,434 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:31,859 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:33,485 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:36,878 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:38,517 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:41,913 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:43,555 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:46,963 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:48,581 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:52,009 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:53,638 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:46:57,063 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:46:58,697 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:02,108 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:03,738 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:07,157 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:08,777 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:12,197 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:13,816 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:17,245 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:18,854 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:22,284 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:23,891 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:27,328 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:28,922 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:32,378 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:33,977 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:37,416 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:39,022 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:42,475 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:44,047 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:47,512 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:49,083 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:52,557 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:54,150 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:47:57,600 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:47:59,195 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:02,635 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:04,229 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:07,680 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:09,257 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:12,718 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:14,306 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:17,762 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:19,339 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:22,804 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:24,379 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:27,844 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:29,418 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:32,872 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:34,449 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:37,911 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:39,504 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:42,964 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:44,561 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:48,001 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:49,592 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:53,052 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:54,623 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:48:58,099 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:48:59,675 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:03,159 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:04,721 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:08,204 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:09,763 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:13,255 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:14,812 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:18,307 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:19,861 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:23,336 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:24,923 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:28,381 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:29,963 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:33,427 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:35,006 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:38,470 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:40,051 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:43,522 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:45,106 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:48,561 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:50,141 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:53,603 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:49:55,186 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:49:58,649 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:00,238 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:03,703 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:05,289 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:08,741 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:10,321 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:13,792 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:15,372 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:18,837 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:20,386 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/output.log?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=WrxQkfSuNURYd6Pf1GlqB%2F9Wcq%2BqJe7VxOZSxTBeKgUAGlF6w7OFjVTfo%2BJ84CBG76AgfBjlQl71NO1URii0XtlTErIX5tH8YEByK6KCeWGYR0cdz0gorCQEi8Foq7UEGpGsVRCCLxRDxltslBUuGB1Gv0i5OMRK4gwHKRsVoZHNPnIK6MRNro3BvRAYWcImEL20sm8gwHSeTzI9Y%2BwnbCARHhtoG60HVIlPLL980dTz%2F5lmr0tTRYD74%2Fs6wUImYth0iNVS%2BPYKmXIPbcIPsD4t1UM3AS9IzhqPcG9GfQZThQrj2xvb77MUS5DykTNmRoeLnB1KdKtL%2B1pfTt1Ftg%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:50:20,388 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121010'}
+2023-04-26 12:50:20,388 ERROR   wandb-upload_1:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:50:20,421 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:23,881 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:25,462 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:27,528 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/wandb-summary.json?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=gsLcMg6pKPuSJMxM1vMGBbPkRJ%2BGa5%2BRXYu9DDJ265AJZTIcoDxTjVaH4%2Bey3c5bua%2FIDPgQtcr5quZKW5onUsHVZeBmMdWT7WKSJkoEaZK8UzIEKkeAC8WEtDDW4U68jRdCRngxZupYwBzIQR6x7M6PGJAy4IVEjdZBIeC3xtLr2Gjo5DdhNkrT3pcfhSKgD%2BvCGdnnrr8aWq0L54qzdy%2FlFD7if188zi8UYr7fh8jyYYDosLveCuPkV%2FHaHt8CEV6Y9ogtNawAwkxd5JT29pLzbv%2BUxLQhAgNk7rLgdfHjx15RgoroixapL5TLGkUH1df4ZbaKR%2Bp6Z9kEpRBrpA%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:50:27,528 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '199'}
+2023-04-26 12:50:27,528 ERROR   wandb-upload_3:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:50:28,923 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:30,510 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:33,971 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:35,549 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:39,027 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:40,598 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:44,070 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:45,644 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:49,121 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:50,687 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:54,155 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:50:55,715 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:50:59,186 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:00,758 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:04,244 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:05,811 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:09,309 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:10,856 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:14,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:15,896 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:19,426 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:20,948 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:24,492 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:26,006 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:29,525 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:31,034 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:34,572 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:36,066 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:37,588 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2099] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/dstech/drop-wall-impact-clfr/pspd1myw/requirements.txt?Expires=1682588034&GoogleAccessId=wandb-production%40appspot.gserviceaccount.com&Signature=YNFqAny%2B%2B7QxigYreJ2N47F11Mj3RiSYG2FadqfTmdAg8hP0T7j%2FHvqWweclhmwnr7hF8xLJESoDvg%2B%2F23QHRre5FTO2KMj4%2FwpetiIhPQT0GlPWwidt5yiVnJ2kT7P7kV84uIKo7DlysWSbp%2BIp5KfAmUyGt4BRl3MVhEdysG5xt5lv9TCOOUQkmiF8eAncRXRACUrZ6x%2FaXSi8fF8sGKg1UjN9v3eqzta0ZF%2Bnck%2BXAp8rvDVBOFJefkSS%2FFe5r81N19%2FAj6VPw0YTj9v8CVQTEL8lGDDZ1tzMyRao3jd%2B1mki7W3y9NmgTitH0reIZA0gr55p8OuvvV52bdGiEw%3D%3D (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-04-26 12:51:37,589 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2101] upload_file request headers: {'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '6139'}
+2023-04-26 12:51:37,589 ERROR   wandb-upload_2:7688 [internal_api.py:upload_file():2103] upload_file response body: 
+2023-04-26 12:51:39,611 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:41,109 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:44,659 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:46,169 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:49,708 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:51,220 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:54,758 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:51:56,256 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:51:59,795 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:01,280 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:04,858 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:06,333 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:09,891 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:11,380 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:14,919 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:16,428 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:19,952 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:21,451 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:24,987 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:26,495 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:30,032 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:31,537 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:35,076 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:36,579 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:40,129 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:41,619 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:45,165 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:46,658 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:50,206 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:51,702 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:52:55,247 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:52:56,730 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:00,277 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:01,784 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:05,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:06,808 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:10,358 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:11,827 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:15,405 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:16,861 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:20,447 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:21,911 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:25,505 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:26,955 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:30,569 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:31,995 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:35,600 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:37,017 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:40,665 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:42,061 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:45,711 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:47,109 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:50,760 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:52,150 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:53:55,797 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:53:57,201 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:00,837 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:02,254 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:05,900 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:07,312 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:10,943 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:12,361 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:16,001 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:17,397 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:21,050 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:22,427 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:26,094 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:27,453 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:31,125 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:32,503 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:36,178 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:37,557 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:41,238 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:42,607 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:46,287 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:47,648 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:51,343 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:52,672 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:54:56,385 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:54:57,703 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:01,440 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:02,739 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:06,490 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:07,776 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:11,524 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:12,834 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:16,582 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:17,877 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:21,625 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:22,930 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:26,676 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:27,954 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:31,737 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:32,992 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:36,769 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:38,033 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:41,812 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:43,091 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:46,853 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:48,124 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:51,908 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:53,162 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:55:55,042 INFO    wandb-upload_3:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\wandb-summary.json
+2023-04-26 12:55:56,959 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:55:57,840 INFO    wandb-upload_1:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\output.log
+2023-04-26 12:55:58,195 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:02,008 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:03,236 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:07,053 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:08,273 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:12,093 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:13,331 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:17,143 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:18,382 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:22,185 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:23,425 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:27,235 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:28,484 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:32,268 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:33,519 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:37,311 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:38,556 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:42,373 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:43,617 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:47,420 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:48,659 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:52,459 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:53,706 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:56:57,510 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:56:58,743 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:02,532 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:03,788 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:07,582 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:08,819 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:12,633 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:13,877 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:17,672 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:18,908 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:22,721 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:23,958 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:27,757 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:29,002 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:32,807 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:34,047 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:37,850 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:39,083 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:42,905 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: status_report
+2023-04-26 12:57:44,131 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: keepalive
+2023-04-26 12:57:45,776 INFO    wandb-upload_2:7688 [upload_job.py:push():137] Uploaded file d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\files\requirements.txt
+2023-04-26 12:57:45,991 INFO    Thread-128 (_thread_body):7688 [sender.py:transition_state():626] send defer: 11
+2023-04-26 12:57:45,992 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:57:45,993 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-26 12:57:45,994 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:57:45,994 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-26 12:57:45,994 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher
+2023-04-26 12:57:45,994 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 12
+2023-04-26 12:57:45,995 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:57:45,995 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-26 12:57:45,996 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:57:45,996 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-26 12:57:46,316 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 13
+2023-04-26 12:57:46,317 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:57:46,317 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-26 12:57:46,318 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:57:46,318 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-26 12:57:46,318 INFO    SenderThread:7688 [sender.py:transition_state():626] send defer: 14
+2023-04-26 12:57:46,318 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: defer
+2023-04-26 12:57:46,319 INFO    HandlerThread:7688 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-26 12:57:46,319 DEBUG   SenderThread:7688 [sender.py:send():375] send: final
+2023-04-26 12:57:46,320 DEBUG   SenderThread:7688 [sender.py:send():375] send: footer
+2023-04-26 12:57:46,320 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: defer
+2023-04-26 12:57:46,320 INFO    SenderThread:7688 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-26 12:57:46,322 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-26 12:57:46,322 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: server_info
+2023-04-26 12:57:46,323 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-26 12:57:46,323 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-26 12:57:46,324 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: poll_exit
+2023-04-26 12:57:46,325 DEBUG   SenderThread:7688 [sender.py:send_request():402] send_request: server_info
+2023-04-26 12:57:46,757 DEBUG   HandlerThread:7688 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-26 12:57:46,758 INFO    HandlerThread:7688 [handler.py:finish():845] shutting down handler
+2023-04-26 12:57:47,326 INFO    WriterThread:7688 [datastore.py:close():298] close: d:\‘“Ë¿ƒ\vkr_gh\Drop_wall_impact\notebooks\wandb\run-20230426_123309-pspd1myw\run-pspd1myw.wandb
+2023-04-26 12:57:47,762 INFO    SenderThread:7688 [sender.py:finish():1550] shutting down sender
+2023-04-26 12:57:47,763 INFO    SenderThread:7688 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-26 12:57:47,763 INFO    SenderThread:7688 [file_pusher.py:join():173] waiting for file pusher
