@@ -1,0 +1,19 @@
+from pathlib import Path
+import pandas as pd
+
+
+def get_train_test(*, dataset_filename: str, target: str):
+    """
+    Create train/test datasets.
+    * dataset_filename - dataset for modelling
+    * target - target for ML
+    """
+    path_data = Path('../data')
+    df_indexes = pd.read_excel(
+        path_data / f'df_ml_split_{target}.xlsx', index_col=[0])
+    df_data = pd.read_excel(
+        path_data / f'{dataset_filename}.xlsx')
+    df_data.drop(columns={'splashing', 'net_impact'}-{target}, inplace=True)
+    train = df_data.loc[df_indexes.loc[df_indexes['sample']=='train', 'index']]
+    test = df_data.loc[df_indexes.loc[df_indexes['sample']!='train', 'index']]
+    return train, test
