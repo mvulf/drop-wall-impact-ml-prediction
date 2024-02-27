@@ -8,6 +8,7 @@ from pathlib import Path
 import os
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 import pandas as pd
+import numpy as np
 
 
 def _create_pipeline(*,
@@ -26,7 +27,8 @@ def _create_pipeline(*,
     if categorical_features is not None:
         dict_transformer = {
             'onehot': OneHotEncoder(handle_unknown="ignore"),
-            'ordenc': OrdinalEncoder(handle_unknown='ignore')}
+            'ordenc': OrdinalEncoder(handle_unknown='use_encoded_value', 
+                                     unknown_value=np.nan)}
         # categorical_transformer = Pipeline(
         #     steps=[("onehot", OneHotEncoder(handle_unknown="ignore"))])
         categorical_transformer = Pipeline(
@@ -42,7 +44,7 @@ class SklearnModelsPipeline:
     def __init__(self, train, test, target, model,
                  numerical_features, categorical_features,
                  random_state,
-                 postfix='',
+                 postfix='onehot',
                  features_to_leave=[]):
         self.train = train
         self.test = test
@@ -54,7 +56,7 @@ class SklearnModelsPipeline:
         self.clf = _create_pipeline(
             numerical_features=numerical_features, 
             categorical_features=categorical_features,
-            model=model,
+            model=model, cat_features_processor=postfix,
             random_state=random_state)
         self.filename = ''
         model_name = str(self.model.__class__).split('.')[-1][:-2]
@@ -81,7 +83,7 @@ class SklearnModelsPipeline:
         return preds
 
 
-    def calculate_metrics(self):
+    def _calculate_metrics(self):
         y_true = self.test[self.target]
         preds = self._predict()
         df_metrics = pd.DataFrame({
@@ -94,6 +96,16 @@ class SklearnModelsPipeline:
         return df_metrics
     
 
+    def _save_metrics(self, df_metrics):
+        filename_results = '../results/metrics_modelling2.xlsx'
+        if os.path.isfile(filename_results):
+            existing_df = pd.read_excel(filename_results)
+            combined_df = pd.concat((existing_df, df_metrics), ignore_index=True)
+            combined_df.to_excel(filename_results, index=False)
+        else:
+            df_metrics.to_excel(filename_results, index=False)
+
+
     def _save_model(self):
         if not os.path.exists(self.path_models): os.makedirs(self.path_models)
         joblib.dump(self.clf, self.path_models / self.model_name)
@@ -101,7 +113,8 @@ class SklearnModelsPipeline:
 
     def full_pipeline(self, save_model=True):
         self._fit()
-        df_metrics = self.calculate_metrics()
+        df_metrics = self._calculate_metrics()
+        self._save_metrics(df_metrics)
         if not save_model: return None
-        self.save_model()
-        print(f'{self.filename} was saved in {str(self.path_models)}')
+        self._save_model()
+        print(f'{self.model_name} was saved in {str(self.path_models)}')
