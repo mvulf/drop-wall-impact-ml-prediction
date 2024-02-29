@@ -16,10 +16,16 @@ def _create_pipeline(*,
                     categorical_features,
                     model,
                     random_state,
+                    smote,
                     cat_features_processor='onehot'):
     features_to_leave = []
     num_features = list(set(numerical_features) - set(features_to_leave))
     cat_features = list(set(categorical_features) - set(features_to_leave))
+    smt = SMOTE(random_state=random_state)
+    pipeline = [("model", model)]
+    if 'sklearn'!=str(model.__class__).split('.')[0]:
+        if smote: pipeline.insert(0, ('smt', smt))
+        return Pipeline(pipeline)
     transformers = []
     numeric_transformer = Pipeline(steps=[("scaler", StandardScaler())])
     transformers.append(
@@ -29,21 +35,21 @@ def _create_pipeline(*,
             'onehot': OneHotEncoder(handle_unknown="ignore"),
             'ordenc': OrdinalEncoder(handle_unknown='use_encoded_value', 
                                      unknown_value=np.nan)}
-        
+
         categorical_transformer = Pipeline(
             steps=[(cat_features_processor, dict_transformer[cat_features_processor])])
         transformers.append(('cat', categorical_transformer, cat_features))
     preprocessor = ColumnTransformer(transformers=transformers)
-    smt = SMOTE(random_state=random_state)
-    clf = Pipeline([("preprocessor", preprocessor), ("smt", smt), ("model", model)])
-    return clf
+    pipeline = [("preprocessor", preprocessor), ("model", model)]
+    if smote: pipeline.insert(1, ("smt", smt))
+    return Pipeline(pipeline)
 
 
 class MLPipeline:
     def __init__(self, train, test, target, model,
                  numerical_features, categorical_features,
-                 random_state,
-                 postfix='onehot',
+                 random_state, dataset_filename,
+                 smote=True, postfix='onehot',
                  features_to_leave=[]):
         self.train = train
         self.test = test
@@ -53,16 +59,16 @@ class MLPipeline:
         self.categorical_features = categorical_features
         self.features_to_leave = features_to_leave
         self.filename = ''
+        self.dataset_filename = dataset_filename
         model_name = str(self.model.__class__).split('.')[-1][:-2]
-        self.model_name = f'{model_name.lower()}_{self.target}'
+        self.model_name = f'{model_name.lower()}_smote_{self.target}_{dataset_filename}'
+        if not smote: self.model_name = self.model_name.replace('_smote', '')
         if len(postfix): self.model_name = f'{self.model_name}_{postfix}'
-        if 'sklearn' == str(self.model.__class__).split('.')[0]:
-            self.clf = _create_pipeline(
-                numerical_features=numerical_features, 
-                categorical_features=categorical_features,
-                model=model, cat_features_processor=postfix,
-                random_state=random_state)
-        else: self.clf = self.model
+        self.clf = _create_pipeline(
+            numerical_features=numerical_features, 
+            categorical_features=categorical_features,
+            model=model, cat_features_processor=postfix,
+            smote=smote, random_state=random_state)
         self.path_models = Path('modelling2_models')
 
 
@@ -72,7 +78,7 @@ class MLPipeline:
                 X=self.train.drop(
                     columns=[self.target]), 
                     y=self.train[self.target],
-                    cat_features=self.categorical_features)
+                    model__cat_features=self.categorical_features)
         else: self.clf.fit(X=self.train.drop(
                     columns=[self.target]), 
                     y=self.train[self.target])
@@ -93,7 +99,9 @@ class MLPipeline:
         y_true = self.test[self.target]
         preds = self._predict()
         df_metrics = pd.DataFrame({
-            'model': [self.model_name],
+            'dataset': [self.dataset_filename],
+            'target': [self.target],
+            'model': [self.model_name.replace(f'_{self.dataset_filename}', '')],
             'accuracy': [accuracy_score(y_true, preds)],
             'f1': [f1_score(y_true, preds)],
             'precision': [precision_score(y_true, preds)],
