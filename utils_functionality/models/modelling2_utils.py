@@ -29,8 +29,7 @@ def _create_pipeline(*,
             'onehot': OneHotEncoder(handle_unknown="ignore"),
             'ordenc': OrdinalEncoder(handle_unknown='use_encoded_value', 
                                      unknown_value=np.nan)}
-        # categorical_transformer = Pipeline(
-        #     steps=[("onehot", OneHotEncoder(handle_unknown="ignore"))])
+        
         categorical_transformer = Pipeline(
             steps=[(cat_features_processor, dict_transformer[cat_features_processor])])
         transformers.append(('cat', categorical_transformer, cat_features))
@@ -40,7 +39,7 @@ def _create_pipeline(*,
     return clf
 
 
-class SklearnModelsPipeline:
+class MLPipeline:
     def __init__(self, train, test, target, model,
                  numerical_features, categorical_features,
                  random_state,
@@ -53,27 +52,34 @@ class SklearnModelsPipeline:
         self.numerical_features = numerical_features
         self.categorical_features = categorical_features
         self.features_to_leave = features_to_leave
-        self.clf = _create_pipeline(
-            numerical_features=numerical_features, 
-            categorical_features=categorical_features,
-            model=model, cat_features_processor=postfix,
-            random_state=random_state)
         self.filename = ''
         model_name = str(self.model.__class__).split('.')[-1][:-2]
         self.model_name = f'{model_name.lower()}_{self.target}'
         if len(postfix): self.model_name = f'{self.model_name}_{postfix}'
+        if 'sklearn' == str(self.model.__class__).split('.')[0]:
+            self.clf = _create_pipeline(
+                numerical_features=numerical_features, 
+                categorical_features=categorical_features,
+                model=model, cat_features_processor=postfix,
+                random_state=random_state)
+        else: self.clf = self.model
         self.path_models = Path('modelling2_models')
 
 
     def _fit(self):
-        self.clf.fit(
-            X=self.train.drop(
-                columns=[self.target]), 
-                y=self.train[self.target])
+        if 'catboost' in str(self.model.__class__):
+            self.clf.fit(
+                X=self.train.drop(
+                    columns=[self.target]), 
+                    y=self.train[self.target],
+                    cat_features=self.categorical_features)
+        else: self.clf.fit(X=self.train.drop(
+                    columns=[self.target]), 
+                    y=self.train[self.target])
 
 
     def _predict(self):
-        return self.clf.predict(X=self.test.drop(
+        return self.clf.predict(self.test.drop(
             columns=[self.target]))
     
 
@@ -101,6 +107,7 @@ class SklearnModelsPipeline:
         if os.path.isfile(filename_results):
             existing_df = pd.read_excel(filename_results)
             combined_df = pd.concat((existing_df, df_metrics), ignore_index=True)
+            combined_df.drop_duplicates(inplace=True)
             combined_df.to_excel(filename_results, index=False)
         else:
             df_metrics.to_excel(filename_results, index=False)
