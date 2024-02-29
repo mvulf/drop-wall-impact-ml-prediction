@@ -17,13 +17,14 @@ def _create_pipeline(*,
                     model,
                     random_state,
                     smote,
-                    cat_features_processor='onehot'):
-    features_to_leave = []
+                    cat_features_processor='onehot',
+                     features_to_leave = []):
+   
     num_features = list(set(numerical_features) - set(features_to_leave))
     cat_features = list(set(categorical_features) - set(features_to_leave))
     smt = SMOTE(random_state=random_state)
     pipeline = [("model", model)]
-    if 'sklearn'!=str(model.__class__).split('.')[0]:
+    if ('xgboost' in str(model.__class__)) or ('catboost' in str(model.__class__)):
         if smote: pipeline.insert(0, ('smt', smt))
         return Pipeline(pipeline)
     transformers = []
@@ -79,7 +80,8 @@ class MLPipeline:
                     columns=[self.target]), 
                     y=self.train[self.target],
                     model__cat_features=self.categorical_features)
-        else: self.clf.fit(X=self.train.drop(
+        else: 
+            self.clf.fit(X=self.train.drop(
                     columns=[self.target]), 
                     y=self.train[self.target])
 
