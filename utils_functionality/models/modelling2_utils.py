@@ -70,7 +70,7 @@ class MLPipeline:
             categorical_features=categorical_features,
             model=model, cat_features_processor=postfix,
             smote=smote, random_state=random_state)
-        self.path_models = Path('modelling2_models')
+        self.path_models = Path('../modelling2_models')
 
 
     def _fit(self):
