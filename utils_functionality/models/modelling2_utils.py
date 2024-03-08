@@ -18,6 +18,7 @@ def _create_pipeline(*,
                     random_state,
                     smote,
                     cat_features_processor='onehot',
+                    boosting_ohe=False,
                      features_to_leave = []):
    
     num_features = list(set(numerical_features) - set(features_to_leave))
@@ -26,6 +27,12 @@ def _create_pipeline(*,
     pipeline = [("model", model)]
     if ('xgboost' in str(model.__class__)) or ('catboost' in str(model.__class__)):
         if smote: pipeline.insert(0, ('smt', smt))
+        if boosting_ohe:
+            categorical_transformer = Pipeline(
+                steps=[('onehot', OneHotEncoder(handle_unknown="ignore"))])
+            transformers = [('cat', categorical_transformer, cat_features)]
+            preprocessor = ColumnTransformer(transformers=transformers)
+            pipeline.insert(1, (''))
         return Pipeline(pipeline)
     transformers = []
     numeric_transformer = Pipeline(steps=[("scaler", StandardScaler())])
@@ -51,6 +58,7 @@ class MLPipeline:
                  numerical_features, categorical_features,
                  random_state, dataset_filename,
                  smote=True, postfix='onehot',
+                 boosting_ohe=False,
                  features_to_leave=[]):
         self.train = train
         self.test = test
@@ -60,26 +68,35 @@ class MLPipeline:
         self.categorical_features = categorical_features
         self.features_to_leave = features_to_leave
         self.filename = ''
+        self.boosting_ohe = boosting_ohe
         self.dataset_filename = dataset_filename
         model_name = str(self.model.__class__).split('.')[-1][:-2]
-        self.model_name = f'{model_name.lower()}_smote_{self.target}_{dataset_filename}'
+        self.model_name = f'{model_name.lower()}_ohe_smote_{self.target}_{dataset_filename}'
         if not smote: self.model_name = self.model_name.replace('_smote', '')
+        if not boosting_ohe: self.model_name = self.model_name.replace('_ohe', '')
         if len(postfix): self.model_name = f'{self.model_name}_{postfix}'
         self.clf = _create_pipeline(
             numerical_features=numerical_features, 
             categorical_features=categorical_features,
             model=model, cat_features_processor=postfix,
-            smote=smote, random_state=random_state)
+            smote=smote, random_state=random_state,
+            boosting_ohe=boosting_ohe)
         self.path_models = Path('../modelling2_models')
 
 
     def _fit(self):
         if 'catboost' in str(self.model.__class__):
-            self.clf.fit(
-                X=self.train.drop(
-                    columns=[self.target]), 
-                    y=self.train[self.target],
-                    model__cat_features=self.categorical_features)
+            if not self.boosting_ohe:
+                self.clf.fit(
+                    X=self.train.drop(
+                        columns=[self.target]), 
+                        y=self.train[self.target],
+                        model__cat_features=self.categorical_features)
+            else:
+                self.clf.fit(
+                    X=self.train.drop(
+                        columns=[self.target]), 
+                        y=self.train[self.target])   
         else: 
             self.clf.fit(X=self.train.drop(
                     columns=[self.target]), 
