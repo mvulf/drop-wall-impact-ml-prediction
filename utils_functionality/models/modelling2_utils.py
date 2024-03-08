@@ -9,6 +9,20 @@ import os
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 import pandas as pd
 import numpy as np
+from sklearn.base import BaseEstimator, TransformerMixin
+
+
+class CustomOneHotEncoder(BaseEstimator, TransformerMixin):
+    def __init__(self, columns):
+        self.columns = columns
+    
+    def fit(self, X, y=None):
+        # X_encoded = pd.get_dummies(X, columns=self.columns)
+        return self
+    
+    def transform(self, X):
+        X_encoded = pd.get_dummies(X, columns=self.columns)
+        return X_encoded
 
 
 def _create_pipeline(*,
@@ -18,21 +32,13 @@ def _create_pipeline(*,
                     random_state,
                     smote,
                     cat_features_processor='onehot',
-                    boosting_ohe=False,
                      features_to_leave = []):
-   
     num_features = list(set(numerical_features) - set(features_to_leave))
     cat_features = list(set(categorical_features) - set(features_to_leave))
     smt = SMOTE(random_state=random_state)
     pipeline = [("model", model)]
     if ('xgboost' in str(model.__class__)) or ('catboost' in str(model.__class__)):
         if smote: pipeline.insert(0, ('smt', smt))
-        if boosting_ohe:
-            categorical_transformer = Pipeline(
-                steps=[('onehot', OneHotEncoder(handle_unknown="ignore"))])
-            transformers = [('cat', categorical_transformer, cat_features)]
-            preprocessor = ColumnTransformer(transformers=transformers)
-            pipeline.insert(1, (''))
         return Pipeline(pipeline)
     transformers = []
     numeric_transformer = Pipeline(steps=[("scaler", StandardScaler())])
@@ -74,13 +80,16 @@ class MLPipeline:
         self.model_name = f'{model_name.lower()}_ohe_smote_{self.target}_{dataset_filename}'
         if not smote: self.model_name = self.model_name.replace('_smote', '')
         if not boosting_ohe: self.model_name = self.model_name.replace('_ohe', '')
+        if boosting_ohe:
+            f_dummy = lambda x: pd.get_dummies(x, columns=self.categorical_features, drop_first=True)
+            self.train = f_dummy(self.train)
+            self.test = f_dummy(self.test)
         if len(postfix): self.model_name = f'{self.model_name}_{postfix}'
         self.clf = _create_pipeline(
             numerical_features=numerical_features, 
             categorical_features=categorical_features,
             model=model, cat_features_processor=postfix,
-            smote=smote, random_state=random_state,
-            boosting_ohe=boosting_ohe)
+            smote=smote, random_state=random_state)
         self.path_models = Path('../modelling2_models')
 
 
