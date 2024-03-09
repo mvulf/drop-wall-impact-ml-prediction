@@ -9,20 +9,6 @@ import os
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 import pandas as pd
 import numpy as np
-from sklearn.base import BaseEstimator, TransformerMixin
-
-
-class CustomOneHotEncoder(BaseEstimator, TransformerMixin):
-    def __init__(self, columns):
-        self.columns = columns
-    
-    def fit(self, X, y=None):
-        # X_encoded = pd.get_dummies(X, columns=self.columns)
-        return self
-    
-    def transform(self, X):
-        X_encoded = pd.get_dummies(X, columns=self.columns)
-        return X_encoded
 
 
 def _create_pipeline(*,
@@ -37,7 +23,7 @@ def _create_pipeline(*,
     cat_features = list(set(categorical_features) - set(features_to_leave))
     smt = SMOTE(random_state=random_state)
     pipeline = [("model", model)]
-    if ('xgboost' in str(model.__class__)) or ('catboost' in str(model.__class__)):
+    if 'boost' in str(model.__class__):
         if smote: pipeline.insert(0, ('smt', smt))
         return Pipeline(pipeline)
     transformers = []
