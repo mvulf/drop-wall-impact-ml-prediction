@@ -103,7 +103,7 @@ def get_model(model_str, params):
         'logistic': LogisticRegression,
         'svc': SVC,
         'kneighbors': KNeighborsClassifier,
-        'xgboost': XGBClassifier,
+        'xgbclassifier': XGBClassifier,
         'catboost': CatBoostClassifier}
     for key in dict_model.keys():
         if key in model_str: return dict_model[key](**params)
