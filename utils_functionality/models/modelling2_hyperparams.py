@@ -61,6 +61,7 @@ def get_params(trial, model_str, random_state, cat_features=['wettability']):
         if 'ohe' not in model_str: params['cat_features'] = cat_features
     if 'kneighborsclassifier' in model_str:
         params = {
+            'random_state': random_state,
             "algorithm": trial.suggest_categorical(
                 "algorithm", ["auto", "ball_tree", "kd_tree", "brute"]
             ),
@@ -71,6 +72,7 @@ def get_params(trial, model_str, random_state, cat_features=['wettability']):
         }
     if 'svc' in model_str:
         params = {
+            'random_state': random_state,
             'C': trial.suggest_float('C', 1e-5, 1e5, log=True),
             'kernel': trial.suggest_categorical('kernel', ['linear', 'rbf', 'sigmoid']),
             'gamma': trial.suggest_float('gamma', 1e-5, 1e5, log=True),
@@ -78,6 +80,7 @@ def get_params(trial, model_str, random_state, cat_features=['wettability']):
             'coef0': trial.suggest_float('coef0', -1.0, 1.0)}
     if 'logisticregression' in model_str:
         params = {
+            'random_state': random_state,
             'penalty': trial.suggest_categorical('penalty', ['l1', 'l2']),
             'C': trial.suggest_float('C', 0.001, 10, log=True),
             'solver': trial.suggest_categorical('solver', ['saga', 'liblinear']),
