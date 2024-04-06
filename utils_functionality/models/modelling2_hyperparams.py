@@ -61,7 +61,6 @@ def get_params(trial, model_str, random_state, cat_features=['wettability']):
         if 'ohe' not in model_str: params['cat_features'] = cat_features
     if 'kneighborsclassifier' in model_str:
         params = {
-            'random_state': random_state,
             "algorithm": trial.suggest_categorical(
                 "algorithm", ["auto", "ball_tree", "kd_tree", "brute"]
             ),
