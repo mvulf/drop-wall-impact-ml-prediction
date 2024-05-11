@@ -126,9 +126,9 @@ def extract_features(source_df):
 """
 
 
-def predict_proba(df, model):
+def predict_proba(df, model, model_features):
     proba = model.predict_proba(
-        df[model[0].feature_names_]
+        df[model_features]
     )[:,1] # Probability of 1-class
     
     return proba
@@ -138,16 +138,16 @@ def predict_all_proba(source_df, model_list):
     
     df = source_df.copy()
     
-    for model_name, model in model_list:
-        df[model_name] = predict_proba(df, model)
+    for model_name, model, model_features in model_list:
+        df[model_name] = predict_proba(df, model, model_features)
     
     return df
 
 
 def get_contour_df(
     df_model,
-    net_impact_model,
-    splashing_model,
+    net_impact_model_features,
+    splashing_model_features,
     velocity:np.ndarray=np.linspace(0.0, 7.0, 50),
     particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
     particle_mean_diameter:np.ndarray=np.linspace(20e-6, 350e-6, 50),
@@ -237,7 +237,7 @@ def get_contour_df(
         print('diam_pred_df after We, Re extraction')
         diam_pred_df.info()
 
-    net_impact_columns = set(net_impact_model[0].feature_names_)
+    net_impact_columns = set(net_impact_model_features)
     extra_columns = net_impact_columns - set(dens_pred_df.columns)
     if len(extra_columns)>0:
         print('Net-impact: columns for additional creation')
@@ -245,7 +245,7 @@ def get_contour_df(
     else:
         print('Net-impact: No columns are needed for creation')
 
-    splashing_columns = set(splashing_model[0].feature_names_)
+    splashing_columns = set(splashing_model_features)
     extra_columns = splashing_columns - set(dens_pred_df.columns)
     if len(extra_columns)>0:
         print('Splashing: columns for additional creation')
