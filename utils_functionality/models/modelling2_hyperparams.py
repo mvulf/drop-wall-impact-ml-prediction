@@ -72,9 +72,9 @@ def get_params(trial, model_str, random_state, cat_features=['wettability']):
     if 'svc' in model_str:
         params = {
             'random_state': random_state,
-            'C': trial.suggest_float('C', 1e-5, 1e5, log=True),
+            'C': trial.suggest_float('C', 1e-5, 150, log=True),
             'kernel': trial.suggest_categorical('kernel', ['linear', 'rbf', 'sigmoid']),
-            'gamma': trial.suggest_float('gamma', 1e-5, 1e5, log=True),
+            'gamma': trial.suggest_float('gamma', 1e-5, 10, log=True),
             # 'degree': trial.suggest_int('degree', 2, 4),
             'coef0': trial.suggest_float('coef0', -1.0, 1.0)}
     if 'logisticregression' in model_str:
@@ -132,20 +132,3 @@ def get_preproc_pipeline(model_str, num_features, random_state, cat_features=['w
         smt = SMOTE(random_state=random_state)
         pipeline.append(('smt', smt))
     return pipeline
-
-
-# def objective(
-#         trial, train, test, target, model_str, 
-#         random_state, dataset_filename, cat_features=['wettability']):
-#     params = get_params(trial, model_str, random_state, cat_features)
-#     model = get_model(model_str, params)
-#     preproc_pipeline = get_preproc_pipeline(model_str=model_str, random_state=random_state, 
-#                                             cat_features=cat_features, 
-#                                             num_features=dict_num_features[dataset_filename])
-#     pipeline = [('model', model)]
-#     if preproc_pipeline: pipeline.insert(0, preproc_pipeline[0])
-#     pipeline = Pipeline(steps=pipeline)
-#     pipeline.fit(train.drop(columns=[target]), train[target])
-#     preds = pipeline.predict(test.drop(columns=[target]))
-#     f1 = f1_score(test[target], preds)
-#     return f1
