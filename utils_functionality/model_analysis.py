@@ -9,6 +9,10 @@ sns.set_style('darkgrid')
 
 from IPython.display import display
 
+import os
+from pathlib import Path
+import joblib
+
 
 
 """________DATA PREPARATION__________
@@ -256,6 +260,156 @@ def get_contour_df(
     print('Dataframes are prepared')
     
     return dens_pred_df, diam_pred_df
+
+
+"""________MODELS__________
+"""
+
+def get_best_model_name(sorted_df, extention='.pkl'):
+    if len(sorted_df) > 0:
+        best_model = sorted_df.iloc[0]
+        
+        if 'svc' in best_model['model']:
+            model_name = '_'.join(best_model['model'].split('_')[:-1])
+            svc_type = best_model['model'].split('_')[-1]
+
+            name = (
+                    '_'.join([model_name, best_model['dataset'], svc_type]) 
+                    + extention
+                )
+        else:
+            name = (
+                    '_'.join(best_model[['model', 'dataset']].values) 
+                    + extention
+                )
+        return name
+
+
+def get_best_model_name_no_opt(sorted_df, extention=''):
+    if len(sorted_df) > 0:
+        best_model = sorted_df.iloc[0]
+        
+        if 'ordenc' in best_model['model'] or 'onehot' in best_model['model']:
+            model_name = '_'.join(best_model['model'].split('_')[:-1])
+            enc_type = best_model['model'].split('_')[-1]
+
+            name = (
+                    '_'.join([model_name, best_model['dataset'], enc_type]) 
+                    + extention
+                )
+        else:
+            name = (
+                    '_'.join(best_model[['model', 'dataset']].values) 
+                    + extention
+                )
+        return name
+    
+
+def get_targer_metrics_dict(metrics_df):
+    
+    net_impact_models = metrics_df[metrics_df['target'] == 'net_impact']
+    splashing_models = metrics_df[metrics_df['target'] == 'splashing']
+
+    metrics_dict = {
+        'splashing': splashing_models,
+        'net_impact': net_impact_models
+    }
+    
+    return metrics_dict
+
+
+def get_best_models(
+    target_metrics_dict,
+    models_type_list,
+    verbose=True,
+    order=['f1', 'roc_auc', 'optuna_flg'],
+    extention='.pkl',
+):
+    best_models_name = {}
+    
+    for target, model_df in target_metrics_dict.items():
+        # best_models_name[target] = {}
+        print()
+        print(f'TARGET: {target.upper()}, models count {model_df.shape[0]}')
+        
+        for model_type in models_type_list:
+            print(model_type)
+            
+            dimless_model_df = (
+                model_df[model_df['dataset'].str.contains('dimensionless')]
+            )
+            
+            sub_model_df = (
+                dimless_model_df[dimless_model_df['model']
+                .str.contains(model_type)]
+                .sort_values(order, ascending=False)
+            )
+            
+            if len(sub_model_df) == 0:
+                sub_model_df = (
+                    model_df[model_df['model']
+                    .str.contains(model_type)]
+                    .sort_values(
+                        ['f1', 'roc_auc', 'optuna_flg'], 
+                        ascending=False
+                    )
+                )
+            
+            best_models_name.setdefault(model_type, {})
+            best_models_name[model_type][target] = (
+                get_best_model_name(sub_model_df, extention=extention)
+            )
+            if verbose:
+                display(sub_model_df)
+
+    return best_models_name
+
+
+def get_best_models_no_opt(
+    target_metrics_dict,
+    models_type_list,
+    verbose=True,
+    order=['f1', 'roc_auc', 'optuna_flg'],
+    extention='',
+):
+    best_models_name = {}
+    
+    for target, model_df in target_metrics_dict.items():
+        # best_models_name[target] = {}
+        print()
+        print(f'TARGET: {target.upper()}, models count {model_df.shape[0]}')
+        
+        for model_type in models_type_list:
+            print(model_type)
+            
+            dimless_model_df = (
+                model_df[model_df['dataset'].str.contains('dimensionless')]
+            )
+            
+            sub_model_df = (
+                dimless_model_df[dimless_model_df['model']
+                .str.contains(model_type)]
+                .sort_values(order, ascending=False)
+            )
+            
+            if len(sub_model_df) == 0:
+                sub_model_df = (
+                    model_df[model_df['model']
+                    .str.contains(model_type)]
+                    .sort_values(
+                        ['f1', 'roc_auc', 'optuna_flg'], 
+                        ascending=False
+                    )
+                )
+            
+            best_models_name.setdefault(model_type, {})
+            best_models_name[model_type][target] = (
+                get_best_model_name_no_opt(sub_model_df, extention=extention)
+            )
+            if verbose:
+                display(sub_model_df)
+
+    return best_models_name
 
 """________PLOTS__________
 """
@@ -569,3 +723,71 @@ def plot_final_plots(
     
     fig.suptitle(model_name)
     fig.tight_layout()
+
+
+def plot_all_final_plots(
+    best_models_name,
+    df_model,
+    scatter_df,
+    models_folder=Path('..', 'results', 'best_models_modelling_2'),
+    save_plots=False,
+    save_prefix='',
+    save_path=Path('..', 'results')
+):
+    
+    for model_name in best_models_name:
+        model = {}
+        model_features = {}
+        for target in best_models_name[model_name]:
+            full_model_name = best_models_name[model_name][target]
+            model_path = Path(models_folder, full_model_name)
+            if not os.path.isfile(model_path):
+                print(f"ERROR: {full_model_name}")
+            model[target] = joblib.load(model_path)
+            display(model_path)
+            display(model[target])
+            
+            if 'catboostclassifier' in model_name:
+                model_features[target] = model[target][0].feature_names_
+            else:
+                model_features[target] = model[target][0].feature_names_in_
+            display(model_features[target])
+        
+        # Prepare dataframes
+        net_impact_model_features = model_features['net_impact']
+        splashing_model_features = model_features['splashing']
+        
+        dens_pred_df, diam_pred_df = get_contour_df(
+            df_model=df_model,
+            net_impact_model_features=net_impact_model_features,
+            splashing_model_features=splashing_model_features,
+            verbose=False,
+        )
+        
+        # Predictions and plot
+        model_list = [
+            ('splashing', model['splashing'], splashing_model_features),
+            ('net_impact', model['net_impact'], net_impact_model_features)
+        ]
+
+        dens_pred_df_res = predict_all_proba(dens_pred_df, model_list)
+        diam_pred_df_res = predict_all_proba(diam_pred_df, model_list)
+
+        plot_final_plots(
+            dens_pred_df_res=dens_pred_df_res,
+            diam_pred_df_res=diam_pred_df_res,
+            scatter_df=scatter_df,
+            # splashing_levels=[0.3],
+            # net_impact_levels=[0.5],
+            splashing_levels_fill=50,
+            net_impact_levels_fill=50,
+            model_name=model_name
+        )
+        if save_plots:
+            plt.savefig(
+                Path(
+                    save_path, 
+                    f'{save_prefix}{model_name}_WeRe_classification.pdf',
+                ),
+                dpi=600
+            )
