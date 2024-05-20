@@ -490,6 +490,7 @@ def plot_WeRe_contour_scatter(
     levels_contour=[0.3, 0.4, 0.5, 0.6, 0.7],
     markersize:int=15,
     fontsize:int=12,
+    contour_labels:bool=True,
 ):
     # Mesh Values
     x = contour_df['We_Re'].unique()
@@ -519,7 +520,8 @@ def plot_WeRe_contour_scatter(
         vmax=1.,
     )
     #contour line labels
-    ax.clabel(contplot, fmt = '%1.1f', colors = 'k', fontsize=fontsize)
+    if contour_labels:
+        ax.clabel(contplot, fmt = '%1.1f', colors = 'k', fontsize=fontsize)
     
     ax = plot_WeRe_scatter(
         scatter_df,
@@ -648,6 +650,8 @@ def plot_final_plots(
     net_impact_levels=[0.5, 0.6, 0.7, 0.8],
     splashing_levels_fill=50,
     net_impact_levels_fill=50,
+    splashing_contour_labels=True,
+    net_impact_contour_labels=True,
 ):
     y_feature_name = 'particle_liquid_density_ratio'
     y_label = '$\\rho_{p}/\\rho_{l}$'
@@ -664,6 +668,7 @@ def plot_final_plots(
         levels_fill=splashing_levels_fill,
         levels_contour=splashing_levels,
         fontsize=10,
+        contour_labels=splashing_contour_labels,
         ax=axes[0,0]
     )
 
@@ -678,6 +683,7 @@ def plot_final_plots(
         levels_fill=net_impact_levels_fill,
         levels_contour=net_impact_levels,
         fontsize=10,
+        contour_labels=net_impact_contour_labels,
         ax=axes[0,1]
     );
 
@@ -697,6 +703,7 @@ def plot_final_plots(
         levels_fill=splashing_levels_fill,
         levels_contour=splashing_levels,
         fontsize=10,
+        contour_labels=splashing_contour_labels,
         ax=axes[1,0]
     )
 
@@ -711,6 +718,7 @@ def plot_final_plots(
         levels_fill=net_impact_levels_fill,
         levels_contour=net_impact_levels,
         fontsize=10,
+        contour_labels=net_impact_contour_labels,
         ax=axes[1,1]
     );
 
