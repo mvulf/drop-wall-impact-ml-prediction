@@ -652,11 +652,12 @@ def plot_final_plots(
     net_impact_levels_fill=50,
     splashing_contour_labels=True,
     net_impact_contour_labels=True,
+    figsize=(12, 12),
 ):
     y_feature_name = 'particle_liquid_density_ratio'
     y_label = '$\\rho_{p}/\\rho_{l}$'
 
-    fig, axes = plt.subplots(2, 2, figsize=(12, 12), dpi=600)
+    fig, axes = plt.subplots(2, 2, figsize=figsize, dpi=600)
 
     plot_WeRe_contour_scatter(
         contour_df=dens_pred_df_res,
@@ -724,7 +725,7 @@ def plot_final_plots(
 
     # Change y-axis
     for ax in axes[1,:].flat:
-        ax.set_yticks(np.linspace(0.01, 0.11, 11))
+        ax.set_yticks(np.arange(0.01, 0.12, 0.02))
         
     axes[1,0].set_title('Splashing classification on diameter');
     axes[1,1].set_title('Net impact classification on diameter');
