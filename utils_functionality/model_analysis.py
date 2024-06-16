@@ -154,7 +154,7 @@ def get_contour_df(
     splashing_model_features,
     velocity:np.ndarray=np.linspace(0.0, 7.0, 50),
     particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
-    particle_mean_diameter:np.ndarray=np.linspace(20e-6, 350e-6, 50),
+    particle_mean_diameter:np.ndarray=np.linspace(20e-6, 400e-6, 50),
     const_params:list=[
         'wettability',
         'inclination',
@@ -800,3 +800,172 @@ def plot_all_final_plots(
                 ),
                 dpi=600
             )
+
+
+def plot_all_level_plots(
+    best_models_name,
+    df,
+    plot_masks,
+    labels,
+    colors,
+    plot_name:str,
+    models_folder=Path('..', 'results', 'best_models_modelling_2'),
+    save_plots=False,
+    save_prefix='',
+    save_path=Path('..', 'results', 'model_dependency')
+):
+    
+    for model_name in best_models_name:
+        model = {}
+        model_features = {}
+        target_levels = {}
+        for target in best_models_name[model_name]:
+            full_model_name, levels = best_models_name[model_name][target]
+            model_path = Path(models_folder, full_model_name)
+            if not os.path.isfile(model_path):
+                print(f"ERROR: {full_model_name}")
+            model[target] = joblib.load(model_path)
+            display(model_path)
+            display(model[target])
+            
+            if 'catboostclassifier' in model_name:
+                model_features[target] = model[target][0].feature_names_
+            else:
+                model_features[target] = model[target][0].feature_names_in_
+            display(model_features[target])
+            target_levels[target] = levels
+        
+        # Prepare dataframes
+        net_impact_model_features = model_features['net_impact']
+        splashing_model_features = model_features['splashing']
+        
+        figsize=(12, 6)
+        fig, axes = plt.subplots(2, 2, figsize=figsize, dpi=600)
+        
+        legend_elements = []
+        
+        for i, plot_mask in enumerate(plot_masks):
+            df_model = df[plot_mask]
+                
+            dens_pred_df, diam_pred_df = get_contour_df(
+                df_model=df_model,
+                net_impact_model_features=net_impact_model_features,
+                splashing_model_features=splashing_model_features,
+                verbose=False,
+            )
+            
+            # Predictions and plot
+            model_list = [
+                ('splashing', model['splashing'], splashing_model_features),
+                ('net_impact', model['net_impact'], net_impact_model_features)
+            ]
+
+            dens_pred_df_res = predict_all_proba(dens_pred_df, model_list)
+            diam_pred_df_res = predict_all_proba(diam_pred_df, model_list)
+            
+            y_feature_name = 'particle_liquid_density_ratio'
+            y_label = '$\\rho_{p}/\\rho_{l}$'
+
+            ax, contplot = plot_WeRe_level(
+                contour_df=dens_pred_df_res,
+                impact_type_name='splashing',
+                y_feature_name=y_feature_name,
+                y_label=y_label,
+                color=colors[i],
+                ax=axes[0,0]
+            )
+            
+            legend_elements.append(contplot.legend_elements())
+            
+            plot_WeRe_level(
+                contour_df=dens_pred_df_res,
+                impact_type_name='net_impact',
+                y_feature_name=y_feature_name,
+                y_label=y_label,
+                color=colors[i],
+                ax=axes[0,1]
+            )
+            
+            axes[0,0].set_title('Splashing classification on density');
+            axes[0,1].set_title('Net impact classification on density');
+            
+            y_feature_name = 'particle_droplet_diameter_ratio'
+            y_label = '$d_p/D_{drop}$'
+            
+            plot_WeRe_level(
+                contour_df=diam_pred_df_res,
+                impact_type_name='splashing',
+                y_feature_name=y_feature_name,
+                y_label=y_label,
+                color=colors[i],
+                ax=axes[1,0]
+            )
+            
+            plot_WeRe_level(
+                contour_df=diam_pred_df_res,
+                impact_type_name='net_impact',
+                y_feature_name=y_feature_name,
+                y_label=y_label,
+                color=colors[i],
+                ax=axes[1,1]
+            )
+            
+            # Change y-axis
+            for ax in axes[1,:].flat:
+                limits = [0.01, 0.12]
+                ax.set_yticks(np.arange(*limits, 0.02))
+                ax.set_ylim(limits)
+                
+            axes[1,0].set_title('Splashing classification on diameter');
+            axes[1,1].set_title('Net impact classification on diameter');
+            
+            fig.suptitle(plot_name)
+            fig.tight_layout()
+
+        # Get legend
+        handles = []
+        for legend_element in legend_elements:
+            handles.append(legend_element[0][0])
+        for ax in axes.flat:
+            ax.legend(handles=handles, labels=labels)
+
+    if save_plots:
+            plt.savefig(
+                Path(
+                    save_path, 
+                    f'{save_prefix}_dependency.pdf',
+                ),
+                dpi=600
+            )
+
+
+
+def plot_WeRe_level(
+    contour_df:pd.DataFrame,
+    impact_type_name:str,
+    y_feature_name:str,
+    y_label:str,
+    ax:mpl.axes.Axes,
+    color,
+    levels_contour=[0.5],
+):
+    # Mesh Values
+    x = contour_df['We_Re'].unique()
+    y = contour_df[y_feature_name].unique()
+    probas = contour_df[impact_type_name].values.reshape(x.size, y.size)
+    
+    contplot = ax.contour(
+        x,
+        y,
+        probas,
+        colors=color,
+        levels=levels_contour,
+        vmin=0.,
+        vmax=1.,
+    )
+    
+    ax.set_xlabel('$We^{1/2} Re^{1/4}$')
+
+    ax.set_ylabel(y_label);
+    
+    return ax, contplot
