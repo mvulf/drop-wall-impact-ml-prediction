@@ -1,4 +1,4 @@
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder, FunctionTransformer
 from imblearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from imblearn.over_sampling import SMOTE
@@ -11,9 +11,13 @@ import pandas as pd
 import numpy as np
 
 
+def return_x(x):
+    return x
+
 def _create_pipeline(*,
                     numerical_features, 
                     categorical_features,
+                    binary_features,
                     model,
                     random_state,
                     smote,
@@ -39,6 +43,10 @@ def _create_pipeline(*,
         categorical_transformer = Pipeline(
             steps=[(cat_features_processor, dict_transformer[cat_features_processor])])
         transformers.append(('cat', categorical_transformer, cat_features))
+    if binary_features is not None:
+        binary_transformer = Pipeline(
+            steps=[('binary_pass', FunctionTransformer(return_x))])
+        transformers.append(('binary', binary_transformer, binary_features))
     preprocessor = ColumnTransformer(transformers=transformers)
     pipeline = [("preprocessor", preprocessor), ("model", model)]
     if smote: pipeline.insert(1, ("smt", smt))
@@ -48,10 +56,12 @@ def _create_pipeline(*,
 class MLPipeline:
     def __init__(self, train, test, target, model,
                  numerical_features, categorical_features,
+                 binary_features,
                  random_state, dataset_filename,
                  smote=True, postfix='onehot',
                  boosting_ohe=False,
-                 features_to_leave=[]):
+                 features_to_leave=[], addition_str='', 
+                 path_models='../results/models_modelling2'):
         self.train = train
         self.test = test
         self.target = target
@@ -62,10 +72,12 @@ class MLPipeline:
         self.filename = ''
         self.boosting_ohe = boosting_ohe
         self.dataset_filename = dataset_filename
+        self.binary_features = binary_features
         model_name = str(self.model.__class__).split('.')[-1][:-2]
         self.model_name = f'{model_name.lower()}_ohe_smote_{self.target}_{dataset_filename}'
         if not smote: self.model_name = self.model_name.replace('_smote', '')
         if not boosting_ohe: self.model_name = self.model_name.replace('_ohe', '')
+        self.model_name += addition_str
         if boosting_ohe:
             f_dummy = lambda x: pd.get_dummies(x, columns=self.categorical_features, drop_first=True)
             self.train = f_dummy(self.train)
@@ -74,9 +86,10 @@ class MLPipeline:
         self.clf = _create_pipeline(
             numerical_features=numerical_features, 
             categorical_features=categorical_features,
+            binary_features=binary_features,
             model=model, cat_features_processor=postfix,
             smote=smote, random_state=random_state)
-        self.path_models = Path('../results/modelling2_models')
+        self.path_models = Path(path_models)
 
 
     def _fit(self):
