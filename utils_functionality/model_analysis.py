@@ -150,8 +150,8 @@ def predict_all_proba(source_df, model_list):
 
 def get_contour_df(
     df_model,
-    net_impact_model_features,
-    splashing_model_features,
+    net_impact_model_features:list=None,
+    splashing_model_features:list=None,
     velocity:np.ndarray=np.linspace(0.0, 7.0, 50),
     particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
     particle_mean_diameter:np.ndarray=np.linspace(20e-6, 400e-6, 50),
@@ -241,22 +241,23 @@ def get_contour_df(
         print('diam_pred_df after We, Re extraction')
         diam_pred_df.info()
 
-    net_impact_columns = set(net_impact_model_features)
-    extra_columns = net_impact_columns - set(dens_pred_df.columns)
-    if len(extra_columns)>0:
-        print('Net-impact: columns for additional creation')
-        display(extra_columns)
-    else:
-        print('Net-impact: No columns are needed for creation')
+    if not((net_impact_model_features is None) or (splashing_model_features is None)):
+        net_impact_columns = set(net_impact_model_features)
+        extra_columns = net_impact_columns - set(dens_pred_df.columns)
+        if len(extra_columns)>0:
+            print('Net-impact: columns for additional creation')
+            display(extra_columns)
+        else:
+            print('Net-impact: No columns are needed for creation')
 
-    splashing_columns = set(splashing_model_features)
-    extra_columns = splashing_columns - set(dens_pred_df.columns)
-    if len(extra_columns)>0:
-        print('Splashing: columns for additional creation')
-        display(extra_columns)
-    else:
-        print('Splashing: No columns are needed for creation')
-    
+        splashing_columns = set(splashing_model_features)
+        extra_columns = splashing_columns - set(dens_pred_df.columns)
+        if len(extra_columns)>0:
+            print('Splashing: columns for additional creation')
+            display(extra_columns)
+        else:
+            print('Splashing: No columns are needed for creation')
+        
     print('Dataframes are prepared')
     
     return dens_pred_df, diam_pred_df
@@ -426,8 +427,16 @@ splash_impact_type_dt = {
 splash_impact_type_df = pd.DataFrame(splash_impact_type_dt)
 display(splash_impact_type_df)
 
+# net_impact_type_dt = {
+#     'impact_type': ['unclear impact', 'net impact'],
+#     'value': [0, 1],
+#     'color': ['r', 'b'],
+#     'marker': ['x', 'o'],
+#     'order': [0, 1] # legend order
+# }
+
 net_impact_type_dt = {
-    'impact_type': ['unclear impact', 'net impact'],
+    'impact_type': ['fragmentation', 'bulk deformation'],
     'value': [0, 1],
     'color': ['r', 'b'],
     'marker': ['x', 'o'],
@@ -491,6 +500,7 @@ def plot_WeRe_contour_scatter(
     markersize:int=15,
     fontsize:int=12,
     contour_labels:bool=True,
+    add_colorbar:bool=True,
 ):
     # Mesh Values
     x = contour_df['We_Re'].unique()
@@ -508,7 +518,8 @@ def plot_WeRe_contour_scatter(
         alpha=0.8,
         antialiased=True,
     )
-    plt.colorbar(contourfplot, ax=ax)
+    if add_colorbar:
+        plt.colorbar(contourfplot, ax=ax)
     
     contplot = ax.contour(
         x,
@@ -535,7 +546,7 @@ def plot_WeRe_contour_scatter(
     
     ax.grid(color='black', alpha=0.5)
     
-    return ax
+    return ax, contourfplot, contplot
 
 
 def plot_all_WeRe_scatters(df):
@@ -680,7 +691,7 @@ def plot_final_plots(
         impact_type_df=net_impact_type_df,
         y_feature_name=y_feature_name,
         y_label=y_label,
-        cmap_fill='RdBu',
+        cmap_fill='coolwarm_r',
         levels_fill=net_impact_levels_fill,
         levels_contour=net_impact_levels,
         fontsize=10,
@@ -689,7 +700,7 @@ def plot_final_plots(
     );
 
     axes[0,0].set_title('Splashing classification on density');
-    axes[0,1].set_title('Net impact classification on density');
+    axes[0,1].set_title('Bulk deformation classification on density');
     
     y_feature_name = 'particle_droplet_diameter_ratio'
     y_label = '$d_p/D_{drop}$'
@@ -715,7 +726,7 @@ def plot_final_plots(
         impact_type_df=net_impact_type_df,
         y_feature_name=y_feature_name,
         y_label=y_label,
-        cmap_fill='RdBu',
+        cmap_fill='coolwarm_r',
         levels_fill=net_impact_levels_fill,
         levels_contour=net_impact_levels,
         fontsize=10,
@@ -728,7 +739,7 @@ def plot_final_plots(
         ax.set_yticks(np.arange(0.01, 0.12, 0.02))
         
     axes[1,0].set_title('Splashing classification on diameter');
-    axes[1,1].set_title('Net impact classification on diameter');
+    axes[1,1].set_title('Bulk deformation classification on diameter');
     
     fig.suptitle(model_name)
     fig.tight_layout()
