@@ -231,7 +231,8 @@ def get_contour_df(
         print('Dataframes are equal')
     else:
         print('WARNING: Dataframes are NOT equal')
-
+    
+    # TODO: Check, what if velocity was corrected?
     dens_pred_df = extract_features(dens_pred_df)
     diam_pred_df = extract_features(diam_pred_df)
 
