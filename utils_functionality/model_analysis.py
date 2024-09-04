@@ -426,7 +426,7 @@ splash_impact_type_dt = {
 }
 
 splash_impact_type_df = pd.DataFrame(splash_impact_type_dt)
-display(splash_impact_type_df)
+
 
 # net_impact_type_dt = {
 #     'impact_type': ['unclear impact', 'net impact'],
@@ -445,7 +445,10 @@ net_impact_type_dt = {
 }
 
 net_impact_type_df = pd.DataFrame(net_impact_type_dt)
-display(net_impact_type_df)
+
+def display_impact_types():
+    display(splash_impact_type_df)
+    display(net_impact_type_df)
 
 
 def plot_WeRe_scatter(
