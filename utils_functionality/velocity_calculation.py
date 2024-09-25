@@ -66,7 +66,7 @@ class DropFallSystem():
     # _dim_observation = 2
     _state_naming = [
         "droplet position [m]",
-        "droplet velocity [m]"
+        "droplet velocity [m/s]"
     ]
     
     def __init__(
