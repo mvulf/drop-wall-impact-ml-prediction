@@ -49,13 +49,16 @@ class SedimentationSystem():
         self._system_parameters_init = system_parameters_init
         self._parameters = system_parameters_init.copy()
         
+        self._calc_state = 0 # init time calc state
+        
     
-    def compute_closed_loop_rhs(self, time, state):
+    def compute_closed_loop_rhs(self, time, state, pbar, indicator_dt):
         """ Compute right-hand-side of the sedimentation dynamics
 
         Args:
             time: current time
             state: current state
+            pbar (tqdm): progress bar for the calculation tracing
 
         Returns:
             Right-hand-side of the sedimentation dynamics
@@ -142,7 +145,10 @@ class SedimentationSystem():
         # TODO: ADD VELOCITY GRADIENT AT THE BOTTOM
         # IDEA: Multiply velocity with the coefficient from 0 to 1!
         N_BN = self._parameters["n_bottom_nodes"]
-        coefs = np.linspace(1, 0, N_BN)
+        # coefs = np.linspace(1, 0, N_BN)
+        
+        # Check if only last two nodes have zero-velocity
+        coefs = 0
         v_p_E[-N_BN:] = v_p_E[-N_BN:]*coefs
         
         # Space differentiation
@@ -175,6 +181,16 @@ class SedimentationSystem():
         # # DELETE. Debug only
         # print(f'State shape = {state.shape}')
         # print(f'Dstate shape = {Dstate.shape}')
+        
+        # Return tqdm-status
+        # Based on https://gist.github.com/thomaslima/d8e795c908f334931354da95acb97e54
+        # Time-step reaching indicator
+        n = int((time - self._calc_state)/indicator_dt)
+        # Progress bar increment: 
+        # when indicator time step (self._indicator_dt) reached -> 1, else 0
+        pbar.update(n)
+        # Update current state (when n = 0, no real update)
+        self._calc_state += indicator_dt*n
         
         return Dstate
     
