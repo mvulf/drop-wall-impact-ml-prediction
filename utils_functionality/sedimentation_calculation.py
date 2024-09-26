@@ -117,18 +117,33 @@ class SedimentationSystem():
         # print(f'Re = {Re}')
         # print(f'C_D = {C_D}')
         
+        
+        # # TODO: try if necessary
+        # Dv_p = np.zeros_like(v_p)
+        # # Make zero velocity for particles above boundary
+        # boundary_mask = (z_p > h_exit)
+        # if boundary_mask.any():
+        #     Dv_p[boundary_mask] = 0
+        #     v_p[boundary_mask] = 0
+        # nonboundary_mask = np.logical_not(boundary_mask)
+        
+        
         # VELOCITY
         Dz_p = v_p
         # ACCELERATION
         # Get free fall acceleration
         Dv_p = (1 - 1/eps_p)*g*np.ones_like(v_p)
+        # Dv_p[nonboundary_mask] = (1 - 1/eps_p)*g*np.ones_like(v_p[nonboundary_mask])
         # Add drag force if velocity is not zero
-        mask = (v_p != 0)
-        if mask.any():
-            Dv_p[mask] -= (
-                0.75*v_p[mask]*np.abs(v_p[mask])*C_D[mask]
+        drag_mask = (v_p != 0)
+        # mask = drag_mask & nonboundary_mask
+        if drag_mask.any():
+            Dv_p[drag_mask] -= (
+                0.75*v_p[drag_mask]*np.abs(v_p[drag_mask])*C_D[drag_mask]
                 /(eps_p*d_p)
             )
+        
+        
         
         # concentration change rate
         Dphi = q_phi
