@@ -39,8 +39,9 @@ class SedimentationSystem():
                 "viscosity_liquid": 23.1e-3, # Dynamic viscosity [Pa*s]
                 "free_fall_acceleration": 9.81, # gravitational acceleration [m/s^2]
                 "height_exit": 10e-3, # effective height of the sedimentation [m]
-                "n_lagrangian_particles": 6, # number of lagrangian particles
-                "n_eulerian_nodes": 6, # number of eulerian nodes
+                "n_lagrangian_particles": 31, # number of lagrangian particles
+                "n_eulerian_nodes": 31, # number of eulerian nodes
+                "n_bottom_nodes": 6, # number of nodes to make linear velocity profile
             }
             print('Standard parameters are set')
             print(system_parameters_init)
@@ -78,10 +79,12 @@ class SedimentationSystem():
         
         z_nodes = np.linspace(0, h_exit, N_E)
         
-        z_p = state[:N_L]
-        v_p = state[N_L:2*N_L]
-        phi = state[2*N_L:2*N_L+N_E]
-        q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
+        # z_p = state[:N_L]
+        # v_p = state[N_L:2*N_L]
+        # phi = state[2*N_L:2*N_L+N_E]
+        # q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
+        
+        z_p, v_p, phi, q_phi = self.get_substates(state)
         
         # # Test only. TODO: Delete further
         # print(f'z_nodes = {z_nodes}')
@@ -138,12 +141,12 @@ class SedimentationSystem():
         
         # TODO: ADD VELOCITY GRADIENT AT THE BOTTOM
         # IDEA: Multiply velocity with the coefficient from 0 to 1!
-        N_bottom_nodes = 6
-        coefs = np.linspace(1, 0, N_bottom_nodes)
-        v_p_E[-N_bottom_nodes:] = v_p_E[-N_bottom_nodes:]*coefs
+        N_BN = self._parameters["n_bottom_nodes"]
+        coefs = np.linspace(1, 0, N_BN)
+        v_p_E[-N_BN:] = v_p_E[-N_BN:]*coefs
         
         # Space differentiation
-        Dq_phi = np.zeros_like(q_phi)
+        Dq_phi = np.zeros_like(q_phi) # NOTE: First node concentration change rate is constant
         Dq_phi[1:] = - (
             (phi[1:]*v_p_E[1:] - phi[:-1]*v_p_E[:-1])
             /np.diff(z_nodes)
@@ -174,6 +177,35 @@ class SedimentationSystem():
         # print(f'Dstate shape = {Dstate.shape}')
         
         return Dstate
+    
+    
+    def get_substates(self, state, verbose=False):
+        """Get sub states of the state: particles position, their velocity, particle concentration, particle concentration change rate
+
+        Args:
+            state: full state
+            verbose: Print substates. Defaults to False.
+
+        Returns:
+            sub states of the state [z_p, v_p, phi, q_phi]
+        """
+        N_L, N_E = (
+            self._parameters["n_lagrangian_particles"],
+            self._parameters["n_eulerian_nodes"],
+        )
+        
+        z_p = state[:N_L]
+        v_p = state[N_L:2*N_L]
+        phi = state[2*N_L:2*N_L+N_E]
+        q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
+        
+        if verbose:
+            print(f'z_p [m] = {z_p}')
+            print(f'v_p [m/s] = {v_p}')
+            print(f'phi = {phi}')
+            print(f'q_phi [1/s] = {q_phi}')
+        
+        return z_p, v_p, phi, q_phi
         
         
 

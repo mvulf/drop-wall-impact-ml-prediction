@@ -1,3 +1,4 @@
 .DS_Store
 # modelling2_models
 */catboost_info
+*/__pycache__
