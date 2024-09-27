@@ -210,7 +210,7 @@ class SedimentationSystem():
         return Dstate
     
     
-    def get_substates(self, state, verbose=False):
+    def get_substates(self, state, verbose=False, display_cnt=None):
         """Get sub states of the state: particles position, their velocity, particle concentration, particle concentration change rate
 
         Args:
@@ -231,10 +231,16 @@ class SedimentationSystem():
         q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
         
         if verbose:
-            print(f'z_p [m] = {z_p}')
-            print(f'v_p [m/s] = {v_p}')
-            print(f'phi = {phi}')
-            print(f'q_phi [1/s] = {q_phi}')
+            if (display_cnt is None):   
+                print(f'z_p [m] = {z_p}')
+                print(f'v_p [m/s] = {v_p}')
+                print(f'phi = {phi}')
+                print(f'q_phi [1/s] = {q_phi}')
+            else:
+                print(f'z_p [m] = {z_p[-display_cnt:]}')
+                print(f'v_p [m/s] = {v_p[-display_cnt:]}')
+                print(f'phi = {phi[-display_cnt:]}')
+                print(f'q_phi [1/s] = {q_phi[-display_cnt:]}')
         
         return z_p, v_p, phi, q_phi
         
