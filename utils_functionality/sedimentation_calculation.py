@@ -11,7 +11,7 @@ class SedimentationSystem():
         "particle position [m]",
         "particle velocity [m/s]",
         "particle concentration",
-        "concentration change rate [1/s]"
+        # "concentration change rate [1/s]"
     ]
 
     def __init__(
@@ -41,7 +41,7 @@ class SedimentationSystem():
                 "height_exit": 10e-3, # effective height of the sedimentation [m]
                 "n_lagrangian_particles": 31, # number of lagrangian particles
                 "n_eulerian_nodes": 31, # number of eulerian nodes
-                "n_bottom_nodes": 6, # number of nodes to make linear velocity profile
+                "n_bottom_nodes": 2, # number of nodes to make zero changing
             }
             print('Standard parameters are set')
             print(system_parameters_init)
@@ -87,15 +87,7 @@ class SedimentationSystem():
         # phi = state[2*N_L:2*N_L+N_E]
         # q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
         
-        z_p, v_p, phi, q_phi = self.get_substates(state)
-        
-        # # Test only. TODO: Delete further
-        # print(f'z_nodes = {z_nodes}')
-        # print(f'z_p = {z_p}')
-        # print(f'v_p = {v_p}')
-        # print(f'phi = {phi}')
-        # print(f'q_phi = {q_phi}')
-        
+        z_p, v_p, phi = self.get_substates(state) # q_phi
         
         Re = vc.get_Re(
             velocity=np.abs(v_p), # Necessary to pass array
@@ -113,20 +105,6 @@ class SedimentationSystem():
             Re=Re,
             volume_fraction=phi_L,
         )
-        # # Test only. TODO: Delete further
-        # print(f'Re = {Re}')
-        # print(f'C_D = {C_D}')
-        
-        
-        # # TODO: try if necessary
-        # Dv_p = np.zeros_like(v_p)
-        # # Make zero velocity for particles above boundary
-        # boundary_mask = (z_p > h_exit)
-        # if boundary_mask.any():
-        #     Dv_p[boundary_mask] = 0
-        #     v_p[boundary_mask] = 0
-        # nonboundary_mask = np.logical_not(boundary_mask)
-        
         
         # VELOCITY
         Dz_p = v_p
@@ -143,10 +121,6 @@ class SedimentationSystem():
                 /(eps_p*d_p)
             )
         
-        
-        
-        # concentration change rate
-        Dphi = q_phi
         # "ACCELERATION" of Concentration change rate
         # velocity-interpolation for the Eulerian nodes
         v_p_E = np.interp(
@@ -160,42 +134,26 @@ class SedimentationSystem():
         # TODO: ADD VELOCITY GRADIENT AT THE BOTTOM
         # IDEA: Multiply velocity with the coefficient from 0 to 1!
         N_BN = self._parameters["n_bottom_nodes"]
-        # coefs = np.linspace(1, 0, N_BN)
         
-        # Check if only last two nodes have zero-velocity
+        # Only last two nodes have zero-velocity
         coefs = 0
         v_p_E[-N_BN:] = v_p_E[-N_BN:]*coefs
         
-        # Space differentiation
-        Dq_phi = np.zeros_like(q_phi) # NOTE: First node concentration change rate is constant
-        Dq_phi[1:] = - (
+        # Space differentiation for the concentration change rate
+        Dphi = np.zeros_like(phi) # NOTE: First node concentration change rate is constant
+        Dphi[1:] = - (
             (phi[1:]*v_p_E[1:] - phi[:-1]*v_p_E[:-1])
             /np.diff(z_nodes)
         )
-        # # TODO: DELETE
-        # Dq_phi[0] = Dq_phi[1]
-        
-        # # TODO: Delete after debug
-        # print(f'Dq_phi = {Dq_phi}')
-        # print(f'np.diff(z_nodes) = {np.diff(z_nodes)}')
-        # print(f'Dz_p shape = {Dz_p.shape}')
-        # print(f'Dv_p shape = {Dv_p.shape}')
-        # print(f'Dphi shape = {Dphi.shape}')
-        # print(f'Dq_phi shape = {Dq_phi.shape}')
-        
         
         Dstate = np.hstack(
             (
                 Dz_p,
                 Dv_p,
                 Dphi,
-                Dq_phi
+                # Dq_phi
             )
         )
-        
-        # # DELETE. Debug only
-        # print(f'State shape = {state.shape}')
-        # print(f'Dstate shape = {Dstate.shape}')
         
         # Return tqdm-status
         # Based on https://gist.github.com/thomaslima/d8e795c908f334931354da95acb97e54
@@ -228,23 +186,23 @@ class SedimentationSystem():
         z_p = state[:N_L]
         v_p = state[N_L:2*N_L]
         phi = state[2*N_L:2*N_L+N_E]
-        q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
+        # q_phi = state[2*N_L+N_E:2*N_L+2*N_E]
         
         if verbose:
             if (display_cnt is None):   
                 print(f'z_p [m] = {z_p}')
                 print(f'v_p [m/s] = {v_p}')
                 print(f'phi = {phi}')
-                print(f'q_phi [1/s] = {q_phi}')
+                # print(f'q_phi [1/s] = {q_phi}')
             else:
                 print(f'z_p [m] = {z_p[-display_cnt:]}')
                 print(f'v_p [m/s] = {v_p[-display_cnt:]}')
                 print(f'phi = {phi[-display_cnt:]}')
-                print(f'q_phi [1/s] = {q_phi[-display_cnt:]}')
+                # print(f'q_phi [1/s] = {q_phi[-display_cnt:]}')
         
-        return z_p, v_p, phi, q_phi
-        
-        
+        return z_p, v_p, phi # q_phi
+
+
 
 def get_suspension_drag_coef(Re, volume_fraction):
     """Calculate drag coefficient for particle sedimenting 
