@@ -15,7 +15,7 @@ def get_drop_volume_fraction(
     init_volume_fraction,
     droplet_diameter,
     diameter_exit=1.6e-3, # [m]
-    verbose=False,
+    # verbose=False,
 ):
     """ Estimate particle volume fraction in the droplet based on the terminal velocity model
     Args:
@@ -51,18 +51,19 @@ def get_drop_volume_fraction(
             "diameter_exit": diameter_exit, # exit diameter of the tip [m]
             "base_volume_fraction": init_volume_fraction, # initial, base, volume fraction for the system
             "weight_base_volume_fraction": 0.5, # coefficient of the base volume fraction in interface volume fraction estimation
-        }
+        },
+        verbose=False,
     )
     
     phi_drop_term, v_term = system.estimate_drop_volume_fraction(time)
-    Re = system.get_Re(v_term)
+    sedimentation_Re = system.get_Re(v_term)
     
-    if verbose:
-        print(f'v_term = {v_term:.3e}')
-        print(f'Re = {Re:.3e}')
-        print(f'Last volume fraction = {phi_drop_term:.3e}')
+    # if verbose:
+    #     print(f'v_term = {v_term:.3e}')
+    #     print(f'Re = {Re:.3e}')
+    #     print(f'Last volume fraction = {phi_drop_term:.3e}')
         
-    return phi_drop_term, v_term
+    return phi_drop_term, v_term, sedimentation_Re
 
 
 
