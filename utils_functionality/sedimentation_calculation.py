@@ -6,6 +6,66 @@ from IPython.display import display
 from scipy.optimize import fsolve
 
 
+def get_drop_volume_fraction(
+    time,
+    density_liquid,
+    viscosity_liquid,
+    particle_mean_diameter,
+    particle_liquid_density_ratio,
+    init_volume_fraction,
+    droplet_diameter,
+    diameter_exit=1.6e-3, # [m]
+    verbose=False,
+):
+    """ Estimate particle volume fraction in the droplet based on the terminal velocity model
+    Args:
+        time: time for volume fraction estimation [s]
+        density_liquid: liquid density [kg/m^3]
+        viscosity_liquid: liquid dynamic viscosity [Pa*s]
+        particle_mean_diameter: mean diameter of particles [m]
+        particle_liquid_density_ratio: epsilon_p = rho_p/rho_l
+        init_volume_fraction: initial volume fraction (phi0)
+        droplet_diameter: diameter of the droplet [m]
+        diameter_exit: Tip exit diameter [m]. Defaults to 1.6e-3.
+
+    Returns:
+        Particle volume fraction in the droplet for `time` and terminal velocity in suspension
+    """
+    
+    phi_drop = init_volume_fraction # assume that initial droplet volume fraction equal to base (init) volume fraction of all syringe
+    v_interface = 0. # initial particle velocity at the interface [m/s]
+    g = 9.81 # [m/s^2]
+    
+    init_state = np.array([v_interface, phi_drop])
+    # print(init_state.shape)
+
+    system = IntegratedSedimentationSystem(
+        init_state=init_state,
+        system_parameters_init = {
+            "particle_size": particle_mean_diameter, # particle diameter [m]
+            "droplet_size": droplet_diameter, # droplet diamter [m]
+            "particle_liquid_density_ratio": particle_liquid_density_ratio, # epsilon_p = rho_p/rho_l
+            "density_liquid": density_liquid, # [kg/m^3]
+            "viscosity_liquid": viscosity_liquid, # Dynamic viscosity [Pa*s]
+            "free_fall_acceleration": g, # gravitational acceleration [m/s^2]
+            "diameter_exit": diameter_exit, # exit diameter of the tip [m]
+            "base_volume_fraction": init_volume_fraction, # initial, base, volume fraction for the system
+            "weight_base_volume_fraction": 0.5, # coefficient of the base volume fraction in interface volume fraction estimation
+        }
+    )
+    
+    phi_drop_term, v_term = system.estimate_drop_volume_fraction(time)
+    Re = system.get_Re(v_term)
+    
+    if verbose:
+        print(f'v_term = {v_term:.3e}')
+        print(f'Re = {Re:.3e}')
+        print(f'Last volume fraction = {phi_drop_term:.3e}')
+        
+    return phi_drop_term, v_term
+
+
+
 class IntegratedSedimentationSystem():
     _name = 'IntegratedSedimentationSystem'
     _system_type = 'diff_eqn'
@@ -43,8 +103,8 @@ class IntegratedSedimentationSystem():
                 "viscosity_liquid": 23.1e-3, # Dynamic viscosity [Pa*s]
                 "free_fall_acceleration": 9.81, # gravitational acceleration [m/s^2]
                 "diameter_exit": 1.6e-3, # exit diameter of the tip [m]
-                "basic_volume_fraction": 0.10, # initial, basic, volume fraction for the system
-                "weight_basic_volume_fraction": 0.5, # coefficient of the basic volume fraction in interface volume fraction estimation
+                "base_volume_fraction": 0.10, # initial, base, volume fraction for the system
+                "weight_base_volume_fraction": 0.5, # coefficient of the base volume fraction in interface volume fraction estimation
             }
             print('Standard parameters are set')
             print(system_parameters_init)
@@ -65,8 +125,8 @@ class IntegratedSedimentationSystem():
         )
         
         phi_0, alpha = (
-            self._parameters["basic_volume_fraction"],
-            self._parameters["weight_basic_volume_fraction"]
+            self._parameters["base_volume_fraction"],
+            self._parameters["weight_base_volume_fraction"]
         )
         
         self._parameters["constant_of_syringe_volume_fraction"] = (
@@ -88,7 +148,27 @@ class IntegratedSedimentationSystem():
         if verbose:
             print('Init parameters')
             display(self._parameters)
+    
+    
+    def estimate_drop_volume_fraction(self, time):
+        """Estimate particle volume fraction in the droplet with assumption, that particles move with terminal velocity, identified for the base (initial) volume fraction. Particle volume fraction entering (or leaving) the droplet, assumed to be equal to the base (initial) volume fraction.
+
+        Args:
+            time: _description_
+
+        Returns:
+            _description_
+        """
         
+        phi0, h_drop = (
+            self._parameters['base_volume_fraction'],
+            self._parameters['height_drop'],
+        )
+        v_term = self.get_terminal_velocity()
+        phi_term = phi0 * (1 + v_term*time/h_drop)
+        
+        return phi_term, v_term[0]
+    
     
     def compute_closed_loop_rhs(self, time, state, pbar, indicator_dt):
         """ Compute right-hand-side of the sedimentation dynamics
@@ -131,7 +211,12 @@ class IntegratedSedimentationSystem():
         return Dstate
     
     
-    def get_interface_acceleration(self, v_interface, phi_drop):
+    def get_interface_acceleration(
+        self, 
+        v_interface, 
+        phi_drop,
+        drag_corrections=False,
+    ):
         """Calculate acceleration of the particle at the droplet interface
 
         Args:
@@ -157,7 +242,7 @@ class IntegratedSedimentationSystem():
         C_D = get_suspension_drag_coef(
             Re=Re,
             volume_fraction=phi_interface,
-            corrections=False,
+            corrections=drag_corrections,
         )[0]
         
         # ACCELERATION
@@ -184,12 +269,12 @@ class IntegratedSedimentationSystem():
             v_interface = 0.
         
         if phi_drop is None:
-            phi_drop = self._parameters['basic_volume_fraction']
+            phi_drop = self._parameters['base_volume_fraction']
         
         terminal_velocity = fsolve(
             self.get_interface_acceleration,
             x0=v_interface,
-            args=(phi_drop,),
+            args=(phi_drop, True), # drag_corrections=False
             **kwargs,
         )
         
@@ -220,7 +305,7 @@ class IntegratedSedimentationSystem():
         """
         
         phi_0, B_phi_syringe, alpha_drop = (
-            self._parameters["basic_volume_fraction"],
+            self._parameters["base_volume_fraction"],
             self._parameters["constant_of_syringe_volume_fraction"],
             self._parameters["weight_droplet_volume_fraction"],
         )
