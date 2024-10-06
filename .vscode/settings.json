@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./utils_functionality/split_utils"
+        "./utils_functionality/split_utils",
+        "./utils_functionality/models"
     ]
 }
