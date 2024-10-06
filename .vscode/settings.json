@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./utils_functionality/split_utils"
+    ]
+}

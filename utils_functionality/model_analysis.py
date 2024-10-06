@@ -100,7 +100,7 @@ def extract_agg_features(source_df):
     df['Re'] = Re_numerator/df['viscosity']
     df['We'] = df['velocity'] * Re_numerator / df['surface_tension']
     
-    df['We_Re'] = df['We']**(1/2) * df['Re']**(1/4)
+    df['K'] = df['We']**(1/2) * df['Re']**(1/4)
     
     return df
 
@@ -175,7 +175,7 @@ def get_contour_df(
         'velocity', 
         'Re', 
         'We', 
-        'We_Re'
+        'K'
     ],
     verbose:bool=True,
 ):
@@ -231,7 +231,8 @@ def get_contour_df(
         print('Dataframes are equal')
     else:
         print('WARNING: Dataframes are NOT equal')
-
+    
+    # TODO: Check, what if velocity was corrected?
     dens_pred_df = extract_features(dens_pred_df)
     diam_pred_df = extract_features(diam_pred_df)
 
@@ -425,7 +426,7 @@ splash_impact_type_dt = {
 }
 
 splash_impact_type_df = pd.DataFrame(splash_impact_type_dt)
-display(splash_impact_type_df)
+
 
 # net_impact_type_dt = {
 #     'impact_type': ['unclear impact', 'net impact'],
@@ -444,10 +445,13 @@ net_impact_type_dt = {
 }
 
 net_impact_type_df = pd.DataFrame(net_impact_type_dt)
-display(net_impact_type_df)
+
+def display_impact_types():
+    display(splash_impact_type_df)
+    display(net_impact_type_df)
 
 
-def plot_WeRe_scatter(
+def plot_K_scatter(
     scatter_df:pd.DataFrame,
     impact_type_name:str,
     impact_type_df:pd.DataFrame,
@@ -461,7 +465,7 @@ def plot_WeRe_scatter(
         impact_group = scatter_df[scatter_df[impact_type_name] == row['value']]
         
         ax.scatter(
-            x=impact_group['We_Re'],
+            x=impact_group['K'],
             y=impact_group[y_feature_name],
             marker=row['marker'],
             s=markersize,
@@ -485,7 +489,7 @@ def plot_WeRe_scatter(
     return ax
 
 
-def plot_WeRe_contour_scatter(
+def plot_K_contour_scatter(
     contour_df:pd.DataFrame,
     scatter_df:pd.DataFrame,
     impact_type_name:str,
@@ -503,7 +507,7 @@ def plot_WeRe_contour_scatter(
     add_colorbar:bool=True,
 ):
     # Mesh Values
-    x = contour_df['We_Re'].unique()
+    x = contour_df['K'].unique()
     y = contour_df[y_feature_name].unique()
     probas = contour_df[impact_type_name].values.reshape(x.size, y.size)
     
@@ -534,7 +538,7 @@ def plot_WeRe_contour_scatter(
     if contour_labels:
         ax.clabel(contplot, fmt = '%1.1f', colors = 'k', fontsize=fontsize)
     
-    ax = plot_WeRe_scatter(
+    ax = plot_K_scatter(
         scatter_df,
         impact_type_name,
         impact_type_df,
@@ -549,14 +553,14 @@ def plot_WeRe_contour_scatter(
     return ax, contourfplot, contplot
 
 
-def plot_all_WeRe_scatters(df):
+def plot_all_K_scatters(df):
 
     y_feature_name = 'particle_liquid_density_ratio'
     y_label = '$\\rho_{p}/\\rho_{l}$'
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 6), dpi=600)
 
-    plot_WeRe_scatter(
+    plot_K_scatter(
         scatter_df=df,
         impact_type_name='splashing_spectrum',
         impact_type_df=splash_impact_type_df,
@@ -565,7 +569,7 @@ def plot_all_WeRe_scatters(df):
         ax=axes[0]
     )
 
-    plot_WeRe_scatter(
+    plot_K_scatter(
         scatter_df=df,
         impact_type_name='net_impact',
         impact_type_df=net_impact_type_df,
@@ -585,7 +589,7 @@ def plot_all_WeRe_scatters(df):
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 6), dpi=600)
 
-    plot_WeRe_scatter(
+    plot_K_scatter(
         scatter_df=df,
         impact_type_name='splashing_spectrum',
         impact_type_df=splash_impact_type_df,
@@ -594,7 +598,7 @@ def plot_all_WeRe_scatters(df):
         ax=axes[0]
     )
 
-    plot_WeRe_scatter(
+    plot_K_scatter(
         scatter_df=df,
         impact_type_name='net_impact',
         impact_type_df=net_impact_type_df,
@@ -614,7 +618,7 @@ def plot_all_WeRe_scatters(df):
 
     sns.swarmplot(
     data=df, 
-    x='We_Re', 
+    x='K', 
     y='volume_fraction_type', 
     hue='splashing_type', # style='splashing_type', 
     ax=ax_splash, 
@@ -627,7 +631,7 @@ def plot_all_WeRe_scatters(df):
 
     sns.swarmplot(
     data=df, 
-    x='We_Re', 
+    x='K', 
     y='volume_fraction_type', 
     hue='net_impact_type', # style='splashing_type', 
     ax=ax_net_impact, 
@@ -670,7 +674,7 @@ def plot_final_plots(
 
     fig, axes = plt.subplots(2, 2, figsize=figsize, dpi=600)
 
-    plot_WeRe_contour_scatter(
+    plot_K_contour_scatter(
         contour_df=dens_pred_df_res,
         scatter_df=scatter_df,
         impact_type_name='splashing',
@@ -684,7 +688,7 @@ def plot_final_plots(
         ax=axes[0,0]
     )
 
-    plot_WeRe_contour_scatter(
+    plot_K_contour_scatter(
         contour_df=dens_pred_df_res,
         scatter_df=scatter_df,
         impact_type_name='net_impact',
@@ -705,7 +709,7 @@ def plot_final_plots(
     y_feature_name = 'particle_droplet_diameter_ratio'
     y_label = '$d_p/D_{drop}$'
 
-    plot_WeRe_contour_scatter(
+    plot_K_contour_scatter(
         contour_df=diam_pred_df_res,
         scatter_df=scatter_df,
         impact_type_name='splashing',
@@ -719,7 +723,7 @@ def plot_final_plots(
         ax=axes[1,0]
     )
 
-    plot_WeRe_contour_scatter(
+    plot_K_contour_scatter(
         contour_df=diam_pred_df_res,
         scatter_df=scatter_df,
         impact_type_name='net_impact',
@@ -807,7 +811,7 @@ def plot_all_final_plots(
             plt.savefig(
                 Path(
                     save_path, 
-                    f'{save_prefix}{model_name}_WeRe_classification.pdf',
+                    f'{save_prefix}{model_name}_K_classification.pdf',
                 ),
                 dpi=600
             )
@@ -877,7 +881,7 @@ def plot_all_level_plots(
             y_feature_name = 'particle_liquid_density_ratio'
             y_label = '$\\rho_{p}/\\rho_{l}$'
 
-            ax, contplot = plot_WeRe_level(
+            ax, contplot = plot_K_level(
                 contour_df=dens_pred_df_res,
                 impact_type_name='splashing',
                 y_feature_name=y_feature_name,
@@ -888,7 +892,7 @@ def plot_all_level_plots(
             
             legend_elements.append(contplot.legend_elements())
             
-            plot_WeRe_level(
+            plot_K_level(
                 contour_df=dens_pred_df_res,
                 impact_type_name='net_impact',
                 y_feature_name=y_feature_name,
@@ -903,7 +907,7 @@ def plot_all_level_plots(
             y_feature_name = 'particle_droplet_diameter_ratio'
             y_label = '$d_p/D_{drop}$'
             
-            plot_WeRe_level(
+            plot_K_level(
                 contour_df=diam_pred_df_res,
                 impact_type_name='splashing',
                 y_feature_name=y_feature_name,
@@ -912,7 +916,7 @@ def plot_all_level_plots(
                 ax=axes[1,0]
             )
             
-            plot_WeRe_level(
+            plot_K_level(
                 contour_df=diam_pred_df_res,
                 impact_type_name='net_impact',
                 y_feature_name=y_feature_name,
@@ -951,7 +955,7 @@ def plot_all_level_plots(
 
 
 
-def plot_WeRe_level(
+def plot_K_level(
     contour_df:pd.DataFrame,
     impact_type_name:str,
     y_feature_name:str,
@@ -961,7 +965,7 @@ def plot_WeRe_level(
     levels_contour=[0.5],
 ):
     # Mesh Values
-    x = contour_df['We_Re'].unique()
+    x = contour_df['K'].unique()
     y = contour_df[y_feature_name].unique()
     probas = contour_df[impact_type_name].values.reshape(x.size, y.size)
     
