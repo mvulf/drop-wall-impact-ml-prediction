@@ -54,12 +54,15 @@ class MLPipeline:
         passthrough_features=(
             'wettability',
         ),
+        log_features=(
+            'relative_roughness',
+            'sedimentation_Stk',
+        ),
         std_features=None,
         dataset_filename='df_dimless',
         path_data=Path('..', 'data'),
         targets=('splashing', 'no_fragmentation'),
         add_init_transformer=True,
-        log_roughness=True,
         add_df_transformer=True,
         add_const=False,
         verbose=True,
@@ -99,8 +102,8 @@ class MLPipeline:
             'passthrough_features': passthrough_features,
             'std_features': std_features,
             'features_to_drop': features_to_drop,
+            'log_features': log_features,
             'add_init_transformer': add_init_transformer,
-            'log_roughness': log_roughness,
             'add_df_transformer': add_df_transformer,
             'add_const': add_const,
         }
@@ -290,10 +293,8 @@ def _create_pipeline(
     minmax_features,
     passthrough_features,
     features_to_drop,
+    log_features,
     add_init_transformer=True,
-    # add_sedimentation_sign=False, # do not forget
-    log_roughness=True,
-    log_sedimentation_Stk=True,
     add_df_transformer=True,
     add_const=False,
     std_features=None, # If none, this features would be generated automatically
@@ -305,8 +306,7 @@ def _create_pipeline(
         init_trans = InitialTransformer(
             # features_to_drop=features_to_drop,
             # add_sedimentation_sign=add_sedimentation_sign,
-            log_roughness=log_roughness,
-            log_sedimentation_Stk=log_sedimentation_Stk,
+            log_features=log_features,
         )
         pipeline.append(
             ('init_transformer', init_trans)
@@ -385,13 +385,9 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
         self,
         # features_to_drop,
         # add_sedimentation_sign=False, 
-        log_roughness,
-        log_sedimentation_Stk,
+        log_features
     ):
-        # self.features_to_drop = features_to_drop
-        # self.add_sedimentation_sign = add_sedimentation_sign
-        self.log_roughness = log_roughness
-        self.log_sedimentation_Stk = log_sedimentation_Stk
+        self.log_features = log_features
     
     def fit(self, X, y=None):
         return self  # Nothing to fit here
@@ -399,21 +395,18 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         if not isinstance(X, pd.DataFrame):
             raise ValueError("Input to InitialTransformer must be a pandas DataFrame")
-        # # Add sign to the sedimentation_Re
-        # if self.add_sedimentation_sign:
-        #     X = X.apply(
-        #         _add_sedimentation_sign,
-        #         axis=1,
-        #     )
         
         X = X.copy()
-        # Get logarithm of relative roughness
-        if self.log_roughness:
-            X['relative_roughness'] = np.log10(X['relative_roughness'])
+        # Get logarithm of features
+        for log_feature in self.log_features:
+            X[log_feature] = np.log10(X[log_feature]+1e-15)
         
-        # Get logarithm of sedimentation Stokes number
-        if self.log_sedimentation_Stk:
-            X['sedimentation_Stk'] = np.log10(X['sedimentation_Stk'] + 1e-15)
+        # if self.log_roughness:
+        #     X['relative_roughness'] = np.log10(X['relative_roughness'])
+        
+        # # Get logarithm of sedimentation Stokes number
+        # if self.log_sedimentation_Stk:
+        #     X['sedimentation_Stk'] = np.log10(X['sedimentation_Stk'] + 1e-15)
         
         # # Drop features
         # if self.features_to_drop:
