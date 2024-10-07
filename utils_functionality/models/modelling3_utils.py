@@ -16,6 +16,7 @@ from sklearn.metrics import (
     accuracy_score, 
     roc_auc_score
 )
+from sklearn.model_selection import cross_validate, StratifiedKFold
 
 import statsmodels.api as sm
 from statsmodels.api import Logit
@@ -109,7 +110,7 @@ class MLPipeline:
             **self._pipeline_params
         )
         
-        # TODO: in new sklearn versions use response_method parameter instead of needs_proba
+        # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
         self.scoring_metrics = {
             'accuracy': make_scorer(accuracy_score),
             'precision': make_scorer(precision_score),
@@ -121,34 +122,109 @@ class MLPipeline:
         self.metric_results = []
     
     
-    def run(self, verbose=True):
-        # target = self._params['target']
-        # X_train = self.train.drop(target, axis=1)
-        # y_train = self.train[target].reset_index(drop=True)
+    def run(self, verbose=True, random_state=42):
         
+        # Split X, y for fitting and predicting
         X_train, y_train = self.get_X_y(self.train)
         X_test, y_test = self.get_X_y(self.test)
+        X, y = self.get_X_y(self.full_df)
         
+        # Conduct cross-validation
+        metric_results_list = []
+        metric_results_list.append(
+            self.get_cv_metrics(
+                X=X,
+                y=y,
+                cv_folds=5,
+                random_state=random_state,
+                type='cv',
+            )
+        )
+        
+        # Fit on holdout train dataset and get summary (if applicable)
         self.fit(
             X=X_train,
             y=y_train,
         )
         self.get_summary()
         
-        self.metric_results.append(
+        # Predict on train, test and save metrics
+        metric_results_list.append(
+            self.get_metrics(
+                X=X_train,
+                y_true=y_train,
+                type='holdout',
+                verbose=False,
+                prefix='train',
+            )
+        )
+        metric_results_list.append(
             self.get_metrics(
                 X=X_test,
                 y_true=y_test,
-                type='test',
+                type='holdout',
+                verbose=False,
+                prefix='test',
             )
         )
+        
+        # Transform metric_results_list to dict and append to metric_results
+        metric_results_dict = {}
+        for metrics in metric_results_list:
+            type = metrics['type']
+            
+            for key in metrics:
+                if key != 'type':
+                    metric_results_dict['_'.join((type, key))] = metrics[key]
+        self.metric_results.append(metric_results_dict)
+        
+        # Prepare dataframe of final metrics
+        self.metric_results_df = pd.DataFrame(self.metric_results)
+        display(self.metric_results_df.T)
+        
+        # TODO: Save metrics and model
+        
+    
+    def get_cv_metrics(
+        self,
+        *,
+        X,
+        y,
+        cv_folds=5,
+        random_state=None,
+        shuffle=True,
+        type:str='cv',
+        verbose=True,
+        fmt='.4f',
+    ):
+        df = X.copy()
+        cv = StratifiedKFold(
+            n_splits=cv_folds,
+            shuffle=shuffle,
+            random_state=random_state,
+        )
+        
+        # Perform cross-validation
+        cv_results = cross_validate(
+            estimator=self.pipe,
+            X=df,
+            y=y,
+            cv=cv,
+            scoring=self.scoring_metrics,
+            return_train_score=True,
+        )
+        cv_results['type'] = type
+        
+        return cv_results
+    
     
     def get_metrics(
         self,
         *,
         X,
         y_true,
-        type:str='test', 
+        type:str, # = 'holdout'
+        prefix:str, # = 'train' OR 'test'
         verbose=True,
         fmt='.4f',
     ):
@@ -161,18 +237,20 @@ class MLPipeline:
         }
         for key in self.scoring_metrics:
             df = X.copy()
-            metrics[key] = self.scoring_metrics[key](
+            metric_key = '_'.join((prefix, key))
+            metrics[metric_key] = self.scoring_metrics[key](
                 estimator=self.pipe,
                 X=df,
                 y_true=y_true,
             )
             if verbose:
-                print(f'{type} {key}: {metrics[key]:{fmt}}')
+                print(f'{type} {metric_key}: {metrics[metric_key]:{fmt}}')
     
         return metrics
     
     
     def fit(self, X, y):
+        X = X.copy()
         self.pipe.fit(X, y)
         
     def predict(self, X):
@@ -327,6 +405,8 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
         #         _add_sedimentation_sign,
         #         axis=1,
         #     )
+        
+        X = X.copy()
         # Get logarithm of relative roughness
         if self.log_roughness:
             X['relative_roughness'] = np.log10(X['relative_roughness'])
@@ -376,6 +456,7 @@ class DataFrameTransformer(BaseEstimator, TransformerMixin):
         return self  # Nothing to fit here
     
     def transform(self, X):
+        X = X.copy()
         if self.add_const:
             X = sm.add_constant(X)
             columns = ['const']+self.feature_names
