@@ -3,6 +3,10 @@ import numpy as np
 
 from pathlib import Path
 import sys
+import os
+import joblib
+
+from collections.abc import Iterable
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
@@ -35,6 +39,7 @@ class MLPipeline:
         *,
         target,
         estimator,
+        model_postfix='',
         features_to_drop=(
             'Re', 
             'We', 
@@ -66,6 +71,9 @@ class MLPipeline:
         add_df_transformer=True,
         add_const=False,
         verbose=True,
+        path_results=Path('..', 'results'),
+        models_folder='models_modelling3',
+        metrics_file='metrics_modelling3.xlsx'
     ):
         target_set = set(targets)
         self._params = {
@@ -73,7 +81,11 @@ class MLPipeline:
             'dataset_filename': dataset_filename,
             'path_data': path_data,
             'target_set': target_set,
+            'path_results': path_results,
+            'models_folder': models_folder,
+            'metrics_file': metrics_file,
         }
+        self.model_postfix = model_postfix
         self.verbose = verbose
         
         # Load dataframe
@@ -112,6 +124,16 @@ class MLPipeline:
         self.pipe = _create_pipeline(
             **self._pipeline_params
         )
+        
+        # Get pipeline name
+        estimator_class_name = self.pipe.steps[-1][-1].__class__.__name__
+        
+        if estimator_class_name == 'StatsModelsEstimator':
+            estimator_class_name = 'Logit'
+        
+        self.model_name = estimator_class_name
+        if self.model_postfix:
+            self.model_name = '_'.join([self.model_name, self.model_postfix])
         
         # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
         self.scoring_metrics = {
@@ -152,22 +174,24 @@ class MLPipeline:
         self.get_summary()
         
         # Predict on train, test and save metrics
-        metric_results_list.append(
-            self.get_metrics(
-                X=X_train,
-                y_true=y_train,
-                type='holdout',
-                verbose=False,
-                prefix='train',
-            )
-        )
-        metric_results_list.append(
+        metric_results_list.insert(
+            0,
             self.get_metrics(
                 X=X_test,
                 y_true=y_test,
                 type='holdout',
                 verbose=False,
                 prefix='test',
+            )
+        )
+        metric_results_list.insert(
+            1,
+            self.get_metrics(
+                X=X_train,
+                y_true=y_train,
+                type='holdout',
+                verbose=False,
+                prefix='train',
             )
         )
         
@@ -182,11 +206,80 @@ class MLPipeline:
         self.metric_results.append(metric_results_dict)
         
         # Prepare dataframe of final metrics
-        self.metric_results_df = pd.DataFrame(self.metric_results)
-        display(self.metric_results_df.T)
+        self.df_results = pd.DataFrame(self.metric_results)
+        
+        self.df_results['dataset'] = self._params['dataset_filename']
+        self.df_results['target'] = self._params['target']
+        self.df_results['model'] = self.model_name
+        self.df_results['params'] = str(self._pipeline_params)
+        
+        self.df_results = pd.concat(
+            (
+                self.df_results.iloc[:,-4:],
+                self.df_results.iloc[:,:-4],
+            ),
+            axis=1
+        )
+        
+        if verbose:
+            display(self.df_results.T)
         
         # TODO: Save metrics and model
+        self.save_results(self.df_results)
+        self.save_model()
         
+    
+    def list2str(self, value):
+        # for value in col:
+        if isinstance(value, np.ndarray):
+            value = value.tolist()
+            value = map(str, value)
+            return ', '.join(value)
+        return value
+    
+        
+    def save_results(self, df_results):
+        
+        df_results_excel = df_results.applymap(
+            self.list2str
+            # lambda x: ', '.join(x) if isinstance(x, Iterable) else x
+        )
+        
+        filepath = Path(
+            self._params['path_results'],
+            self._params['metrics_file']
+        )
+        if os.path.isfile(filepath):
+            existing_df = pd.read_excel(filepath)
+            combined_df = pd.concat(
+                (existing_df, df_results_excel), 
+                ignore_index=True
+            )
+            
+            columns_to_check = (
+                set(combined_df.columns) 
+                - set(['cv_fit_time', 'cv_score_time'])
+            )
+            
+            combined_df.drop_duplicates(
+                subset=columns_to_check,
+                inplace=True,
+            )
+            combined_df.to_excel(filepath, index=False)
+        else:
+            df_results_excel.to_excel(filepath, index=False)
+
+    def save_model(self, verbose=True):
+        path_models = Path(
+            self._params['path_results'],
+            self._params['models_folder'],
+        )
+        if not os.path.exists(path_models): os.makedirs(path_models)
+        model_path = path_models / self.model_name
+        joblib.dump(self.pipe, model_path)
+        if verbose:
+            print(f'Model saved in {model_path}')
+    
     
     def get_cv_metrics(
         self,
