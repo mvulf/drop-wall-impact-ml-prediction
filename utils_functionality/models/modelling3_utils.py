@@ -8,7 +8,15 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.compose import ColumnTransformer
-from sklearn.metrics import f1_score, accuracy_score, roc_auc_score
+from sklearn.metrics import (
+    make_scorer,
+    precision_score, 
+    recall_score, 
+    f1_score, 
+    accuracy_score, 
+    roc_auc_score
+)
+from sklearn.model_selection import cross_validate, StratifiedKFold
 
 import statsmodels.api as sm
 from statsmodels.api import Logit
@@ -18,8 +26,8 @@ from IPython.display import display
 sys.path.append(
     '../'
 )
+# from utils_functionality.split_utils.split_tools import load_df, get_train_test
 from utils_functionality.split_utils.split_tools import load_df, get_train_test
-
 
 class MLPipeline:
     def __init__(
@@ -46,12 +54,15 @@ class MLPipeline:
         passthrough_features=(
             'wettability',
         ),
+        log_features=(
+            'relative_roughness',
+            'sedimentation_Stk',
+        ),
         std_features=None,
         dataset_filename='df_dimless',
         path_data=Path('..', 'data'),
         targets=('splashing', 'no_fragmentation'),
         add_init_transformer=True,
-        log_roughness=True,
         add_df_transformer=True,
         add_const=False,
         verbose=True,
@@ -91,8 +102,8 @@ class MLPipeline:
             'passthrough_features': passthrough_features,
             'std_features': std_features,
             'features_to_drop': features_to_drop,
+            'log_features': log_features,
             'add_init_transformer': add_init_transformer,
-            'log_roughness': log_roughness,
             'add_df_transformer': add_df_transformer,
             'add_const': add_const,
         }
@@ -101,35 +112,148 @@ class MLPipeline:
         self.pipe = _create_pipeline(
             **self._pipeline_params
         )
-    
-    
-    def run(self):
-        # target = self._params['target']
-        # X_train = self.train.drop(target, axis=1)
-        # y_train = self.train[target].reset_index(drop=True)
         
+        # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
+        self.scoring_metrics = {
+            'accuracy': make_scorer(accuracy_score),
+            'precision': make_scorer(precision_score),
+            'recall': make_scorer(recall_score),
+            'f1': make_scorer(f1_score),
+            'roc_auc': make_scorer(roc_auc_score, needs_proba=True),
+        }
+        
+        self.metric_results = []
+    
+    
+    def run(self, verbose=True, random_state=42):
+        
+        # Split X, y for fitting and predicting
         X_train, y_train = self.get_X_y(self.train)
         X_test, y_test = self.get_X_y(self.test)
+        X, y = self.get_X_y(self.full_df)
         
+        # Conduct cross-validation
+        metric_results_list = []
+        metric_results_list.append(
+            self.get_cv_metrics(
+                X=X,
+                y=y,
+                cv_folds=5,
+                random_state=random_state,
+                type='cv',
+            )
+        )
+        
+        # Fit on holdout train dataset and get summary (if applicable)
         self.fit(
             X=X_train,
             y=y_train,
         )
         self.get_summary()
         
-        y_pred = self.predict(X_test)
-        y_pred_proba = self.predict_proba(X_test)
+        # Predict on train, test and save metrics
+        metric_results_list.append(
+            self.get_metrics(
+                X=X_train,
+                y_true=y_train,
+                type='holdout',
+                verbose=False,
+                prefix='train',
+            )
+        )
+        metric_results_list.append(
+            self.get_metrics(
+                X=X_test,
+                y_true=y_test,
+                type='holdout',
+                verbose=False,
+                prefix='test',
+            )
+        )
         
-        f1 = f1_score(y_test, y_pred)
-        accuracy = accuracy_score(y_test, y_pred)
-        roc_auc = roc_auc_score(y_test, y_pred_proba)
+        # Transform metric_results_list to dict and append to metric_results
+        metric_results_dict = {}
+        for metrics in metric_results_list:
+            type = metrics['type']
+            
+            for key in metrics:
+                if key != 'type':
+                    metric_results_dict['_'.join((type, key))] = metrics[key]
+        self.metric_results.append(metric_results_dict)
         
-        print(f'test f1-score: {f1:.4f}')
-        print(f'test accuracy: {accuracy:.4f}')
-        print(f'test roc_auc: {roc_auc:.4f}')
+        # Prepare dataframe of final metrics
+        self.metric_results_df = pd.DataFrame(self.metric_results)
+        display(self.metric_results_df.T)
+        
+        # TODO: Save metrics and model
+        
+    
+    def get_cv_metrics(
+        self,
+        *,
+        X,
+        y,
+        cv_folds=5,
+        random_state=None,
+        shuffle=True,
+        type:str='cv',
+        verbose=True,
+        fmt='.4f',
+    ):
+        df = X.copy()
+        cv = StratifiedKFold(
+            n_splits=cv_folds,
+            shuffle=shuffle,
+            random_state=random_state,
+        )
+        
+        # Perform cross-validation
+        cv_results = cross_validate(
+            estimator=self.pipe,
+            X=df,
+            y=y,
+            cv=cv,
+            scoring=self.scoring_metrics,
+            return_train_score=True,
+        )
+        cv_results['type'] = type
+        
+        return cv_results
+    
+    
+    def get_metrics(
+        self,
+        *,
+        X,
+        y_true,
+        type:str, # = 'holdout'
+        prefix:str, # = 'train' OR 'test'
+        verbose=True,
+        fmt='.4f',
+    ):
+        
+        # y_pred = self.predict(X)
+        # y_pred_proba = self.predict_proba(X)
+        
+        metrics = {
+            'type': type,
+        }
+        for key in self.scoring_metrics:
+            df = X.copy()
+            metric_key = '_'.join((prefix, key))
+            metrics[metric_key] = self.scoring_metrics[key](
+                estimator=self.pipe,
+                X=df,
+                y_true=y_true,
+            )
+            if verbose:
+                print(f'{type} {metric_key}: {metrics[metric_key]:{fmt}}')
+    
+        return metrics
     
     
     def fit(self, X, y):
+        X = X.copy()
         self.pipe.fit(X, y)
         
     def predict(self, X):
@@ -142,10 +266,12 @@ class MLPipeline:
         y_pred_proba = self.pipe.predict_proba(X)
         return y_pred_proba
     
+    
     def get_X_y(self, dataset):
         target = self._params['target']
         X = dataset.drop(target, axis=1)
-        y = dataset[target].reset_index(drop=True)
+        # y = dataset[target].reset_index(drop=True)
+        y = dataset[target].values
         
         return X, y
         
@@ -167,10 +293,8 @@ def _create_pipeline(
     minmax_features,
     passthrough_features,
     features_to_drop,
+    log_features,
     add_init_transformer=True,
-    # add_sedimentation_sign=False, # do not forget
-    log_roughness=True,
-    log_sedimentation_Stk=True,
     add_df_transformer=True,
     add_const=False,
     std_features=None, # If none, this features would be generated automatically
@@ -182,8 +306,7 @@ def _create_pipeline(
         init_trans = InitialTransformer(
             # features_to_drop=features_to_drop,
             # add_sedimentation_sign=add_sedimentation_sign,
-            log_roughness=log_roughness,
-            log_sedimentation_Stk=log_sedimentation_Stk,
+            log_features=log_features,
         )
         pipeline.append(
             ('init_transformer', init_trans)
@@ -225,6 +348,7 @@ class StatsModelsEstimator(BaseEstimator):
         self.init_params = init_params
         
     def fit(self, X, y, **fit_params):
+        self.classes_ = np.unique(y)
         self.model_ = self.model_class(endog = y, exog = X, **self.init_params)
         # Get fit_method. Pass "fit", if fit_method did not specified
         fit_method = fit_params.pop("fit_method", "fit")
@@ -234,7 +358,8 @@ class StatsModelsEstimator(BaseEstimator):
         return self
 
     def predict(self, X, level=0.5, **predict_params):
-        y_pred_proba = self.predict_proba(X, **predict_params)
+        # Get probabilities only for main class "1"
+        y_pred_proba = self.predict_proba(X, **predict_params)[:,1]
         
         y_pred = np.zeros_like(y_pred_proba)
         y_pred[y_pred_proba>level] = 1
@@ -242,7 +367,15 @@ class StatsModelsEstimator(BaseEstimator):
         return y_pred
 
     def predict_proba(self, X, **predict_params):
-        y_pred_proba = self.results_.predict(exog=X, **predict_params)
+        prob = (
+            self.results_
+            .predict(exog=X, **predict_params)
+            .to_numpy()
+            .reshape((-1,1))
+        )
+        y_pred_proba = np.hstack([1 - prob, prob])
+        # y_pred_proba = prob
+        
         return y_pred_proba
 
 
@@ -252,13 +385,9 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
         self,
         # features_to_drop,
         # add_sedimentation_sign=False, 
-        log_roughness,
-        log_sedimentation_Stk,
+        log_features
     ):
-        # self.features_to_drop = features_to_drop
-        # self.add_sedimentation_sign = add_sedimentation_sign
-        self.log_roughness = log_roughness
-        self.log_sedimentation_Stk = log_sedimentation_Stk
+        self.log_features = log_features
     
     def fit(self, X, y=None):
         return self  # Nothing to fit here
@@ -266,19 +395,18 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X):
         if not isinstance(X, pd.DataFrame):
             raise ValueError("Input to InitialTransformer must be a pandas DataFrame")
-        # # Add sign to the sedimentation_Re
-        # if self.add_sedimentation_sign:
-        #     X = X.apply(
-        #         _add_sedimentation_sign,
-        #         axis=1,
-        #     )
-        # Get logarithm of relative roughness
-        if self.log_roughness:
-            X['relative_roughness'] = np.log10(X['relative_roughness'])
         
-        # Get logarithm of sedimentation Stokes number
-        if self.log_sedimentation_Stk:
-            X['sedimentation_Stk'] = np.log10(X['sedimentation_Stk'] + 1e-15)
+        X = X.copy()
+        # Get logarithm of features
+        for log_feature in self.log_features:
+            X[log_feature] = np.log10(X[log_feature]+1e-15)
+        
+        # if self.log_roughness:
+        #     X['relative_roughness'] = np.log10(X['relative_roughness'])
+        
+        # # Get logarithm of sedimentation Stokes number
+        # if self.log_sedimentation_Stk:
+        #     X['sedimentation_Stk'] = np.log10(X['sedimentation_Stk'] + 1e-15)
         
         # # Drop features
         # if self.features_to_drop:
@@ -321,6 +449,7 @@ class DataFrameTransformer(BaseEstimator, TransformerMixin):
         return self  # Nothing to fit here
     
     def transform(self, X):
+        X = X.copy()
         if self.add_const:
             X = sm.add_constant(X)
             columns = ['const']+self.feature_names
@@ -340,7 +469,9 @@ def _get_feature_names(column_transformer):
         if transformer != 'drop':
             if hasattr(transformer, 'get_feature_names_out'):
                 # If transformer supports get_feature_names_out (e.g., OneHotEncoder)
-                feature_names.extend(transformer.get_feature_names_out(columns))
+                feature_names.extend(
+                    transformer.get_feature_names_out(columns)
+                )
             else:
                 # Otherwise, just use the original column names (e.g., for StandardScaler)
                 feature_names.extend(columns)
@@ -412,3 +543,28 @@ def _drop_features(features, features_to_drop, inplace=False):
     if inplace:
         return
     return tuple(features)
+
+
+if __name__ == '__main__':
+    estimator = StatsModelsEstimator(Logit)
+
+    ml_pipe = MLPipeline(
+        target='splashing',
+        estimator=estimator,
+        features_to_drop = (
+            'Re', 
+            'We', 
+            'init_volume_fraction',
+            'particle_droplet_diameter_ratio', 
+            'sedimentation_Re',
+            # 'particle_liquid_density_ratio',
+            'sedimentation_Stk'
+            # 'sign_sedimentation_Re',
+            # 'volume_fraction', 
+            # 'relative_roughness', 
+            # 'inclination',
+            # 'wettability',
+        ),
+    )
+
+    ml_pipe.run()
