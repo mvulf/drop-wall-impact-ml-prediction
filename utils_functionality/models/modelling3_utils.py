@@ -67,6 +67,7 @@ class MLPipeline:
         dataset_filename='df_dimless',
         path_data=Path('..', 'data'),
         targets=('splashing', 'no_fragmentation'),
+        cv_folds=7,
         add_init_transformer=True,
         add_df_transformer=True,
         add_const=False,
@@ -81,6 +82,7 @@ class MLPipeline:
             'dataset_filename': dataset_filename,
             'path_data': path_data,
             'target_set': target_set,
+            'cv_folds': cv_folds,
             'path_results': path_results,
             'models_folder': models_folder,
             'metrics_file': metrics_file,
@@ -106,19 +108,44 @@ class MLPipeline:
         # Get features
         source_features = list(self.full_df.columns)
         source_features.remove(target)
-        
+        source_features = tuple(source_features)
+        # Prepare pipeline-params
         self._pipeline_params = {
             'estimator': estimator,
             'source_features': source_features,
-            'minmax_features': minmax_features,
-            'passthrough_features': passthrough_features,
-            'std_features': std_features,
             'features_to_drop': features_to_drop,
-            'log_features': log_features,
+            'log_features': _drop_features(
+                log_features, features_to_drop
+            ),
+            'minmax_features': _drop_features(
+                minmax_features, features_to_drop
+            ),
+            'passthrough_features': _drop_features(
+                passthrough_features, features_to_drop
+            ),
+            'std_features': std_features,
             'add_init_transformer': add_init_transformer,
             'add_df_transformer': add_df_transformer,
             'add_const': add_const,
         }
+        # Prepare STD-features
+        if std_features is None:
+            features_to_drop_std = (
+                features_to_drop
+                + self._pipeline_params['minmax_features']
+                + self._pipeline_params['passthrough_features']
+            )
+            self._pipeline_params['std_features'] = _drop_features(
+                source_features, features_to_drop_std
+            )
+            if verbose:
+                print('std_features')
+                display(std_features)
+        else:
+            self._pipeline_params['std_features'] = _drop_features(
+                std_features, features_to_drop
+            )
+        
         
         # Create full pipeline
         self.pipe = _create_pipeline(
@@ -162,7 +189,7 @@ class MLPipeline:
             self.get_cv_metrics(
                 X=X,
                 y=y,
-                cv_folds=5,
+                cv_folds=self._params['cv_folds'],
                 random_state=random_state,
                 type='cv',
             )
@@ -215,6 +242,8 @@ class MLPipeline:
         self.df_results['model'] = self.model_name
         self.df_results['params'] = str(self._pipeline_params)
         
+        # TODO: ADD CV-STATS
+        
         self.df_results = pd.concat(
             (
                 self.df_results.iloc[:,-4:],
@@ -265,6 +294,7 @@ class MLPipeline:
             
             combined_df.drop_duplicates(
                 subset=columns_to_check,
+                keep='last',
                 inplace=True,
             )
             combined_df.to_excel(filepath, index=False)
@@ -288,7 +318,7 @@ class MLPipeline:
         *,
         X,
         y,
-        cv_folds=5,
+        cv_folds=7,
         random_state=None,
         shuffle=True,
         type:str='cv',
@@ -384,16 +414,17 @@ class MLPipeline:
 def _create_pipeline(
     *,
     estimator,
-    source_features,
+    # source_features,
+    # features_to_drop,
     minmax_features,
     passthrough_features,
-    features_to_drop,
     log_features,
     add_init_transformer=True,
     add_df_transformer=True,
     add_const=False,
     std_features=None, # If none, this features would be generated automatically
     verbose=True,
+    **kwargs,
 ):
     pipeline = []
     
@@ -408,10 +439,10 @@ def _create_pipeline(
         )
     
     ct = _get_column_transformer(
-        source_features=source_features,
+        # source_features=source_features,
+        # features_to_drop=features_to_drop,
         minmax_features=minmax_features,
         passthrough_features=passthrough_features,
-        features_to_drop=features_to_drop,
         std_features=std_features,
         verbose=verbose,
     )
@@ -576,29 +607,14 @@ def _get_feature_names(column_transformer):
 
 def _get_column_transformer(
     *,
-    source_features,
+    # source_features,
+    # features_to_drop,
     minmax_features,
     passthrough_features,
-    features_to_drop,
     std_features=None,
     verbose=True,
 ):
-    minmax_features = _drop_features(minmax_features, features_to_drop)
-
-    if std_features is None:
-        features_to_drop_std = (
-            features_to_drop
-            + minmax_features
-            + passthrough_features
-            # + minmax_neg_features  
-            # + [target]
-        )
-        std_features = _drop_features(source_features, features_to_drop_std)
-
-        if verbose:
-            print('std_features')
-            display(std_features)
-
+    
     transformers = [
         ('minmax', MinMaxScaler(), minmax_features),
         # (
