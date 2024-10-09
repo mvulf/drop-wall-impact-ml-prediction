@@ -131,7 +131,9 @@ class MLPipeline:
         if estimator_class_name == 'StatsModelsEstimator':
             estimator_class_name = 'Logit'
         
-        self.model_name = estimator_class_name
+        self.model_name = '_'.join(
+            [estimator_class_name, self._params['target']]
+        )
         if self.model_postfix:
             self.model_name = '_'.join([self.model_name, self.model_postfix])
         
