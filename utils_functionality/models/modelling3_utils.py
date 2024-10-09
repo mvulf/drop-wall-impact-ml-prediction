@@ -235,27 +235,40 @@ class MLPipeline:
         self.metric_results.append(metric_results_dict)
         
         # Prepare dataframe of final metrics
-        self.df_results = pd.DataFrame(self.metric_results)
+        df = pd.DataFrame(self.metric_results)
         
-        self.df_results['dataset'] = self._params['dataset_filename']
-        self.df_results['target'] = self._params['target']
-        self.df_results['model'] = self.model_name
-        self.df_results['params'] = str(self._pipeline_params)
+        df['dataset'] = self._params['dataset_filename']
+        df['target'] = self._params['target']
+        df['model'] = self.model_name
+        df['params'] = str(self._pipeline_params)
         
-        # TODO: ADD CV-STATS
-        
-        self.df_results = pd.concat(
+        df = pd.concat(
             (
-                self.df_results.iloc[:,-4:],
-                self.df_results.iloc[:,:-4],
+                df.iloc[:,-4:],
+                df.iloc[:,:-4],
             ),
             axis=1
         )
         
+        # ADD STATS
+        cv_columns = [x for x in df.columns if x.startswith('cv_')]
+        for cv_column in cv_columns:
+            # NOTE: No need for numpy
+            # df[cv_column] = df[cv_column].apply(
+            #     lambda x: list(map(float, x.split(', '))))
+            df[cv_column + '_std'] = df[cv_column].apply(lambda x: np.std(x))
+            df[cv_column + '_mean'] = df[cv_column].apply(lambda x: np.mean(x))
+            df[cv_column + '_median'] = df[cv_column].apply(lambda x: np.median(x))   
+        cv_columns = [x for x in df.columns if x.startswith('cv_')]
+        non_cv_columns = [x for x in df.columns if not x.startswith('cv_')]
+        df = df[non_cv_columns + sorted(cv_columns)]
+        
+        self.df_results = df.copy(deep=True)
+        
         if verbose:
             display(self.df_results.T)
         
-        # TODO: Save metrics and model
+        # Save metrics and model
         self.save_results(self.df_results)
         self.save_model()
         
@@ -287,10 +300,20 @@ class MLPipeline:
                 ignore_index=True
             )
             
-            columns_to_check = (
-                set(combined_df.columns) 
-                - set(['cv_fit_time', 'cv_score_time'])
-            )
+            
+            # columns_to_check = [
+            #     col for col in combined_df.columns if not('time' in col)
+            # ]
+            # columns_to_check = (
+            #     set(combined_df.columns) 
+            #     - set(['cv_fit_time', 'cv_score_time'])
+            # )
+            columns_to_check = [
+                'dataset',
+                'target',
+                'model',
+                'params'
+            ]
             
             combined_df.drop_duplicates(
                 subset=columns_to_check,
