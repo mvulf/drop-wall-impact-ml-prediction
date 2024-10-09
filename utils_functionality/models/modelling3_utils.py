@@ -40,17 +40,20 @@ class MLPipeline:
         target,
         estimator,
         model_postfix='',
-        features_to_drop=(
+        features_to_drop = (
             'Re', 
             'We', 
             'init_volume_fraction',
             'particle_droplet_diameter_ratio', 
+            'sedimentation_Re',
+            'sedimentation_Stk',
+            # 'particle_liquid_density_ratio',
+            # 'sign_sedimentation_Re',
             # 'volume_fraction', 
-            # 'sedimentation_Re', 
             # 'relative_roughness', 
             # 'inclination',
             # 'wettability',
-            # 'particle_liquid_density_ratio',
+            # 'K',
         ),
         minmax_features=(
             'inclination',
@@ -140,7 +143,7 @@ class MLPipeline:
             )
             if verbose:
                 print('std_features')
-                display(std_features)
+                display(self._pipeline_params['std_features'])
         else:
             self._pipeline_params['std_features'] = _drop_features(
                 std_features, features_to_drop
@@ -176,7 +179,12 @@ class MLPipeline:
         self.metric_results = []
     
     
-    def run(self, verbose=True, random_state=42):
+    def run(
+        self, 
+        verbose=True, 
+        random_state=42,
+        save_model_and_metrics=True,
+    ):
         
         # Split X, y for fitting and predicting
         X_train, y_train = self.get_X_y(self.train)
@@ -258,7 +266,9 @@ class MLPipeline:
             #     lambda x: list(map(float, x.split(', '))))
             df[cv_column + '_std'] = df[cv_column].apply(lambda x: np.std(x))
             df[cv_column + '_mean'] = df[cv_column].apply(lambda x: np.mean(x))
-            df[cv_column + '_median'] = df[cv_column].apply(lambda x: np.median(x))   
+            df[cv_column + '_median'] = df[cv_column].apply(
+                lambda x: np.median(x)
+            )   
         cv_columns = [x for x in df.columns if x.startswith('cv_')]
         non_cv_columns = [x for x in df.columns if not x.startswith('cv_')]
         df = df[non_cv_columns + sorted(cv_columns)]
@@ -266,11 +276,25 @@ class MLPipeline:
         self.df_results = df.copy(deep=True)
         
         if verbose:
-            display(self.df_results.T)
+            display(
+                self.df_results[
+                    [
+                        'target',
+                        'model',
+                        'holdout_test_accuracy',
+                        'holdout_test_f1',
+                        'holdout_test_roc_auc',
+                        'cv_test_accuracy_median',
+                        'cv_test_f1_median',
+                        'cv_test_roc_auc_median',
+                    ]
+                ].T
+            )
         
         # Save metrics and model
-        self.save_results(self.df_results)
-        self.save_model()
+        if save_model_and_metrics:
+            self.save_results(self.df_results)
+            self.save_model()
         
     
     def list2str(self, value):
