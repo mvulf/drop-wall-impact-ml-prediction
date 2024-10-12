@@ -9,11 +9,15 @@ sns.set_style('darkgrid')
 
 from IPython.display import display
 
+import sys
 import os
 from pathlib import Path
 import joblib
 
-
+sys.path.append(
+    '../'
+)
+import utils_functionality.sedimentation_calculation as sc
 
 """________DATA PREPARATION__________
 """
@@ -92,8 +96,76 @@ def create_dataframe(
     return df
 
 
+def extract_sediment_features(source_df):
+    # TODO: CALCULATE 'sedimentation_Re', 'sign_sedimentation_Re', 'sedimentation_Stk',
+    df = source_df.copy()
+    
+    # Sedimentation velocity and sedimentation Re!
+    df = df.apply(
+        get_sedimentation_velocity_and_Re,
+        axis=1
+    )
+    
+    df['sedimentation_Stk'] = df.apply(
+        get_stokes_number,
+        axis=1,
+    )
+
+    df = df.apply(
+        get_sedimentation_sign,
+        axis=1,
+        args=('sedimentation_Re',)
+    )
+    
+    return df
+
+
+def get_sedimentation_velocity_and_Re(row):
+    _, v_term, sedimentation_Re = sc.get_drop_volume_fraction(
+        time=1., # does not use for velocity
+        density_liquid=row['liquid_density'],
+        viscosity_liquid=row['viscosity'],
+        particle_mean_diameter=row['particle_mean_diameter'],
+        particle_liquid_density_ratio=row['particle_liquid_density_ratio'],
+        init_volume_fraction=row['init_volume_fraction'],
+        droplet_diameter=row['droplet_diameter'],
+        # verbose=True,
+    )
+    
+    row['sedimentation_velocity'] = v_term
+    row['sedimentation_Re'] = sedimentation_Re[0]
+    return row
+
+def get_stokes_number(row):
+    
+    rho_p = row['particle_density']
+    d_p = row['particle_mean_diameter']
+    v_term = row['sedimentation_velocity']
+    mu_l = row['viscosity']
+    D_drop = row['droplet_diameter']
+    
+    Stk = (
+        (rho_p*d_p**2*abs(v_term))
+        /(18*mu_l*D_drop)
+    )
+    return Stk
+
+# Add sign
+def get_sedimentation_sign(row, column='sedimentation_Re'):
+    sign_column = 'sign_'+column
+    row[sign_column] = row[column]
+    if row['sedimentation_velocity'] < 0.:
+        row[sign_column] *= -1
+    return row
+
+
 def extract_agg_features(source_df):
     df = source_df.copy()
+    
+    df['velocity'] = (
+        df['drag_velocity']
+        *np.cos(df['inclination'])
+    )
     
     Re_numerator = df['velocity'] * df['droplet_diameter'] * df['liquid_density']
     
@@ -120,8 +192,8 @@ def get_poly_df(source_df):
 
 def extract_features(source_df):
     df = source_df.copy()
-    # TODO: ADD extract_sediment_features!
     df = extract_agg_features(df)
+    df = extract_sediment_features(df)
     df = get_poly_df(df)
     
     return df
@@ -153,8 +225,9 @@ def get_contour_df(
     df_model,
     no_fragmentation_model_features:list=None,
     splashing_model_features:list=None,
-    velocity:np.ndarray=np.linspace(0.0, 7.0, 50),
-    particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
+    drag_velocity:np.ndarray=np.linspace(0.0, 6., 50),
+    # particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
+    particle_density:np.ndarray=np.linspace(400, 2300, 50),
     particle_mean_diameter:np.ndarray=np.linspace(20e-6, 400e-6, 50),
     const_params:list=[
         'wettability',
@@ -168,17 +241,19 @@ def get_contour_df(
         'viscosity',
     ],
     density_params:list=[
-        'particle_liquid_density_ratio'
+        # 'particle_density',
+        'particle_liquid_density_ratio',
     ],
     diameter_params:list=[
-        'particle_droplet_diameter_ratio', 
+        'particle_mean_diameter',
+        # 'particle_droplet_diameter_ratio', 
     ],
-    # TODO: CALCULATE 'sedimentation_Re', 'sign_sedimentation_Re', 'sedimentation_Stk',
     dynamic_params:list=[
         'velocity', 
         'Re', 
         'We', 
         'K',
+        'sedimentation_velocity',
         'sedimentation_Re',
         'sign_sedimentation_Re',
         'sedimentation_Stk',
@@ -188,12 +263,14 @@ def get_contour_df(
     df_model = df_model.copy()
 
     vel_dens_df = create_mesh_df(
-        velocity=velocity,
-        particle_liquid_density_ratio=particle_liquid_density_ratio
+        drag_velocity=drag_velocity,
+        # particle_liquid_density_ratio=particle_liquid_density_ratio,
+        particle_density=particle_density,
+        
     )
 
     vel_diam_df = create_mesh_df(
-        velocity=velocity,
+        drag_velocity=drag_velocity,
         particle_mean_diameter=particle_mean_diameter,
     )
 
@@ -219,6 +296,15 @@ def get_contour_df(
         ),
         variable_df=vel_dens_df
     )
+    dens_pred_df['particle_liquid_density_ratio'] = (
+        dens_pred_df['particle_density']
+        / dens_pred_df['liquid_density']
+        # / df_model['liquid_density'].median()
+    )
+    dens_pred_df['particle_droplet_diameter_ratio'] = (
+        dens_pred_df['particle_mean_diameter']
+        / dens_pred_df['droplet_diameter']
+    )
 
     diam_pred_df = create_dataframe(
         const_params=get_const_params(
@@ -229,9 +315,18 @@ def get_contour_df(
     )
     diam_pred_df['particle_droplet_diameter_ratio'] = (
         diam_pred_df['particle_mean_diameter']
-        / df_model['droplet_diameter'].median()
+        / diam_pred_df['droplet_diameter']
+        # / df_model['droplet_diameter'].median()
     )
-    diam_pred_df = diam_pred_df.drop('particle_mean_diameter', axis=1)
+    
+    diam_pred_df['particle_density'] = (
+        diam_pred_df['liquid_density']
+        * diam_pred_df['particle_liquid_density_ratio']
+        # / df_model['droplet_diameter'].median()
+    )
+    
+    # diam_pred_df = diam_pred_df.drop('particle_mean_diameter', axis=1)
+
 
     if set(diam_pred_df.columns) == set(dens_pred_df.columns):
         print('Dataframes are equal')
@@ -656,9 +751,10 @@ def plot_all_K_scatters(df):
         log_y=True,
     )
 
-    
+# TODO: Add plot sedimentation plots    
 
-def plot_final_plots(
+
+def plot_particle_properties_plots(
     dens_pred_df_res,
     diam_pred_df_res,
     scatter_df,
@@ -706,7 +802,7 @@ def plot_final_plots(
     );
 
     axes[0,0].set_title('Splashing classification on density');
-    axes[0,1].set_title('Bulk deformation classification on density');
+    axes[0,1].set_title('No fragmentation classification on density');
     
     y_feature_name = 'particle_droplet_diameter_ratio'
     y_label = '$d_p/D_{drop}$'
@@ -745,7 +841,7 @@ def plot_final_plots(
         ax.set_yticks(np.arange(0.01, 0.12, 0.02))
         
     axes[1,0].set_title('Splashing classification on diameter');
-    axes[1,1].set_title('Bulk deformation classification on diameter');
+    axes[1,1].set_title('No fragmentation classification on diameter');
     
     fig.suptitle(model_name)
     fig.tight_layout()
@@ -772,11 +868,14 @@ def plot_all_final_plots(
             model[target] = joblib.load(model_path)
             display(model_path)
             display(model[target])
+
+            # if 'catboostclassifier' in model_name:
+            #     model_features[target] = model[target][0].feature_names_
+            # else:
+            #     model_features[target] = model[target][0].feature_names_in_
+            # display(model_features[target])
             
-            if 'catboostclassifier' in model_name:
-                model_features[target] = model[target][0].feature_names_
-            else:
-                model_features[target] = model[target][0].feature_names_in_
+            model_features[target] = model[target][0].feature_names_in_
             display(model_features[target])
         
         # Prepare dataframes
@@ -845,12 +944,15 @@ def plot_all_level_plots(
             display(model_path)
             display(model[target])
             
-            if 'catboostclassifier' in model_name:
-                model_features[target] = model[target][0].feature_names_
-            else:
-                model_features[target] = model[target][0].feature_names_in_
+            # if 'catboostclassifier' in model_name:
+            #     model_features[target] = model[target][0].feature_names_
+            # else:
+            #     model_features[target] = model[target][0].feature_names_in_
+            
+            model_features[target] = model[target][0].feature_names_in_
             display(model_features[target])
             target_levels[target] = levels
+            
         
         # Prepare dataframes
         no_fragmentation_model_features = model_features['no_fragmentation']

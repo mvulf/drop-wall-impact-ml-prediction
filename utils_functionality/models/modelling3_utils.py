@@ -563,6 +563,7 @@ class InitialTransformer(BaseEstimator, TransformerMixin):
         self.log_features = log_features
     
     def fit(self, X, y=None):
+        self.feature_names_in_ = X.columns
         return self  # Nothing to fit here
     
     def transform(self, X):
