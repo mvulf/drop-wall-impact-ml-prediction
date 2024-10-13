@@ -221,6 +221,208 @@ def predict_all_proba(source_df, model_list):
     return df
 
 
+def get_sediment_contour_df(
+    df_model,
+    drag_velocity:np.ndarray=np.linspace(0.0, 6., 50),
+    # particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
+    sedimentation_Stk:np.ndarray=np.logspace(-10, -5, 50),
+    particle_mean_diameter:np.ndarray=np.linspace(20e-6, 400e-6, 50),
+    const_params:list=[
+        'wettability',
+        'inclination',
+        'relative_roughness',
+        'init_volume_fraction',
+        'volume_fraction',
+        'droplet_diameter',
+        'liquid_density',
+        'surface_tension',
+        'viscosity',
+    ],
+    density_params:list=[
+        # 'particle_density',
+        'particle_liquid_density_ratio',
+    ],
+    diameter_params:list=[
+        'particle_mean_diameter',
+        # 'particle_droplet_diameter_ratio', 
+    ],
+    dynamic_params:list=[
+        'velocity', 
+        'Re', 
+        'We', 
+        'K',
+        'sedimentation_velocity',
+        'sedimentation_Re',
+        'sign_sedimentation_Re',
+        'sedimentation_Stk',
+    ],
+    verbose:bool=True,
+):
+    df_model = df_model.copy()
+
+    vel_dens_df = create_mesh_df(
+        drag_velocity=drag_velocity,
+        # particle_liquid_density_ratio=particle_liquid_density_ratio,
+        particle_density=particle_density,
+        
+    )
+
+    vel_diam_df = create_mesh_df(
+        drag_velocity=drag_velocity,
+        particle_mean_diameter=particle_mean_diameter,
+    )
+
+    const_params_list_dens = const_params.copy()
+    const_params_list_dens.extend(diameter_params)
+    const_params_list_diam = const_params.copy()
+    const_params_list_diam.extend(density_params)
+
+    if verbose:
+        print('vel_dens_df')
+        display(vel_dens_df)
+        print('vel_diam_df')
+        display(vel_diam_df)
+        print('const_params_list_dens')
+        display(const_params_list_dens)
+        print('const_params_list_diam')
+        display(const_params_list_diam)
+
+    dens_pred_df = create_dataframe(
+        const_params=get_const_params(
+            df_model, 
+            const_params_list_dens
+        ),
+        variable_df=vel_dens_df
+    )
+    dens_pred_df['particle_liquid_density_ratio'] = (
+        dens_pred_df['particle_density']
+        / dens_pred_df['liquid_density']
+        # / df_model['liquid_density'].median()
+    )
+    dens_pred_df['particle_droplet_diameter_ratio'] = (
+        dens_pred_df['particle_mean_diameter']
+        / dens_pred_df['droplet_diameter']
+    )
+
+    diam_pred_df = create_dataframe(
+        const_params=get_const_params(
+            df_model, 
+            const_params_list_diam
+        ),
+        variable_df=vel_diam_df
+    )
+    diam_pred_df['particle_droplet_diameter_ratio'] = (
+        diam_pred_df['particle_mean_diameter']
+        / diam_pred_df['droplet_diameter']
+        # / df_model['droplet_diameter'].median()
+    )
+    
+    diam_pred_df['particle_density'] = (
+        diam_pred_df['liquid_density']
+        * diam_pred_df['particle_liquid_density_ratio']
+        # / df_model['droplet_diameter'].median()
+    )
+    
+    # diam_pred_df = diam_pred_df.drop('particle_mean_diameter', axis=1)
+
+
+    if set(diam_pred_df.columns) == set(dens_pred_df.columns):
+        print('Dataframes are equal')
+    else:
+        print('WARNING: Dataframes are NOT equal')
+    
+    # TODO: Check, what if velocity was corrected?
+    dens_pred_df = extract_features(dens_pred_df)
+    diam_pred_df = extract_features(diam_pred_df)
+
+    if verbose:
+        print('dens_pred_df after We, Re extraction')
+        dens_pred_df.info()
+        print('diam_pred_df after We, Re extraction')
+        diam_pred_df.info()
+        
+    print('Dataframes are prepared')
+    
+    return dens_pred_df, diam_pred_df
+
+
+def get_combined_contour_df(
+    df_model,
+    drag_velocity:np.ndarray=np.linspace(0.0, 10., 50),
+    particle_density:np.ndarray=np.linspace(100, 3_000, 50),
+    particle_mean_diameter:np.ndarray=np.linspace(20e-6, 400e-6, 50),
+    const_params:list=[
+        'wettability',
+        'inclination',
+        'relative_roughness',
+        'init_volume_fraction',
+        'volume_fraction',
+        'droplet_diameter',
+        'liquid_density',
+        'surface_tension',
+        'viscosity',
+    ],
+    density_params:list=[
+        'particle_density',
+        'particle_liquid_density_ratio',
+    ],
+    diameter_params:list=[
+        'particle_mean_diameter',
+        'particle_droplet_diameter_ratio', 
+    ],
+    dynamic_params:list=[
+        'velocity', 
+        'Re', 
+        'We', 
+        'K',
+        'sedimentation_velocity',
+        'sedimentation_Re',
+        'sign_sedimentation_Re',
+        'sedimentation_Stk',
+    ],
+    verbose:bool=True,
+):
+    df_model = df_model.copy()
+
+    vel_dens_diam_df = create_mesh_df(
+        drag_velocity=drag_velocity,
+        particle_density=particle_density,
+        particle_mean_diameter=particle_mean_diameter,
+        
+    )
+
+    if verbose:
+        print('vel_dens_diam_df')
+        display(vel_dens_diam_df)
+        print('const_params_list')
+        display(const_params)
+
+    df_pred = create_dataframe(
+        const_params=get_const_params(
+            df_model, 
+            const_params
+        ),
+        variable_df=vel_dens_diam_df
+    )
+    df_pred['particle_liquid_density_ratio'] = (
+        df_pred['particle_density']
+        / df_pred['liquid_density']
+        # / df_model['liquid_density'].median()
+    )
+    df_pred['particle_droplet_diameter_ratio'] = (
+        df_pred['particle_mean_diameter']
+        / df_pred['droplet_diameter']
+    )
+    
+    df_pred = extract_features(df_pred)
+
+    if verbose:
+        print('df_pred after feature extraction')
+        df_pred.info()
+    
+    return df_pred
+
+
 def get_contour_df(
     df_model,
     no_fragmentation_model_features:list=None,
@@ -613,7 +815,7 @@ def plot_K_contour_scatter(
     # Mesh Values
     x = contour_df['K'].unique()
     y = contour_df[y_feature_name].unique()
-    probas = contour_df[impact_type_name].values.reshape(x.size, y.size)
+    probas = contour_df[impact_type_name].values.reshape((y.size, x.size))
     
     contourfplot = ax.contourf(
         x,
