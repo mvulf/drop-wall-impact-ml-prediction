@@ -190,11 +190,17 @@ def get_poly_df(source_df):
     return df
 
 
-def extract_features(source_df):
+def extract_features(
+    source_df,
+    extract_sediment=True,
+    get_poly=True,
+):
     df = source_df.copy()
     df = extract_agg_features(df)
-    df = extract_sediment_features(df)
-    df = get_poly_df(df)
+    if extract_sediment:
+        df = extract_sediment_features(df)
+    if get_poly:
+        df = get_poly_df(df)
     
     return df
 
@@ -234,13 +240,14 @@ def get_sediment_contour_df(
         'init_volume_fraction',
         'volume_fraction',
         'droplet_diameter',
+        # 'particle_liquid_density_ratio',
         'liquid_density',
         'surface_tension',
         'viscosity',
     ],
-    density_params:list=[
+    Stk_params:list=[
         # 'particle_density',
-        'particle_liquid_density_ratio',
+        'sedimentation_Stk',
     ],
     diameter_params:list=[
         'particle_mean_diameter',
@@ -260,10 +267,10 @@ def get_sediment_contour_df(
 ):
     df_model = df_model.copy()
 
-    vel_dens_df = create_mesh_df(
+    vel_Stk_df = create_mesh_df(
         drag_velocity=drag_velocity,
         # particle_liquid_density_ratio=particle_liquid_density_ratio,
-        particle_density=particle_density,
+        sedimentation_Stk=sedimentation_Stk,
         
     )
 
@@ -272,36 +279,36 @@ def get_sediment_contour_df(
         particle_mean_diameter=particle_mean_diameter,
     )
 
-    const_params_list_dens = const_params.copy()
-    const_params_list_dens.extend(diameter_params)
+    const_params_list_Stk = const_params.copy()
+    const_params_list_Stk.extend(diameter_params)
     const_params_list_diam = const_params.copy()
-    const_params_list_diam.extend(density_params)
+    const_params_list_diam.extend(Stk_params)
 
     if verbose:
-        print('vel_dens_df')
-        display(vel_dens_df)
+        print('vel_Stk_df')
+        display(vel_Stk_df)
         print('vel_diam_df')
         display(vel_diam_df)
-        print('const_params_list_dens')
-        display(const_params_list_dens)
+        print('const_params_list_Stk')
+        display(const_params_list_Stk)
         print('const_params_list_diam')
         display(const_params_list_diam)
 
-    dens_pred_df = create_dataframe(
+    Stk_pred_df = create_dataframe(
         const_params=get_const_params(
             df_model, 
-            const_params_list_dens
+            const_params_list_Stk
         ),
-        variable_df=vel_dens_df
+        variable_df=vel_Stk_df
     )
-    dens_pred_df['particle_liquid_density_ratio'] = (
-        dens_pred_df['particle_density']
-        / dens_pred_df['liquid_density']
-        # / df_model['liquid_density'].median()
-    )
-    dens_pred_df['particle_droplet_diameter_ratio'] = (
-        dens_pred_df['particle_mean_diameter']
-        / dens_pred_df['droplet_diameter']
+    # Stk_pred_df['particle_liquid_density_ratio'] = (
+    #     Stk_pred_df['particle_density']
+    #     / Stk_pred_df['liquid_density']
+    #     # / df_model['liquid_density'].median()
+    # )
+    Stk_pred_df['particle_droplet_diameter_ratio'] = (
+        Stk_pred_df['particle_mean_diameter']
+        / Stk_pred_df['droplet_diameter']
     )
 
     diam_pred_df = create_dataframe(
@@ -317,33 +324,138 @@ def get_sediment_contour_df(
         # / df_model['droplet_diameter'].median()
     )
     
-    diam_pred_df['particle_density'] = (
-        diam_pred_df['liquid_density']
-        * diam_pred_df['particle_liquid_density_ratio']
-        # / df_model['droplet_diameter'].median()
-    )
+    # diam_pred_df['particle_density'] = (
+    #     diam_pred_df['liquid_density']
+    #     * diam_pred_df['particle_liquid_density_ratio']
+    #     # / df_model['droplet_diameter'].median()
+    # )
     
     # diam_pred_df = diam_pred_df.drop('particle_mean_diameter', axis=1)
 
 
-    if set(diam_pred_df.columns) == set(dens_pred_df.columns):
+    if set(diam_pred_df.columns) == set(Stk_pred_df.columns):
         print('Dataframes are equal')
     else:
         print('WARNING: Dataframes are NOT equal')
     
     # TODO: Check, what if velocity was corrected?
-    dens_pred_df = extract_features(dens_pred_df)
-    diam_pred_df = extract_features(diam_pred_df)
+    Stk_pred_df = extract_features(Stk_pred_df, extract_sediment=False)
+    diam_pred_df = extract_features(diam_pred_df, extract_sediment=False)
 
     if verbose:
-        print('dens_pred_df after We, Re extraction')
-        dens_pred_df.info()
+        print('Stk_pred_df after We, Re extraction')
+        Stk_pred_df.info()
         print('diam_pred_df after We, Re extraction')
         diam_pred_df.info()
         
     print('Dataframes are prepared')
     
-    return dens_pred_df, diam_pred_df
+    return Stk_pred_df, diam_pred_df
+
+
+
+def get_phi_roughness_contour_df(
+    df_model,
+    drag_velocity:np.ndarray=np.linspace(0.0, 6., 50),
+    # particle_liquid_density_ratio:np.ndarray=np.linspace(0.3, 1.9, 50),
+    init_volume_fraction:np.ndarray=np.linspace(0.02, 0.15, 50),
+    relative_roughness:np.ndarray=np.logspace(-5, -2, 50),
+    const_params:list=[
+        'wettability',
+        'inclination',
+        # 'relative_roughness',
+        # 'init_volume_fraction',
+        # 'volume_fraction',
+        'particle_liquid_density_ratio',
+        'particle_droplet_diameter_ratio',
+        'droplet_diameter',
+        'liquid_density',
+        'surface_tension',
+        'viscosity',
+    ],
+    volume_fraction_params:list=[
+        # 'particle_density',
+        'init_volume_fraction',
+    ],
+    roughness_params:list=[
+        'relative_roughness',
+        # 'particle_droplet_diameter_ratio', 
+    ],
+    verbose:bool=True,
+):
+    df_model = df_model.copy()
+
+    vel_vol_frac_df = create_mesh_df(
+        drag_velocity=drag_velocity,
+        # particle_liquid_density_ratio=particle_liquid_density_ratio,
+        init_volume_fraction=init_volume_fraction,   
+    )
+
+    vel_rough_df = create_mesh_df(
+        drag_velocity=drag_velocity,
+        relative_roughness=relative_roughness,
+    )
+
+    const_params_list_vol_frac = const_params.copy()
+    const_params_list_vol_frac.extend(roughness_params)
+    const_params_list_rough = const_params.copy()
+    const_params_list_rough.extend(volume_fraction_params)
+
+    vol_frac_pred_df = create_dataframe(
+        const_params=get_const_params(
+            df_model, 
+            const_params_list_vol_frac
+        ),
+        variable_df=vel_vol_frac_df
+    )
+    vol_frac_pred_df['particle_mean_diameter'] = (
+        vol_frac_pred_df['droplet_diameter']
+        * vol_frac_pred_df['particle_droplet_diameter_ratio']
+    )
+    vol_frac_pred_df['particle_density'] = (
+        vol_frac_pred_df['liquid_density']
+        * vol_frac_pred_df['particle_liquid_density_ratio']
+    )
+
+    rough_pred_df = create_dataframe(
+        const_params=get_const_params(
+            df_model, 
+            const_params_list_rough
+        ),
+        variable_df=vel_rough_df
+    )
+    rough_pred_df['particle_mean_diameter'] = (
+        rough_pred_df['droplet_diameter']
+        * rough_pred_df['particle_droplet_diameter_ratio']
+    )
+    rough_pred_df['particle_density'] = (
+        rough_pred_df['liquid_density']
+        * rough_pred_df['particle_liquid_density_ratio']
+    )
+    
+    vol_frac_pred_df['volume_fraction'] =\
+        vol_frac_pred_df['init_volume_fraction']
+    rough_pred_df['volume_fraction'] =\
+        rough_pred_df['init_volume_fraction']
+
+    if set(vol_frac_pred_df.columns) == set(rough_pred_df.columns):
+        print('Dataframes are equal')
+    else:
+        print('WARNING: Dataframes are NOT equal')
+    
+    
+    rough_pred_df = extract_features(rough_pred_df, get_poly=False)
+    vol_frac_pred_df = extract_features(vol_frac_pred_df, get_poly=False)
+
+    if verbose:
+        print('vol_frac_pred_df after We, Re extraction')
+        vol_frac_pred_df.info()
+        print('rough_pred_df after We, Re extraction')
+        rough_pred_df.info()
+        
+    print('Dataframes are prepared')
+    
+    return vol_frac_pred_df, rough_pred_df
 
 
 def get_combined_contour_df(
