@@ -557,8 +557,7 @@ class StatsModelsEstimator(BaseEstimator):
 
 
 class DecisionStumpEstimator(BaseEstimator, ClassifierMixin):
-    def __init__(self, threshold, less_sign=True, **init_params):
-        self.threshold = threshold
+    def __init__(self, less_sign=True, **init_params):
         self.less_sign = less_sign
 
     def fit(self, X, y, **fit_params):
@@ -566,18 +565,21 @@ class DecisionStumpEstimator(BaseEstimator, ClassifierMixin):
         return self
 
     def predict(self, X, **predict_params):
+        kl = (649 + 3.76 / (X['relative_roughness'] ** 0.63)) ** (5/8)
         if self.less_sign:
-            y_pred = np.where(X["K"] < self.threshold, 1, 0)
+            y_pred = np.where(X["K"] < kl, 1, 0)
         else:
-            y_pred = np.where(X["K"] >= self.threshold, 1, 0)
+            y_pred = np.where(X["K"] >= kl, 1, 0)
         return y_pred
 
     def predict_proba(self, X):
         pred = self.predict(X)
-        proba = np.zeros((len(pred), len(self.classes_)))
-        for i, cls in enumerate(self.classes_):
-            proba[:, i] = (pred == cls).astype(int)
-        return proba
+        return np.vstack([1 - pred, pred]).T
+        # pred = self.predict(X)
+        # proba = np.zeros((len(pred), len(self.classes_)))
+        # for i, cls in enumerate(self.classes_):
+        #     proba[:, i] = (pred == cls).astype(int)
+        # return proba
 
 
 # Custom transformer to convert NumPy array to DataFrame with feature names
