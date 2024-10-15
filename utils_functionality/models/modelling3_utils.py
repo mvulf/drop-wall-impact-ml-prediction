@@ -8,7 +8,7 @@ import joblib
 
 from collections.abc import Iterable
 
-from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.compose import ColumnTransformer
@@ -162,7 +162,10 @@ class MLPipeline:
         
         if estimator_class_name == 'StatsModelsEstimator':
             estimator_class_name = 'Logit'
-        
+
+        if estimator_class_name == "DecisionStumpEstimator":
+            estimator_class_name = "DecisionStump"
+
         self.model_name = '_'.join(
             [estimator_class_name, self._params['target']]
         )
@@ -550,8 +553,31 @@ class StatsModelsEstimator(BaseEstimator):
         )
         y_pred_proba = np.hstack([1 - prob, prob])
         # y_pred_proba = prob
-        
         return y_pred_proba
+
+
+class DecisionStumpEstimator(BaseEstimator, ClassifierMixin):
+    def __init__(self, threshold, less_sign=True, **init_params):
+        self.threshold = threshold
+        self.less_sign = less_sign
+
+    def fit(self, X, y, **fit_params):
+        self.classes_ = np.unique(y)
+        return self
+
+    def predict(self, X, **predict_params):
+        if self.less_sign:
+            y_pred = np.where(X["K"] < self.threshold, 1, 0)
+        else:
+            y_pred = np.where(X["K"] >= self.threshold, 1, 0)
+        return y_pred
+
+    def predict_proba(self, X):
+        pred = self.predict(X)
+        proba = np.zeros((len(pred), len(self.classes_)))
+        for i, cls in enumerate(self.classes_):
+            proba[:, i] = (pred == cls).astype(int)
+        return proba
 
 
 # Custom transformer to convert NumPy array to DataFrame with feature names
