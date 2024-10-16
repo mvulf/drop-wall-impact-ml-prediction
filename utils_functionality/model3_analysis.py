@@ -1381,6 +1381,7 @@ def plot_K_level(
     ax:mpl.axes.Axes,
     color,
     levels_contour=[0.5],
+    linestyle=None
 ):
     # Mesh Values
     x = contour_df['K'].unique()
@@ -1395,6 +1396,7 @@ def plot_K_level(
         levels=levels_contour,
         vmin=0.,
         vmax=1.,
+        linestyles=linestyle,
     )
     
     ax.set_xlabel('$K$')
