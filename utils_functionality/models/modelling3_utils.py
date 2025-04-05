@@ -18,7 +18,8 @@ from sklearn.metrics import (
     recall_score, 
     f1_score, 
     accuracy_score, 
-    roc_auc_score
+    roc_auc_score,
+    balanced_accuracy_score
 )
 from sklearn.model_selection import cross_validate, StratifiedKFold
 
@@ -173,12 +174,18 @@ class MLPipeline:
             self.model_name = '_'.join([self.model_name, self.model_postfix])
         
         # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
+        # Metrics with pos_label=1 are equal to regular methods. 
         self.scoring_metrics = {
             'accuracy': make_scorer(accuracy_score),
             'precision': make_scorer(precision_score),
             'recall': make_scorer(recall_score),
             'f1': make_scorer(f1_score),
             'roc_auc': make_scorer(roc_auc_score, needs_proba=True),
+            'f1_macro': make_scorer(f1_score, average='macro'),
+            'accuracy_balanced': make_scorer(balanced_accuracy_score),
+            'precision_class_0': make_scorer(precision_score, pos_label=0),
+            'recall_class_0': make_scorer(recall_score, pos_label=0),
+            'f1_class_0': make_scorer(f1_score, pos_label=0)
         }
         
         self.metric_results = []
@@ -292,6 +299,11 @@ class MLPipeline:
                         'cv_test_accuracy_median',
                         'cv_test_f1_median',
                         'cv_test_roc_auc_median',
+                        'cv_test_f1_macro_median',
+                        'cv_test_accuracy_balanced_median',
+                        'cv_test_precision_class_0_median',
+                        'cv_test_recall_class_0_median',
+                        'cv_test_f1_class_0_median'
                     ]
                 ].T
             )
