@@ -116,6 +116,8 @@ class MLPipeline:
             'models_folder': models_folder,
             'metrics_file': metrics_file,
         }
+        if add_smote:
+            model_postfix = 'smote_' + model_postfix
         self.model_postfix = model_postfix
         self.verbose = verbose
         
@@ -298,9 +300,6 @@ class MLPipeline:
         # ADD STATS
         cv_columns = [x for x in df.columns if x.startswith('cv_')]
         for cv_column in cv_columns:
-            # NOTE: No need for numpy
-            # df[cv_column] = df[cv_column].apply(
-            #     lambda x: list(map(float, x.split(', '))))
             df[cv_column + '_std'] = df[cv_column].apply(lambda x: np.std(x))
             df[cv_column + '_mean'] = df[cv_column].apply(lambda x: np.mean(x))
             df[cv_column + '_median'] = df[cv_column].apply(
@@ -318,14 +317,16 @@ class MLPipeline:
                     [
                         'target',
                         'model',
-                        'holdout_test_accuracy',
-                        'holdout_test_f1',
+                        'holdout_test_f1_macro',
+                        'holdout_test_accuracy_balanced',
                         'holdout_test_roc_auc',
-                        'cv_test_accuracy_median',
-                        'cv_test_f1_median',
-                        'cv_test_roc_auc_median',
+                        'holdout_test_f1',
+                        'holdout_test_accuracy',
                         'cv_test_f1_macro_median',
                         'cv_test_accuracy_balanced_median',
+                        'cv_test_roc_auc_median',
+                        'cv_test_f1_median',
+                        'cv_test_accuracy_median',
                         'cv_test_precision_class_0_median',
                         'cv_test_recall_class_0_median',
                         'cv_test_f1_class_0_median'
@@ -352,7 +353,6 @@ class MLPipeline:
         
         df_results_excel = df_results.applymap(
             self.list2str
-            # lambda x: ', '.join(x) if isinstance(x, Iterable) else x
         )
         
         filepath = Path(
