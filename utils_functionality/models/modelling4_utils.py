@@ -82,6 +82,7 @@ class MLPipeline:
         smote_params:dict=None,
         random_state=RANDOM_STATE,
         verbose=True,
+        scoring_metrics=None,
         path_results=Path("..", "results"),
         models_folder="models_modelling4",
         metrics_file="metrics_modelling4.xlsx",
@@ -196,22 +197,65 @@ class MLPipeline:
         if self.model_postfix:
             self.model_name = "_".join([self.model_name, self.model_postfix])
 
-        # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
-        # Metrics with pos_label=1 are equal to regular methods.
-        self.scoring_metrics = {
-            "accuracy": make_scorer(accuracy_score),
-            "precision": make_scorer(precision_score),
-            "recall": make_scorer(recall_score),
-            "f1": make_scorer(f1_score),
-            "roc_auc": make_scorer(roc_auc_score, needs_proba=True),
-            "f1_macro": make_scorer(f1_score, average="macro"),
-            "accuracy_balanced": make_scorer(balanced_accuracy_score),
-            "precision_class_0": make_scorer(precision_score, pos_label=0),
-            "recall_class_0": make_scorer(recall_score, pos_label=0),
-            "f1_class_0": make_scorer(f1_score, pos_label=0),
-        }
+        if scoring_metrics is None:
+            # NOTE: in new sklearn versions use response_method parameter instead of needs_proba
+            # Metrics with pos_label=1 are equal to regular methods.
+            self.scoring_metrics = {
+                "accuracy": make_scorer(accuracy_score),
+                "precision": make_scorer(precision_score),
+                "recall": make_scorer(recall_score),
+                "f1": make_scorer(f1_score),
+                "roc_auc": make_scorer(roc_auc_score, needs_proba=True),
+                "f1_macro": make_scorer(f1_score, average="macro"),
+                "accuracy_balanced": make_scorer(balanced_accuracy_score),
+                "precision_class_0": make_scorer(precision_score, pos_label=0),
+                "recall_class_0": make_scorer(recall_score, pos_label=0),
+                "f1_class_0": make_scorer(f1_score, pos_label=0),
+            }
+        else:
+            self.scoring_metrics = scoring_metrics
 
         self.metric_results = []
+
+    def step(
+        self,
+        estimator,
+        add_smote=None,
+        is_smotenc=None,
+        smote_params=None,
+    ):
+        # Update pipeline params (if provided)
+        self._pipeline_params['estimator'] = estimator
+        if add_smote is not None:
+            self._pipeline_params['add_smote'] = add_smote
+        if is_smotenc is not None:
+            self._pipeline_params['is_smotenc'] = is_smotenc
+        if smote_params is not None:
+            self._pipeline_params['smote_params'] = smote_params
+            
+        # Create full pipeline
+        self.pipe = _create_pipeline(**self._pipeline_params)
+        
+        X_train, y_train = self.get_X_y(self.train) # train dataset
+        
+        metrics = self.get_cv_metrics(
+            X=X_train,
+            y=y_train,
+            cv_folds=self._params["cv_folds"],
+            random_state=self._pipeline_params['random_state'],
+            type="cv",
+        )
+        
+        self.metric_results.append(
+            metrics
+        )
+        
+        # Get median from CV metric on train set
+        score = np.median(
+            metrics['test_' + list(self.scoring_metrics.keys())[-1]]
+        )
+
+        return score # score
 
     def run(
         self,
@@ -221,9 +265,9 @@ class MLPipeline:
     ):
 
         # Split X, y for fitting and predicting
-        X_train, y_train = self.get_X_y(self.train)
-        X_test, y_test = self.get_X_y(self.test)
-        X, y = self.get_X_y(self.full_df)
+        X_train, y_train = self.get_X_y(self.train) # train dataset
+        X_test, y_test = self.get_X_y(self.test) # holdout test
+        X, y = self.get_X_y(self.full_df) # full dataset
 
         # Conduct cross-validation
         metric_results_list = []
