@@ -44,6 +44,7 @@ class MLPipeline:
         *,
         target,
         estimator,
+        estimator_params:dict=None, # estimator params are not passed to the estimator class. They are logged in the pipeline params to be able to log them in the results
         model_postfix="",
         features_to_drop: tuple = (
             "Re",
@@ -147,6 +148,7 @@ class MLPipeline:
         # Prepare pipeline-params
         self._pipeline_params = {
             "estimator": estimator,
+            "estimator_params": estimator_params,
             "source_features": source_features,
             "features_to_drop": features_to_drop,
             "log_features": _drop_features(log_features, features_to_drop),
@@ -215,7 +217,9 @@ class MLPipeline:
         else:
             self.scoring_metrics = scoring_metrics
 
-        self.metric_results = []
+        self.step_metrics = [] # for step 
+        self.metric_results = [] # for run
+        
 
     def step(
         self,
@@ -223,6 +227,7 @@ class MLPipeline:
         add_smote=None,
         is_smotenc=None,
         smote_params=None,
+        verbose=False,
     ):
         # Update pipeline params (if provided)
         self._pipeline_params['estimator'] = estimator
@@ -232,6 +237,7 @@ class MLPipeline:
             self._pipeline_params['is_smotenc'] = is_smotenc
         if smote_params is not None:
             self._pipeline_params['smote_params'] = smote_params
+        self._pipeline_params['verbose'] = verbose
             
         # Create full pipeline
         self.pipe = _create_pipeline(**self._pipeline_params)
@@ -246,7 +252,7 @@ class MLPipeline:
             type="cv",
         )
         
-        self.metric_results.append(
+        self.step_metrics.append(
             metrics
         )
         
