@@ -12,7 +12,7 @@ from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 
 # from sklearn.pipeline import Pipeline
 from imblearn.pipeline import Pipeline
-from imblearn.over_sampling import SMOTE
+from imblearn.over_sampling import SMOTE, SMOTENC
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import (
@@ -78,6 +78,8 @@ class MLPipeline:
         add_df_transformer=True,
         add_const=False,
         add_smote=True,
+        is_smotenc=False,
+        smote_params:dict=None,
         random_state=RANDOM_STATE,
         verbose=True,
         path_results=Path("..", "results"),
@@ -115,7 +117,10 @@ class MLPipeline:
             "metrics_file": metrics_file,
         }
         if add_smote:
-            model_postfix = "smote_" + model_postfix
+            smote_type = 'smote'
+            if is_smotenc:
+                smote_type += 'nc'
+            model_postfix = '_'.join([smote_type, model_postfix])
         self.model_postfix = model_postfix
         self.verbose = verbose
 
@@ -148,12 +153,14 @@ class MLPipeline:
             "passthrough_features": _drop_features(
                 passthrough_features, features_to_drop
             ),
-            "std_features": std_features,
-            "add_init_transformer": add_init_transformer,
-            "add_df_transformer": add_df_transformer,
-            "add_const": add_const,
-            "add_smote": add_smote,
-            "random_state": random_state,
+            'std_features': std_features,
+            'add_init_transformer': add_init_transformer,
+            'add_df_transformer': add_df_transformer,
+            'add_const': add_const,
+            'add_smote': add_smote,
+            'is_smotenc': is_smotenc,
+            'smote_params': smote_params,
+            'random_state': random_state,
         }
         # Prepare STD-features
         if std_features is None:
@@ -478,6 +485,8 @@ def _create_pipeline(
     add_df_transformer=True,
     add_const=False,
     add_smote=True,
+    is_smotenc=False,
+    smote_params:dict=None,
     random_state=RANDOM_STATE,
     std_features=None,  # If none, this features would be generated automatically
     verbose=True,
@@ -512,10 +521,32 @@ def _create_pipeline(
         pipeline.append(("df_transformer", df_transformer))
 
     if add_smote:
-        pipeline.append(("smote", SMOTE(random_state=random_state)))
-
-    pipeline.append(("estimator", estimator))
-
+        smote_params = smote_params or {} # If None, use default SMOTE[NC] parameters
+        
+        if is_smotenc:
+            smote_name = 'smotenc'
+            smote_method = SMOTENC
+        else:
+            smote_name = 'smote'
+            smote_method = SMOTE
+        
+        pipeline.append(
+            (
+                smote_name, 
+                smote_method(
+                    # If random_state is in smote_params, it will overwrite the random_state
+                    **{
+                        'random_state': random_state,
+                        **smote_params,   
+                    }
+                )
+            )
+        )
+    
+    pipeline.append(
+        ('estimator', estimator)
+    )
+    
     return Pipeline(pipeline)
 
 
