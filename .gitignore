@@ -4,3 +4,5 @@
 */__pycache__/*
 *.pyc
 *myenv/
+
+**/__pycache__/
