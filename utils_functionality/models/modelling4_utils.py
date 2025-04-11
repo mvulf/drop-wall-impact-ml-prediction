@@ -6,7 +6,10 @@ import sys
 import os
 import joblib
 
+from tqdm import tqdm
+
 from collections.abc import Iterable
+from functools import partial
 
 from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 
@@ -24,10 +27,12 @@ from sklearn.metrics import (
     roc_auc_score,
     balanced_accuracy_score,
 )
-from sklearn.model_selection import cross_validate, StratifiedKFold
+from sklearn.model_selection import cross_validate, StratifiedKFold, ParameterGrid
 
 import statsmodels.api as sm
 from statsmodels.api import Logit
+
+import optuna
 
 from IPython.display import display
 
@@ -37,6 +42,89 @@ from utils_functionality.split_utils.split_tools import load_df, get_train_test
 
 RANDOM_STATE = 42
 
+
+class OptunaOptimizer:
+    def __init__(
+        self, 
+        objective:callable,
+        study_name:str,
+        direction:str="maximize",
+        seed:int=RANDOM_STATE,
+    ):
+        """Initialize the optimizer.
+
+        Args:
+            objective: The objective function to optimize.
+            study_name: The name of the study.
+            direction: The direction of optimization (maximize or minimize).
+        """
+        self.objective = objective
+        self.study_name = study_name
+        self.direction = direction
+        
+        self.study = optuna.create_study(
+            study_name=study_name,
+            direction=direction,
+            sampler=optuna.samplers.TPESampler(
+                seed=seed,
+            )
+        )
+        
+    def optimize(self, n_trials:int):
+        """Optimize the objective function.
+
+        Args:
+            n_trials: The number of trials to run for optimization.
+
+        Returns:
+            The study object containing the optimization results.
+        """
+        self.study.optimize(
+            self.objective,
+            n_trials=n_trials,
+        )
+
+
+class GridSearchOptimizer:
+    def __init__(
+        self,
+        objective:callable,
+        param_grid:dict,
+        verbose:bool=True,
+    ):
+        """
+        Initialize the manual grid search optimizer.
+
+        Args:
+            objective: A callable like `objective(params_dict)` returning a score.
+            param_grid: A dict of parameters to explore (like in sklearn).
+        """
+        self.objective = objective
+        self.param_grid = list(ParameterGrid(param_grid))
+        self.results = []
+        self.best_score = -float('inf')
+        self.best_params = None
+        self.verbose = verbose
+        
+    def optimize(self):
+        """Run the grid search over the parameter space."""
+        
+        for i, params in enumerate(
+            tqdm(self.param_grid, desc="Optimizing parameters")
+        ):
+            score = self.objective(params)
+            if score > self.best_score:
+                self.best_score = score
+                self.best_params = params
+            self.results.append((score, params))
+            if self.verbose:
+                print(f"Progress: {i+1}/{len(self.param_grid)}.\tScore: {score}.\tConsidered params: {params}.")
+        
+        if self.verbose:
+            print('-'*85)
+            print(f"Best score: {self.best_score}")
+            print(f"Best params: {self.best_params}")
+            print('-'*85)
 
 class MLPipeline:
     def __init__(
@@ -220,7 +308,6 @@ class MLPipeline:
         self.step_metrics = [] # for step 
         self.metric_results = [] # for run
         
-
     def step(
         self,
         estimator,
@@ -809,6 +896,69 @@ def _drop_features(features, features_to_drop, inplace=False):
     if inplace:
         return
     return tuple(features)
+
+
+def update_smote_params(
+    ml_pipe:MLPipeline,
+    suggested_params:dict,
+) -> dict:
+    """Upate the SMOTE parameters based the parameters from pipeline.
+
+    Args:
+        ml_pipe: An instance of MLPipeline used for model training and evaluation.
+        suggested_params: A dictionary containing the suggested SMOTE-hyperparameters.
+    
+    Returns:
+        A dictionary containing the estimator parameters.
+    """
+    smote_params = ml_pipe._pipeline_params['smote_params']
+    smote_params.update(suggested_params)
+    return smote_params
+
+def smote_objective(trial:optuna.trial.Trial, ml_pipe:MLPipeline):
+    """Objective function for SMOTE optimization using Optuna.
+    NOTE: With this parameters for SMOTE no need to use Optuna. GridSearchOptimizer is enough.
+
+    Args:
+        trial: An Optuna trial object used to suggest hyperparameters.
+        ml_pipe: An instance of MLPipeline used for training and evaluation.
+    """
+    
+    suggested_smote_params = {
+        'k_neighbors': trial.suggest_int('k_neighbors', 3, 10),
+        'sampling_strategy': trial.suggest_categorical(
+            'sampling_strategy', [0.6, 0.7, 0.8, 0.9, 1.0]
+        ),
+    }
+    
+    smote_params = update_smote_params(ml_pipe, suggested_smote_params)
+    
+    # Conduct the step with the suggested SMOTE parameters and default estimator
+    score = ml_pipe.step(
+        estimator=ml_pipe._pipeline_params['estimator'],
+        smote_params=smote_params,
+    )
+    
+    return score
+
+
+def pure_smote_objective(suggested_smote_params, ml_pipe:MLPipeline):
+    """Objective function for SMOTE optimization using Optuna.
+
+    Args:
+        suggested_smote_params: Parameters for SMOTE.
+        ml_pipe: An instance of MLPipeline used for training and evaluation.
+    """
+    
+    smote_params = update_smote_params(ml_pipe, suggested_smote_params)
+    
+    # Conduct the step with the suggested SMOTE parameters and default estimator
+    score = ml_pipe.step(
+        estimator=ml_pipe._pipeline_params['estimator'],
+        smote_params=smote_params,
+    )
+    
+    return score
 
 
 if __name__ == "__main__":
