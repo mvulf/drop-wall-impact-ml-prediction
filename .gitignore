@@ -4,5 +4,5 @@
 */__pycache__/*
 *.pyc
 *myenv/
-
+*myenv_mpl/
 **/__pycache__/
