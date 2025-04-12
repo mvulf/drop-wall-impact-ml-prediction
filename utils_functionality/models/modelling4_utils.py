@@ -419,7 +419,11 @@ class MLPipeline:
         df["dataset"] = self._params["dataset_filename"]
         df["target"] = self._params["target"]
         df["model"] = self.model_name
-        df["params"] = str(self._pipeline_params)
+        
+        # Replace estimator with its name
+        params_dict = self._pipeline_params.copy()
+        params_dict['estimator'] = params_dict['estimator'].__class__.__name__
+        df["params"] = str(params_dict)
 
         df = pd.concat(
             (
