@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 
@@ -5,6 +6,8 @@ from pathlib import Path
 import sys
 import os
 import joblib
+
+import inspect
 
 from tqdm import tqdm
 
@@ -37,7 +40,6 @@ import optuna
 from IPython.display import display
 
 sys.path.append("../")
-# from utils_functionality.split_utils.split_tools import load_df, get_train_test
 from utils_functionality.split_utils.split_tools import load_df, get_train_test
 
 RANDOM_STATE = 42
@@ -131,8 +133,8 @@ class MLPipeline:
         self,
         *,
         target,
-        estimator,
-        estimator_params:dict=None, # estimator params are not passed to the estimator class. They are logged in the pipeline params to be able to log them in the results
+        estimator, # Estimator CLASS
+        estimator_params:dict=None, # They would be passed to the estimator class
         model_postfix="",
         features_to_drop: tuple = (
             "Re",
@@ -311,6 +313,7 @@ class MLPipeline:
     def step(
         self,
         estimator,
+        estimator_params:dict=None,
         add_smote=None,
         is_smotenc=None,
         smote_params=None,
@@ -318,6 +321,8 @@ class MLPipeline:
     ):
         # Update pipeline params (if provided)
         self._pipeline_params['estimator'] = estimator
+        if estimator_params is not None:
+            self._pipeline_params['estimator_params'] = estimator_params
         if add_smote is not None:
             self._pipeline_params['add_smote'] = add_smote
         if is_smotenc is not None:
@@ -422,7 +427,13 @@ class MLPipeline:
         
         # Replace estimator with its name
         params_dict = self._pipeline_params.copy()
-        params_dict['estimator'] = params_dict['estimator'].__class__.__name__
+        params_dict['estimator'] = params_dict['estimator'].__name__
+        # If model_class is in params_dict['estimator_params'], 
+        # replace model_class in estimator_params with its name
+        if 'model_class' in params_dict['estimator_params']:
+            params_dict['estimator_params']['model_class'] = (
+                params_dict['estimator_params']['model_class'].__name__
+            )
         df["params"] = str(params_dict)
 
         df = pd.concat(
@@ -616,7 +627,7 @@ class MLPipeline:
 
 def _create_pipeline(
     *,
-    estimator,
+    estimator, # TODO: and init estimator here with these params! Add random_state here with check has_random_state and apply init_with_random_state!
     # source_features,
     # features_to_drop,
     minmax_features,
@@ -625,6 +636,7 @@ def _create_pipeline(
     add_init_transformer=True,
     add_df_transformer=True,
     add_const=False,
+    estimator_params:dict=None,
     add_smote=True,
     is_smotenc=False,
     smote_params:dict=None,
@@ -685,16 +697,39 @@ def _create_pipeline(
         )
     
     pipeline.append(
-        ('estimator', estimator)
+        (
+            'estimator', 
+            init_with_random_state(estimator, random_state, **estimator_params)
+        )
     )
     
     return Pipeline(pipeline)
+
+
+def has_random_state(cls):
+    """Check if the class (of the estimator) has a random_state parameter in its constructor."""
+    try:
+        sig = inspect.signature(cls.__init__)
+        return 'random_state' in sig.parameters
+    except (TypeError, ValueError):
+        print(f'[WARNING] No signature was found in {cls} constructor (__init__)')
+        return False
+
+def init_with_random_state(cls, random_state, **estimator_params):
+    """Initialize the estimator with a random state."""
+    if has_random_state(cls):
+        estimator_params = {
+            'random_state': random_state,
+            **estimator_params,
+        } # If random_state is in estimator_params, it will overwrite the random_state
+    return cls(**estimator_params)
 
 
 # Wrapper for Statsmodel
 class StatsModelsEstimator(BaseEstimator):
     def __init__(self, model_class, **init_params):
         self.model_class = model_class
+        self.__name__ = model_class.__name__
         self.init_params = init_params
 
     def fit(self, X, y, **fit_params):
@@ -728,6 +763,7 @@ class StatsModelsEstimator(BaseEstimator):
 class DecisionStumpEstimator(BaseEstimator, ClassifierMixin):
     def __init__(self, less_sign=True, **init_params):
         self.less_sign = less_sign
+        self.__name__ = 'DecisionStumpEstimator'
 
     def fit(self, X, y, **fit_params):
         self.classes_ = np.unique(y)
@@ -966,11 +1002,15 @@ def pure_smote_objective(suggested_smote_params, ml_pipe:MLPipeline):
 
 
 if __name__ == "__main__":
-    estimator = StatsModelsEstimator(Logit)
+    estimator = StatsModelsEstimator
+    estimator_params = {
+        'model_class': Logit,
+    }
 
     ml_pipe = MLPipeline(
         target="splashing",
         estimator=estimator,
+        estimator_params=estimator_params,
         features_to_drop=(
             "Re",
             "We",
@@ -987,4 +1027,6 @@ if __name__ == "__main__":
         ),
     )
 
-    ml_pipe.run()
+    ml_pipe.run(
+        save_model_and_metrics=False,
+    )
