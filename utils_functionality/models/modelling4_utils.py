@@ -69,7 +69,7 @@ class OptunaOptimizer:
             direction=direction,
             sampler=optuna.samplers.TPESampler(
                 seed=seed,
-            )
+            ),
         )
         
     def optimize(self, n_trials:int):
@@ -179,6 +179,12 @@ class MLPipeline:
         models_folder="models_modelling4",
         metrics_file="metrics_modelling4.xlsx",
     ):
+        # Copy estimator_params to base_estimator_params for update_estimator_params
+        if not(estimator_params is None):
+            base_estimator_params = estimator_params.copy()
+        else:
+            base_estimator_params = {}
+            
         # Add features choice depending on the target
         if minmax_features is None:
             if target == "splashing":
@@ -241,6 +247,7 @@ class MLPipeline:
         self._pipeline_params = {
             "estimator": estimator,
             "estimator_params": estimator_params,
+            "base_estimator_params": base_estimator_params,
             "source_features": source_features,
             "features_to_drop": features_to_drop,
             "log_features": _drop_features(log_features, features_to_drop),
@@ -548,7 +555,7 @@ class MLPipeline:
         cv_folds=7,
         random_state=None,
         shuffle=True,
-        type: str = "cv",
+        type:str="cv",
         verbose=True,
         fmt=".4f",
     ):
@@ -961,7 +968,7 @@ def update_estimator_params(
     Returns:
         A dictionary containing the estimator parameters.
     """
-    estimator_params = ml_pipe._pipeline_params['estimator_params']
+    estimator_params = ml_pipe._pipeline_params['base_estimator_params'].copy()
     estimator_params.update(suggested_params)
     return estimator_params
 
