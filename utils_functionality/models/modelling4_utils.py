@@ -696,6 +696,7 @@ def _create_pipeline(
             )
         )
     
+    estimator_params = estimator_params or {}
     pipeline.append(
         (
             'estimator', 
