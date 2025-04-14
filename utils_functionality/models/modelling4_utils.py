@@ -174,6 +174,7 @@ class MLPipeline:
         random_state=RANDOM_STATE,
         verbose=True,
         scoring_metrics=None,
+        step_scoring_average:str="median",
         path_results=Path("..", "results"),
         models_folder="models_modelling4",
         metrics_file="metrics_modelling4.xlsx",
@@ -204,6 +205,7 @@ class MLPipeline:
             "path_data": path_data,
             "target_set": target_set,
             "cv_folds": cv_folds,
+            "step_scoring_average": step_scoring_average,
             "path_results": path_results,
             "models_folder": models_folder,
             "metrics_file": metrics_file,
@@ -348,10 +350,17 @@ class MLPipeline:
             metrics
         )
         
-        # Get median from CV metric on train set
-        score = np.median(
-            metrics['test_' + list(self.scoring_metrics.keys())[-1]]
-        )
+        # Get average from CV metric on train set
+        if self._params["step_scoring_average"] == "median":
+            score = np.median(
+                metrics['test_' + list(self.scoring_metrics.keys())[-1]]
+            )
+        elif self._params["step_scoring_average"] == "mean":
+            score = np.mean(
+                metrics['test_' + list(self.scoring_metrics.keys())[-1]]
+            )
+        else:
+            raise ValueError(f"Invalid step_scoring_average: {self._params['step_scoring_average']}")
 
         return score # score
 
@@ -939,6 +948,24 @@ def _drop_features(features, features_to_drop, inplace=False):
     return tuple(features)
 
 
+def update_estimator_params(
+    ml_pipe:MLPipeline,
+    suggested_params:dict,
+) -> dict:
+    """Upate the estimator parameters based the parameters from pipeline.
+
+    Args:
+        ml_pipe: An instance of MLPipeline used for model training and evaluation.
+        suggested_params: A dictionary containing the suggested hyperparameters.
+    
+    Returns:
+        A dictionary containing the estimator parameters.
+    """
+    estimator_params = ml_pipe._pipeline_params['estimator_params']
+    estimator_params.update(suggested_params)
+    return estimator_params
+
+
 def update_smote_params(
     ml_pipe:MLPipeline,
     suggested_params:dict,
@@ -950,7 +977,7 @@ def update_smote_params(
         suggested_params: A dictionary containing the suggested SMOTE-hyperparameters.
     
     Returns:
-        A dictionary containing the estimator parameters.
+        A dictionary containing the SMOTE parameters.
     """
     smote_params = ml_pipe._pipeline_params['smote_params']
     smote_params.update(suggested_params)
