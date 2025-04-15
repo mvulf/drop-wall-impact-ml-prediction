@@ -135,6 +135,8 @@ class MLPipeline:
         target,
         estimator, # Estimator CLASS
         estimator_params:dict=None, # They would be passed to the estimator class
+        base_estimator=None,
+        base_estimator_params:dict=None,
         model_postfix="",
         features_to_drop: tuple = (
             "Re",
@@ -179,11 +181,17 @@ class MLPipeline:
         models_folder="models_modelling4",
         metrics_file="metrics_modelling4.xlsx",
     ):
-        # Copy estimator_params to base_estimator_params for update_estimator_params
+        # Copy estimator_params to init_estimator_params for update_estimator_params
         if not(estimator_params is None):
-            base_estimator_params = estimator_params.copy()
+            init_estimator_params = estimator_params.copy()
         else:
-            base_estimator_params = {}
+            init_estimator_params = {}
+            
+        if not(base_estimator_params is None):
+            init_base_estimator_params = base_estimator_params.copy()
+        else:
+            init_base_estimator_params = {}
+            
             
         # Add features choice depending on the target
         if minmax_features is None:
@@ -247,7 +255,10 @@ class MLPipeline:
         self._pipeline_params = {
             "estimator": estimator,
             "estimator_params": estimator_params,
+            "init_estimator_params": init_estimator_params,
+            "base_estimator": base_estimator,
             "base_estimator_params": base_estimator_params,
+            "init_base_estimator_params": init_base_estimator_params,
             "source_features": source_features,
             "features_to_drop": features_to_drop,
             "log_features": _drop_features(log_features, features_to_drop),
@@ -323,6 +334,8 @@ class MLPipeline:
         self,
         estimator,
         estimator_params:dict=None,
+        base_estimator=None,
+        base_estimator_params:dict=None,
         add_smote=None,
         is_smotenc=None,
         smote_params=None,
@@ -339,6 +352,11 @@ class MLPipeline:
         if smote_params is not None:
             self._pipeline_params['smote_params'] = smote_params
         self._pipeline_params['verbose'] = verbose
+        
+        if base_estimator is not None:
+            self._pipeline_params['base_estimator'] = base_estimator
+        if base_estimator_params is not None:
+            self._pipeline_params['base_estimator_params'] = base_estimator_params
             
         # Create full pipeline
         self.pipe = _create_pipeline(**self._pipeline_params)
@@ -450,6 +468,15 @@ class MLPipeline:
             params_dict['estimator_params']['model_class'] = (
                 params_dict['estimator_params']['model_class'].__name__
             )
+        # Remove init_estimator_params from params_dict
+        params_dict.pop('init_estimator_params', None)
+        params_dict.pop('init_base_estimator_params', None)
+        # Process base_estimator if it is used
+        if params_dict['base_estimator'] is not None:
+            params_dict['base_estimator'] = params_dict['base_estimator'].__name__
+        else:
+            params_dict.pop('base_estimator', None)
+            params_dict.pop('base_estimator_params', None)
         df["params"] = str(params_dict)
 
         df = pd.concat(
@@ -653,6 +680,8 @@ def _create_pipeline(
     add_df_transformer=True,
     add_const=False,
     estimator_params:dict=None,
+    base_estimator=None,
+    base_estimator_params:dict=None,
     add_smote=True,
     is_smotenc=False,
     smote_params:dict=None,
@@ -713,12 +742,27 @@ def _create_pipeline(
         )
     
     estimator_params = estimator_params or {}
+
+    # Process base_estimator if it is used
+    if base_estimator is not None:
+        base_estimator_params = base_estimator_params or {}
+        base_estimator = init_with_random_state(
+            base_estimator, random_state, **base_estimator_params
+        )
+        
+        estimator_params = {
+            **estimator_params,
+            'base_estimator': base_estimator,
+        }
+        
     pipeline.append(
         (
             'estimator', 
             init_with_random_state(estimator, random_state, **estimator_params)
         )
     )
+        
+        
     
     return Pipeline(pipeline)
 
@@ -958,6 +1002,7 @@ def _drop_features(features, features_to_drop, inplace=False):
 def update_estimator_params(
     ml_pipe:MLPipeline,
     suggested_params:dict,
+    estimator_type:str='main',
 ) -> dict:
     """Upate the estimator parameters based the parameters from pipeline.
 
@@ -968,8 +1013,14 @@ def update_estimator_params(
     Returns:
         A dictionary containing the estimator parameters.
     """
-    estimator_params = ml_pipe._pipeline_params['base_estimator_params'].copy()
-    estimator_params.update(suggested_params)
+    if estimator_type == 'main':
+        estimator_params = ml_pipe._pipeline_params['init_estimator_params'].copy()
+        estimator_params.update(suggested_params)
+    elif estimator_type == 'base':
+        estimator_params = ml_pipe._pipeline_params['init_base_estimator_params'].copy()
+        estimator_params.update(suggested_params)
+    else:
+        raise ValueError(f"Invalid estimator type: {estimator_type}")
     return estimator_params
 
 
