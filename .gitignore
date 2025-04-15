@@ -5,6 +5,4 @@
 *.pyc
 *myenv/
 .venv/
-*myenv_mpl/
-*new_venv/
 **/__pycache__/
