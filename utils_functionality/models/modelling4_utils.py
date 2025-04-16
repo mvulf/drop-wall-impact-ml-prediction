@@ -1052,9 +1052,11 @@ def smote_objective(trial:optuna.trial.Trial, ml_pipe:MLPipeline):
     
     suggested_smote_params = {
         'k_neighbors': trial.suggest_int('k_neighbors', 3, 10),
-        'sampling_strategy': trial.suggest_categorical(
-            'sampling_strategy', [0.6, 0.7, 0.8, 0.9, 1.0]
-        ),
+        # 'sampling_strategy': trial.suggest_categorical(
+        #     'sampling_strategy', [0.6, 0.7, 0.8, 0.9, 1.0]
+        # ),
+        'sampling_strategy': trial.suggest_float(
+            'sampling_strategy', 0.60, 1.00, step=0.01),
     }
     
     smote_params = update_smote_params(ml_pipe, suggested_smote_params)
