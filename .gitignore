@@ -4,5 +4,6 @@
 */__pycache__/*
 *.pyc
 *myenv/
+*myenv_upd/
 .venv/
 **/__pycache__/
