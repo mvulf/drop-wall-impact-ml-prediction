@@ -314,6 +314,8 @@ class MLPipeline:
             
         if estimator_class_name == 'PytorchTabularEstimator':
             estimator_class_name = self.pipe.steps[-1][-1].__name__
+            if estimator_class_name == 'CategoryEmbeddingModelConfig':
+                estimator_class_name = 'CategoryEmbeddingModel'
 
         if estimator_class_name == "DecisionStumpEstimator":
             estimator_class_name = "DecisionStump"
