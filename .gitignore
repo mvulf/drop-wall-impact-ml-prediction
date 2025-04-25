@@ -7,3 +7,7 @@
 *myenv_upd/
 .venv/
 **/__pycache__/
+
+notebooks/.pt_tmp
+notebooks/lightning_logs
+notebooks/saved_models

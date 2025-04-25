@@ -35,14 +35,24 @@ from sklearn.model_selection import cross_validate, StratifiedKFold, ParameterGr
 import statsmodels.api as sm
 from statsmodels.api import Logit
 
+from pytorch_tabular import TabularModel
+from pytorch_tabular.config import DataConfig, OptimizerConfig, TrainerConfig
+from pytorch_tabular.models import CategoryEmbeddingModelConfig, TabNetModelConfig
+
 import optuna
 
 from IPython.display import display
+
+# from pytorch_lightning.loggers import MLFlowLogger
+from pytorch_lightning.loggers import TensorBoardLogger
 
 sys.path.append("../")
 from utils_functionality.split_utils.split_tools import load_df, get_train_test
 
 RANDOM_STATE = 42
+
+# METRICS = ['f1_macro', 'roc_auc', 'balanced_accuracy']
+METRICS = ['accuracy']
 
 
 class OptunaOptimizer:
@@ -301,6 +311,9 @@ class MLPipeline:
 
         if estimator_class_name == "StatsModelsEstimator":
             estimator_class_name = "Logit"
+            
+        if estimator_class_name == 'PytorchTabularEstimator':
+            estimator_class_name = self.pipe.steps[-1][-1].__name__
 
         if estimator_class_name == "DecisionStumpEstimator":
             estimator_class_name = "DecisionStump"
@@ -761,30 +774,114 @@ def _create_pipeline(
             init_with_random_state(estimator, random_state, **estimator_params)
         )
     )
-        
-        
     
     return Pipeline(pipeline)
 
 
-def has_random_state(cls):
+def has_random_state(
+    cls,
+    random_state_name:str='random_state',
+):
     """Check if the class (of the estimator) has a random_state parameter in its constructor."""
     try:
         sig = inspect.signature(cls.__init__)
-        return 'random_state' in sig.parameters
+        return random_state_name in sig.parameters
     except (TypeError, ValueError):
         print(f'[WARNING] No signature was found in {cls} constructor (__init__)')
         return False
 
 def init_with_random_state(cls, random_state, **estimator_params):
     """Initialize the estimator with a random state."""
-    if has_random_state(cls):
-        estimator_params = {
-            'random_state': random_state,
-            **estimator_params,
-        } # If random_state is in estimator_params, it will overwrite the random_state
+    random_state_names = ['random_state', 'seed']
+    for random_state_name in random_state_names:
+        if has_random_state(cls, random_state_name=random_state_name):
+            estimator_params = {
+                random_state_name: random_state,
+                **estimator_params,
+            } # If random_state or SEED is in estimator_params, it will overwrite the random_state
     return cls(**estimator_params)
 
+
+# Wrapper for pytorch_tabular
+class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
+    def __init__(
+        self, 
+        model_class,
+        model_config_params:dict=None, # layers, activation, etc.
+        data_config_params:dict=None, # continuous_cols, categorical_cols, etc.
+        trainer_config_params:dict=None, # gpus, max_epochs, etc.
+        optimizer_config_params:dict=None, # optimizer, lr_scheduler, etc.
+        seed:int=RANDOM_STATE,
+    ):
+        self.model_class = model_class
+        self.__name__ = model_class.__name__
+        self.model_class = model_class
+        self.model_config_params = model_config_params
+        self.data_config_params = data_config_params
+        self.trainer_config_params = trainer_config_params
+        self.optimizer_config_params = optimizer_config_params
+        self.seed = seed
+        
+        self.logger = TensorBoardLogger(save_dir="../logs/", name="drop-impact-exp")
+    
+    def fit(self, X, y):
+        self.classes_ = np.unique(y)
+        df = pd.DataFrame(X)
+        df['target'] = y
+        
+        data_config_params = {
+            'target': ['target'],
+            'continuous_cols': list(df.columns[:-1]),
+            'categorical_cols': [],
+            **(self.data_config_params or {}), # continuous_cols and categorical_cols will be overwritten if specified in data_config_params
+        }
+        data_config = DataConfig(**data_config_params)
+        
+        model_config_params = {
+            'task': 'classification',
+            'metrics': METRICS,
+            **(self.model_config_params or {}), # task and metrics will be overwritten if specified in model_config_params
+        }
+        model_config = self.model_class(**model_config_params)
+        
+        trainer_config_params = {
+            'seed': self.seed,
+            **(self.trainer_config_params or {}), # seed be overwritten if specified in trainer_config_params
+        }
+        trainer_config = TrainerConfig(**trainer_config_params)
+        
+        optimizer_config = OptimizerConfig(
+            **(self.optimizer_config_params or {}),
+        )
+        
+        self.model = TabularModel(
+            data_config=data_config,
+            model_config=model_config,
+            trainer_config=trainer_config,
+            optimizer_config=optimizer_config,
+        )
+        
+        self.model.fit(
+            train=df,
+        )
+        
+        self.model.trainer.logger = self.logger
+        
+        return self
+    
+    def predict(self, X):
+        df = pd.DataFrame(X)
+        preds = self.model.predict(df)
+        y_pred = preds.values[:,-1]
+        return y_pred
+    
+    def predict_proba(self, X):
+        df = pd.DataFrame(X)
+        preds = self.model.predict(df)
+        y_pred_proba = preds.values[:,:-1] # Remove last column (prediction)
+        return y_pred_proba
+    
+        
 
 # Wrapper for Statsmodel
 class StatsModelsEstimator(BaseEstimator):
