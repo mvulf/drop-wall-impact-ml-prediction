@@ -52,7 +52,7 @@ from utils_functionality.split_utils.split_tools import load_df, get_train_test
 RANDOM_STATE = 42
 
 # METRICS = ['f1_macro', 'roc_auc', 'balanced_accuracy']
-METRICS = ['accuracy']
+METRICS = ['f1_score', 'accuracy']
 
 
 class OptunaOptimizer:
@@ -314,8 +314,12 @@ class MLPipeline:
             
         if estimator_class_name == 'PytorchTabularEstimator':
             estimator_class_name = self.pipe.steps[-1][-1].__name__
-            if estimator_class_name == 'CategoryEmbeddingModelConfig':
-                estimator_class_name = 'CategoryEmbeddingModel'
+            # if estimator_class_name == 'CategoryEmbeddingModelConfig':
+            #     estimator_class_name = 'CategoryEmbeddingModel'
+            if 'Config' in estimator_class_name:
+                estimator_class_name = estimator_class_name.replace(
+                    'Config', ''
+                )
 
         if estimator_class_name == "DecisionStumpEstimator":
             estimator_class_name = "DecisionStump"
