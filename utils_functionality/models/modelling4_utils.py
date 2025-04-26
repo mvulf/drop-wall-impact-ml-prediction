@@ -13,7 +13,7 @@ from tqdm import tqdm
 
 from collections.abc import Iterable
 from functools import partial
-
+import copy
 from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 
 # from sklearn.pipeline import Pipeline
@@ -1101,6 +1101,42 @@ def _drop_features(features, features_to_drop, inplace=False):
         return
     return tuple(features)
 
+
+def deep_update_estimator_params(
+    ml_pipe:MLPipeline,
+    suggested_params:dict,
+)->dict:
+    """Deep update of the estimator parameters.
+    
+    Args:
+        ml_pipe: An instance of MLPipeline used for model training and evaluation.
+        suggested_params: A dictionary containing the suggested hyperparameters.
+    
+    Returns:
+        A dictionary containing the estimator parameters (including unchanged).
+    """
+    original_params = copy.deepcopy(
+        ml_pipe._pipeline_params['init_estimator_params']
+    )
+    deep_update(original_params, suggested_params)
+    
+    return original_params
+
+
+def deep_update(original, updates):
+    """Deep update of the original dictionary.
+    
+    Args:
+        original: Original dictionary.
+        updates: Dictionary with updates.
+    """
+    
+    for key, value in updates.items():
+        if isinstance(value, dict) and key in original:
+            deep_update(original[key], value)
+        else:
+            original[key] = value
+    
 
 def update_estimator_params(
     ml_pipe:MLPipeline,
