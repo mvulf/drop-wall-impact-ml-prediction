@@ -1,3 +1,20 @@
+import logging
+
+# Устанавливаем уровень логирования для PyTorch Tabular
+logging.getLogger("pytorch_tabular").setLevel(logging.ERROR)
+
+# Устанавливаем уровень логирования для PyTorch Lightning
+logging.getLogger("pytorch_lightning").setLevel(logging.ERROR)
+
+# Устанавливаем уровень логирования для Lightning Fabric
+logging.getLogger("lightning_fabric").setLevel(logging.ERROR)
+
+# Отключаем сообщения о доступности устройств
+logging.getLogger("lightning.pytorch.utilities.rank_zero").setLevel(logging.FATAL)
+
+import contextlib
+import io
+
 
 import pandas as pd
 import numpy as np
@@ -818,6 +835,8 @@ class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
         trainer_config_params:dict=None, # gpus, max_epochs, etc.
         optimizer_config_params:dict=None, # optimizer, lr_scheduler, etc.
         seed:int=RANDOM_STATE,
+        suppress_lightning_logger:bool=True,
+        verbose:bool=False,
     ):
         self.model_class = model_class
         self.__name__ = model_class.__name__
@@ -827,8 +846,10 @@ class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
         self.trainer_config_params = trainer_config_params
         self.optimizer_config_params = optimizer_config_params
         self.seed = seed
+        self.suppress_lightning_logger = suppress_lightning_logger
+        self.verbose = verbose
         
-        self.logger = TensorBoardLogger(save_dir="../logs/", name="drop-impact-exp")
+        # self.logger = TensorBoardLogger(save_dir="../logs/", name="drop-impact-exp")
     
     def fit(self, X, y):
         self.classes_ = np.unique(y)
@@ -865,13 +886,14 @@ class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
             model_config=model_config,
             trainer_config=trainer_config,
             optimizer_config=optimizer_config,
+            verbose=self.verbose,
+            suppress_lightning_logger=self.suppress_lightning_logger,
         )
-        
+
         self.model.fit(
             train=df,
         )
-        
-        self.model.trainer.logger = self.logger
+        # self.model.trainer.logger = self.logger
         
         return self
     
