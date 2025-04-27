@@ -869,6 +869,11 @@ class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
             'metrics': METRICS,
             **(self.model_config_params or {}), # task and metrics will be overwritten if specified in model_config_params
         }
+        if 'activation' in model_config_params:
+            if model_config_params['activation'] == 'ELU':
+                model_config_params['initialization'] = 'xavier'
+            else:
+                model_config_params['initialization'] = 'kaiming'
         model_config = self.model_class(**model_config_params)
         
         trainer_config_params = {
