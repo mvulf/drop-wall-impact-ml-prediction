@@ -1,15 +1,15 @@
 import logging
 
-# Устанавливаем уровень логирования для PyTorch Tabular
+# Set logging level for PyTorch Tabular
 logging.getLogger("pytorch_tabular").setLevel(logging.ERROR)
 
-# Устанавливаем уровень логирования для PyTorch Lightning
+# Set logging level for PyTorch Lightning
 logging.getLogger("pytorch_lightning").setLevel(logging.ERROR)
 
-# Устанавливаем уровень логирования для Lightning Fabric
+# Set logging level for Lightning Fabric
 logging.getLogger("lightning_fabric").setLevel(logging.ERROR)
 
-# Отключаем сообщения о доступности устройств
+# Disable device availability messages
 logging.getLogger("lightning.pytorch.utilities.rank_zero").setLevel(logging.FATAL)
 
 import contextlib
