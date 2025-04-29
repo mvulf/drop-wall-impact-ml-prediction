@@ -18,6 +18,7 @@ import io
 
 import pandas as pd
 import numpy as np
+import random
 
 from pathlib import Path
 import sys
@@ -47,10 +48,15 @@ from sklearn.metrics import (
     roc_auc_score,
     balanced_accuracy_score,
 )
-from sklearn.model_selection import cross_validate, StratifiedKFold, ParameterGrid
+from sklearn.model_selection import train_test_split, cross_validate, StratifiedKFold, ParameterGrid
 
 import statsmodels.api as sm
 from statsmodels.api import Logit
+
+import torch  # Import PyTorch library for tensor computations
+import torch.nn as nn  # Import neural network modules
+import torch.nn.functional as F  # Import functional API for activation and loss functions
+from torch.utils.data import DataLoader, TensorDataset
 
 from pytorch_tabular import TabularModel
 from pytorch_tabular.config import DataConfig, OptimizerConfig, TrainerConfig
@@ -824,6 +830,325 @@ def init_with_random_state(cls, random_state, **estimator_params):
             } # If random_state or SEED is in estimator_params, it will overwrite the random_state
     return cls(**estimator_params)
 
+ 
+# TODO: Proceed checking and testing this model and BetaVAEEncoder
+# Variational Autoencoder Model
+# Inspired by https://github.com/AntixK/PyTorch-VAE/blob/master/models/vanilla_vae.py
+class VAE(nn.Module):
+    def __init__(
+        self,
+        input_dim:int,
+        latent_dim:int=3, # could be changed to 4 or 5, if needed
+        hidden_dim:int=32, # could be optimized
+        normalization:str="batch", # could be "batch" or "layer", or False
+        activation:str="LeakyReLU", # could be "ReLU" or "LeakyReLU", or False
+        negative_slope:float=0.1, # only used if activation == "LeakyReLU"
+        verbose:bool=True,
+    ):
+        super().__init__()
+        
+        encoder_layers = [
+            nn.Linear(input_dim, hidden_dim),
+        ]
+        decoder_layers = [
+            nn.Linear(latent_dim, hidden_dim),
+            nn.Linear(hidden_dim, input_dim),
+        ]
+        
+        if normalization:
+            if normalization == "batch":
+                Norm = nn.BatchNorm1d
+            elif normalization == "layer":
+                Norm = nn.LayerNorm
+            else:
+                raise ValueError(
+                    f"Normalization method {normalization} not supported"
+                )
+            # If no activation, then normalization is redundant before latent space,
+            # since latent space makes normalization
+            if activation:
+                encoder_layers.append(Norm(hidden_dim))
+            decoder_layers.insert(1, Norm(hidden_dim))
+        
+        if activation:
+            if activation == "ReLU":
+                Activation = nn.ReLU
+                activation_params = {
+                    "inplace": True,
+                }
+            elif activation == "LeakyReLU":
+                Activation = nn.LeakyReLU
+                activation_params = {
+                    "negative_slope": negative_slope,
+                    "inplace": True,
+                }
+            else:
+                raise ValueError(
+                    f"Activation function {activation} not supported"
+                )
+            encoder_layers.append(Activation(**activation_params))
+            decoder_layers.insert(-1, Activation(**activation_params))
+        
+        # Encoder: input -> hidden_dim
+        # Transform input to latent space
+        self.encoder = nn.Sequential(
+            *encoder_layers,
+        )
+        
+        # Latent space: hidden_dim -> 2 layers with latent_dim
+        self.fc_mu = nn.Linear(hidden_dim, latent_dim)
+        self.fc_log_sigma2 = nn.Linear(hidden_dim, latent_dim)
+        
+        # Decoder: latent_dim -> hidden_dim -> input
+        # Reconstruct input from latent space
+        self.decoder = nn.Sequential(
+            *decoder_layers,
+        )
+        
+        if verbose:
+            print(f"Encoder: {self.encoder}")
+            print(f"Latent space:")
+            print(f"\tMu: {self.fc_mu}")
+            print(f"\tlog_sigma2: {self.fc_log_sigma2}")
+            print(f"Decoder: {self.decoder}")
+    
+    def encode(self, x):
+        """Transform input to latent space"""
+        enc_out = self.encoder(x)
+        mu = self.fc_mu(enc_out)
+        log_sigma2 = self.fc_log_sigma2(enc_out)
+        return mu, log_sigma2
+    
+    def reparameterize(self, mu, log_sigma2):
+        """Reparameterization trick, since direct sampling from latent space z~N(\mu, \sigma^2) is not differentiable"""
+        std = torch.exp(0.5 * log_sigma2) # Compute standard deviation from log variance
+        eps = torch.randn_like(std) # Sample some noise from standard normal distribution
+        z = mu + eps * std # Return reparametrized latent vector z 
+        return z # (z = mu + eps * std) allows to get gradients: dz/d\mu = 1, dz/d\sigma = eps
+    
+    def decode(self, z):
+        """Reconstruct input from latent space"""
+        return self.decoder(z)
+    
+    def forward(self, x):
+        """Forward pass"""
+        mu, log_sigma2 = self.encode(x) # Transform input to latent space
+        z = self.reparameterize(mu, log_sigma2) # Reparameterize to get differentiable latent vector z
+        x_reconstr = self.decode(z) # Decode latent vector z to reconstructed input x\hat
+        return x_reconstr, mu, log_sigma2
+    
+
+class BetaVAEncoder(BaseEstimator, TransformerMixin):
+    def __init__(
+        self,
+        VAE_class:nn.Module=VAE,
+        VAE_params:dict=None, # includes latent_dim, hidden_dim, normalization, activation, negative_slope. Input dim is set automatically
+        batch_size:int=32,
+        shuffle:bool=True,
+        beta_start:float=0.0,
+        beta_end:float=4.0,
+        beta_warmup_steps:int=100,
+        learning_rate:float=1e-3,
+        scheduler_class:torch.optim.lr_scheduler.LRScheduler=torch.optim.lr_scheduler.ReduceLROnPlateau, # any scheduler from torch.optim.lr_scheduler or False
+        scheduler_params:dict=None,
+        max_epochs:int=100,
+        early_stopping:bool=True,
+        early_stopping_patience:int=10,
+        early_stopping_min_delta:float=1e-3,
+        device:str=None,
+        seed:int=RANDOM_STATE,
+        verbose:bool=False,
+    ):
+        self.VAE_class = VAE_class
+        self.VAE_params = VAE_params
+        self.batch_size = batch_size
+        self.shuffle = shuffle
+        self.beta_start = beta_start
+        self.beta_end = beta_end
+        self.beta_warmup_steps = beta_warmup_steps
+        self.learning_rate = learning_rate
+        self.max_epochs = max_epochs
+        self.early_stopping = early_stopping
+        self.early_stopping_patience = early_stopping_patience
+        self.early_stopping_min_delta = early_stopping_min_delta
+        # Prepare scheduler and its params
+        self.scheduler_class = scheduler_class
+        if (
+            scheduler_class == torch.optim.lr_scheduler.ReduceLROnPlateau 
+            and scheduler_params is None
+        ):
+            self.scheduler_params = {
+                'mode': 'min',
+                'patience': 5,
+                'factor': 0.1,
+                'min_lr': 1e-5,
+            }
+        else:
+            self.scheduler_params = scheduler_params or {}
+            
+        # Prepare device
+        if device is None:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        else:
+            self.device = torch.device(device)
+        self.verbose = verbose
+        self.seed = seed
+        if self.seed:
+            self.set_seed(self.seed)
+        
+    def set_seed(self, seed:int):
+        random.seed(seed)
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+        if self.device == torch.device("cuda"):
+            torch.cuda.manual_seed_all(seed)
+            torch.backends.cudnn.deterministic = True
+            torch.backends.cudnn.benchmark = False # Auto-tuner of cuDNN would be disabled
+        
+    def fit(self, X, y=None):
+        input_dim = X.shape[1]
+        # Convert pandas DataFrame or numpy array to Tensor
+        if isinstance(X, pd.DataFrame):
+            X = X.values
+        # If scheduler Plateau or early stopping is used, split data into train and validation sets
+        if (
+            self.scheduler_class == torch.optim.lr_scheduler.ReduceLROnPlateau
+            or self.early_stopping
+        ):
+            X_train, X_val = train_test_split(
+                X, test_size=0.1, random_state=self.seed,
+            )
+            val_tensor = (
+                torch.tensor(X_val, dtype=torch.float32).to(self.device)
+            )
+        else:
+            X_train = X
+            val_tensor = None
+        
+        X_tensor = torch.tensor(X_train, dtype=torch.float32)
+        dataset = TensorDataset(X_tensor)
+        # DataLoader for training batches (with fixed seed for reproducibility)
+        generator = torch.Generator()
+        if self.seed:
+            generator.manual_seed(self.seed)
+        loader = DataLoader(
+            dataset, 
+            batch_size=self.batch_size, 
+            shuffle=self.shuffle,
+            generator=generator,
+        )
+        
+        optimizer = torch.optim.Adam(
+            self.model.parameters(),
+            lr=self.learning_rate,
+        )
+        
+        if self.scheduler_class:
+            scheduler = self.scheduler_class(
+                optimizer,
+                **self.scheduler_params,
+            )
+        else:
+            scheduler = None
+        
+        
+        # VAE_params should be updated
+        if self.VAE_params is None:
+            self.VAE_params = {}
+        self.VAE_params = {
+            **self.VAE_params,
+            'input_dim': input_dim,
+            'verbose': self.verbose,
+        }
+        if self.verbose:
+            print(f"VAE_params: {self.VAE_params}")
+        self.model = self.VAE_class(**self.VAE_params).to(self.device)
+        
+        step = 0  # Initialize global step counter for beta warmup
+        patience_counter = 0
+        best_loss = float('inf')
+        
+        for epoch in range(self.max_epochs):
+            self.model.train() # Set model to training mode
+            for batch_X in loader:
+                X = batch_X[0].to(self.device)
+                step += 1
+                beta = min(
+                    self.beta_end,
+                    (
+                        self.beta_start + (self.beta_end - self.beta_start) 
+                        * step / self.beta_warmup_steps
+                    ),
+                )
+                x_reconstr, mu, log_sigma2 = self.model(X)
+                loss, reconstr_loss, kl_divergence = (
+                    self.beta_vae_loss(x_reconstr, X, mu, log_sigma2, beta)
+                )
+                optimizer.zero_grad() # Reset gradients
+                loss.backward() # Backpropagate loss
+                optimizer.step() # Update model parameters
+            
+            self.model.eval() # Set model to evaluation mode
+            if val_tensor:
+                with torch.no_grad():
+                    x_reconstr, mu, log_sigma2 = self.model(val_tensor)
+                    val_loss, val_reconstr_loss, val_kl_divergence = (
+                        self.beta_vae_loss(
+                            x_reconstr, val_tensor, mu, log_sigma2, beta
+                        )
+                    )
+                scheduler.step(val_loss)
+            if self.verbose:
+                # Print training metrics
+                print(
+                    f"Epoch {epoch}/{self.max_epochs}, "
+                    f"Loss: {loss.item():.4f}, "
+                    f"Reconstr Loss: {reconstr_loss.item():.4f}, "
+                    f"KL Divergence: {kl_divergence.item():.4f}, "
+                    f"Beta: {beta:.2f}"
+                )
+                if val_tensor:
+                    # Print validation metrics
+                    print(
+                        f"Val Loss: {val_loss.item():.4f}, "
+                        f"Val Reconstr Loss: {val_reconstr_loss.item():.4f}, "
+                        f"Val KL Divergence: {val_kl_divergence.item():.4f}"
+                    )
+            if self.early_stopping:
+                if val_loss < best_loss:
+                    best_loss = val_loss
+                    patience_counter = 0
+                else:
+                    patience_counter += 1
+                if patience_counter >= self.early_stopping_patience:
+                    print(f"Early stopping at epoch {epoch}.")
+                    break
+                         
+                
+    def transform(self, X):
+        Z, _ = self.model.encode(X) # Need only mu
+        return Z
+    
+    def fit_transform(self, X, y=None):
+        self.fit(X, y)
+        return self.transform(X)
+    
+    def inverse_transform(self, Z):
+        X_reconstr = self.model.decode(Z) # Z is latent space vector (batch of vectors) z
+        return X_reconstr
+    
+    def beta_vae_loss(self, x_reconstr, x, mu, log_sigma2, beta=4.0):
+        # beta can be from 1 to 10
+        reconstr_loss = F.mse_loss(x_reconstr, x, reduction='mean')
+        # Kullback-Leibler divergence
+        kl_divergence = -0.5 * torch.mean(1 + log_sigma2 - mu.pow(2) - log_sigma2.exp()) # Compute KL divergence to N(0,1)
+        # Total loss with beta weight on KL divergence
+        loss = reconstr_loss + beta * kl_divergence
+        
+        return loss, reconstr_loss.detach(), kl_divergence.detach()
+    
+    
+    
 
 # Wrapper for pytorch_tabular
 class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
