@@ -61,6 +61,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from pytorch_tabular import TabularModel
 from pytorch_tabular.config import DataConfig, OptimizerConfig, TrainerConfig
 from pytorch_tabular.models import CategoryEmbeddingModelConfig, TabNetModelConfig
+from torchmetrics import MeanMetric
 
 import optuna
 
@@ -852,7 +853,6 @@ class VAE(nn.Module):
         ]
         decoder_layers = [
             nn.Linear(latent_dim, hidden_dim),
-            nn.Linear(hidden_dim, input_dim),
         ]
         
         if normalization:
@@ -868,7 +868,7 @@ class VAE(nn.Module):
             # since latent space makes normalization
             if activation:
                 encoder_layers.append(Norm(hidden_dim))
-            decoder_layers.insert(1, Norm(hidden_dim))
+            decoder_layers.append(Norm(hidden_dim))
         
         if activation:
             if activation == "ReLU":
@@ -886,9 +886,12 @@ class VAE(nn.Module):
                 raise ValueError(
                     f"Activation function {activation} not supported"
                 )
-            encoder_layers.append(Activation(**activation_params))
-            decoder_layers.insert(-1, Activation(**activation_params))
+            for layers in [encoder_layers, decoder_layers]:
+                layers.append(Activation(**activation_params))
         
+        decoder_layers.append(
+            nn.Linear(hidden_dim, input_dim)
+        )
         # Encoder: input -> hidden_dim
         # Transform input to latent space
         self.encoder = nn.Sequential(
@@ -1000,16 +1003,38 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         random.seed(seed)
         np.random.seed(seed)
         torch.manual_seed(seed)
-        if self.device == torch.device("cuda"):
+        if self.device.type == "cuda":
             torch.cuda.manual_seed_all(seed)
             torch.backends.cudnn.deterministic = True
             torch.backends.cudnn.benchmark = False # Auto-tuner of cuDNN would be disabled
+            
+    def _to_tensor(self, X, to_device:bool=False):
+        """Convert pandas DataFrame or numpy array to Tensor and move to device if specified
+        Args:
+            X: source data
+            to_device: whether to move the tensor to the device
+
+        Returns:
+            Tensor
+        """
+        
+        if isinstance(X, pd.DataFrame):
+            X = X.values
+        
+        if torch.is_tensor(X):
+            X = X.to(torch.float32)
+        else:
+            X = torch.tensor(X, dtype=torch.float32)
+        
+        if to_device:
+            X = X.to(self.device)
+            
+        return X
+        
         
     def fit(self, X, y=None):
         input_dim = X.shape[1]
-        # Convert pandas DataFrame or numpy array to Tensor
-        if isinstance(X, pd.DataFrame):
-            X = X.values
+
         # If scheduler Plateau or early stopping is used, split data into train and validation sets
         if (
             self.scheduler_class == torch.optim.lr_scheduler.ReduceLROnPlateau
@@ -1018,14 +1043,12 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             X_train, X_val = train_test_split(
                 X, test_size=0.1, random_state=self.seed,
             )
-            val_tensor = (
-                torch.tensor(X_val, dtype=torch.float32).to(self.device)
-            )
+            val_tensor = self._to_tensor(X_val, to_device=True)
         else:
             X_train = X
             val_tensor = None
         
-        X_tensor = torch.tensor(X_train, dtype=torch.float32)
+        X_tensor = self._to_tensor(X_train, to_device=False) # Better to keep on CPU for the DataLoader
         dataset = TensorDataset(X_tensor)
         # DataLoader for training batches (with fixed seed for reproducibility)
         generator = torch.Generator()
@@ -1037,6 +1060,18 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             shuffle=self.shuffle,
             generator=generator,
         )
+        
+        # VAE_params should be updated
+        if self.VAE_params is None:
+            self.VAE_params = {}
+        self.VAE_params = {
+            **self.VAE_params,
+            'input_dim': input_dim,
+            'verbose': self.verbose,
+        }
+        if self.verbose:
+            print(f"VAE_params: {self.VAE_params}")
+        self.model = self.VAE_class(**self.VAE_params).to(self.device)
         
         optimizer = torch.optim.Adam(
             self.model.parameters(),
@@ -1051,25 +1086,17 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         else:
             scheduler = None
         
-        
-        # VAE_params should be updated
-        if self.VAE_params is None:
-            self.VAE_params = {}
-        self.VAE_params = {
-            **self.VAE_params,
-            'input_dim': input_dim,
-            'verbose': self.verbose,
-        }
-        if self.verbose:
-            print(f"VAE_params: {self.VAE_params}")
-        self.model = self.VAE_class(**self.VAE_params).to(self.device)
-        
         step = 0  # Initialize global step counter for beta warmup
         patience_counter = 0
         best_loss = float('inf')
         
+        mean_loss = MeanMetric().to(self.device)
+        mean_reconstr_loss = MeanMetric().to(self.device)
+        mean_kl_divergence = MeanMetric().to(self.device)
+        
         for epoch in range(self.max_epochs):
             self.model.train() # Set model to training mode
+            
             for batch_X in loader:
                 X = batch_X[0].to(self.device)
                 step += 1
@@ -1087,9 +1114,20 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                 optimizer.zero_grad() # Reset gradients
                 loss.backward() # Backpropagate loss
                 optimizer.step() # Update model parameters
+                
+                # Current batch metrics
+                mean_loss.update(loss.detach())
+                # Other metrics already detached
+                mean_reconstr_loss.update(reconstr_loss)
+                mean_kl_divergence.update(kl_divergence)
+                
+            # Compute epoch metrics
+            epoch_loss = mean_loss.compute().item()
+            epoch_reconstr_loss = mean_reconstr_loss.compute().item()
+            epoch_kl_divergence = mean_kl_divergence.compute().item()
             
             self.model.eval() # Set model to evaluation mode
-            if val_tensor:
+            if val_tensor is not None:
                 with torch.no_grad():
                     x_reconstr, mu, log_sigma2 = self.model(val_tensor)
                     val_loss, val_reconstr_loss, val_kl_divergence = (
@@ -1097,23 +1135,29 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                             x_reconstr, val_tensor, mu, log_sigma2, beta
                         )
                     )
-                scheduler.step(val_loss)
+                scheduler.step(val_loss.item())
             if self.verbose:
                 # Print training metrics
                 print(
                     f"Epoch {epoch}/{self.max_epochs}, "
-                    f"Loss: {loss.item():.4f}, "
-                    f"Reconstr Loss: {reconstr_loss.item():.4f}, "
-                    f"KL Divergence: {kl_divergence.item():.4f}, "
+                    f"Loss: {epoch_loss:.4f}, "
+                    f"Reconstr Loss: {epoch_reconstr_loss:.4f}, "
+                    f"KL Divergence: {epoch_kl_divergence:.4f}, "
                     f"Beta: {beta:.2f}"
                 )
-                if val_tensor:
+                if val_tensor is not None:
                     # Print validation metrics
                     print(
-                        f"Val Loss: {val_loss.item():.4f}, "
+                        f"\tVal Loss: {val_loss.item():.4f}, "
                         f"Val Reconstr Loss: {val_reconstr_loss.item():.4f}, "
                         f"Val KL Divergence: {val_kl_divergence.item():.4f}"
                     )
+            
+            # Reset metrics
+            mean_loss.reset()
+            mean_reconstr_loss.reset()
+            mean_kl_divergence.reset()
+            
             if self.early_stopping:
                 if val_loss < best_loss:
                     best_loss = val_loss
@@ -1126,16 +1170,22 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                          
                 
     def transform(self, X):
-        Z, _ = self.model.encode(X) # Need only mu
-        return Z
+        X_tensor = self._to_tensor(X, to_device=True)
+        self.model.eval()
+        with torch.no_grad():
+            Z, _ = self.model.encode(X_tensor) # Need only mu
+        return Z.cpu().numpy()
     
     def fit_transform(self, X, y=None):
         self.fit(X, y)
         return self.transform(X)
     
     def inverse_transform(self, Z):
-        X_reconstr = self.model.decode(Z) # Z is latent space vector (batch of vectors) z
-        return X_reconstr
+        Z_tensor = self._to_tensor(Z, to_device=True)
+        self.model.eval()
+        with torch.no_grad():   
+            X_reconstr = self.model.decode(Z_tensor) # Z is latent space vector (batch of vectors) z
+        return X_reconstr.cpu().numpy()
     
     def beta_vae_loss(self, x_reconstr, x, mu, log_sigma2, beta=4.0):
         # beta can be from 1 to 10
@@ -1146,9 +1196,7 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         loss = reconstr_loss + beta * kl_divergence
         
         return loss, reconstr_loss.detach(), kl_divergence.detach()
-    
-    
-    
+       
 
 # Wrapper for pytorch_tabular
 class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
