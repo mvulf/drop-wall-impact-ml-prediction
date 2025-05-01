@@ -27,11 +27,11 @@ import joblib
 
 import inspect
 
-from tqdm import tqdm
+from tqdm.notebook import tqdm, trange
 
 from collections.abc import Iterable
 from functools import partial
-import copy
+from copy import deepcopy
 from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 
 # from sklearn.pipeline import Pipeline
@@ -66,6 +66,7 @@ from torchmetrics import MeanMetric
 import optuna
 
 from IPython.display import display
+import matplotlib.pyplot as plt
 
 # from pytorch_lightning.loggers import MLFlowLogger
 from pytorch_lightning.loggers import TensorBoardLogger
@@ -172,6 +173,8 @@ class MLPipeline:
         base_estimator=None,
         base_estimator_params:dict=None,
         model_postfix="",
+        post_transformer=None,
+        post_transformer_params:dict=None,
         features_to_drop: tuple = (
             "Re",
             "We",
@@ -193,6 +196,7 @@ class MLPipeline:
         passthrough_features: tuple = None,
         log_features: tuple = (
             "relative_roughness",
+            "sedimentation_Re",
             "sedimentation_Stk",
             "particle_droplet_diameter_ratio",
         ),
@@ -232,6 +236,7 @@ class MLPipeline:
             if target == "splashing":
                 minmax_features = (
                     "inclination",
+                    "init_volume_fraction",
                     "volume_fraction",
                 )
             else:  # no_fragmentation
@@ -244,6 +249,7 @@ class MLPipeline:
                     "wettability",
                     "inclination",
                     "volume_fraction",
+                    "init_volume_fraction",
                 )
 
         target_set = set(targets)
@@ -293,6 +299,8 @@ class MLPipeline:
             "base_estimator": base_estimator,
             "base_estimator_params": base_estimator_params,
             "init_base_estimator_params": init_base_estimator_params,
+            "post_transformer": post_transformer,
+            "post_transformer_params": post_transformer_params,
             "source_features": source_features,
             "features_to_drop": features_to_drop,
             "log_features": _drop_features(log_features, features_to_drop),
@@ -379,6 +387,8 @@ class MLPipeline:
         estimator_params:dict=None,
         base_estimator=None,
         base_estimator_params:dict=None,
+        post_transformer=None,
+        post_transformer_params:dict=None,
         add_smote=None,
         is_smotenc=None,
         smote_params=None,
@@ -400,6 +410,10 @@ class MLPipeline:
             self._pipeline_params['base_estimator'] = base_estimator
         if base_estimator_params is not None:
             self._pipeline_params['base_estimator_params'] = base_estimator_params
+        if post_transformer is not None:
+            self._pipeline_params['post_transformer'] = post_transformer
+        if post_transformer_params is not None:
+            self._pipeline_params['post_transformer_params'] = post_transformer_params
             
         # Create full pipeline
         self.pipe = _create_pipeline(**self._pipeline_params)
@@ -435,9 +449,12 @@ class MLPipeline:
     def run(
         self,
         verbose=True,
+        cv_verbose:bool|None=None,
         random_state=RANDOM_STATE,
         save_model_and_metrics=True,
     ):
+        if cv_verbose is None:
+            cv_verbose = verbose
 
         # Split X, y for fitting and predicting
         X_train, y_train = self.get_X_y(self.train) # train dataset
@@ -453,6 +470,7 @@ class MLPipeline:
                 cv_folds=self._params["cv_folds"],
                 random_state=random_state,
                 type="cv",
+                verbose=cv_verbose,
             )
         )
 
@@ -520,6 +538,13 @@ class MLPipeline:
         else:
             params_dict.pop('base_estimator', None)
             params_dict.pop('base_estimator_params', None)
+        # Process post_transformer if it is used
+        if params_dict['post_transformer'] is not None:
+            params_dict['post_transformer'] = params_dict['post_transformer'].__name__
+        else:
+            params_dict.pop('post_transformer', None)
+            params_dict.pop('post_transformer_params', None)
+        
         df["params"] = str(params_dict)
 
         df = pd.concat(
@@ -636,14 +661,23 @@ class MLPipeline:
             random_state=random_state,
         )
 
+        pipe = deepcopy(self.pipe)
+        if not verbose:
+            for step in pipe.steps:
+                if 'verbose' in step[1].__dict__:
+                    step[1].verbose = False
+        
+        verbose_level = 2 if self.verbose else 0
+        
         # Perform cross-validation
         cv_results = cross_validate(
-            estimator=self.pipe,
+            estimator=pipe,
             X=df,
             y=y,
             cv=cv,
             scoring=self.scoring_metrics,
             return_train_score=True,
+            verbose=verbose_level,
         )
         cv_results["type"] = type
 
@@ -725,6 +759,8 @@ def _create_pipeline(
     estimator_params:dict=None,
     base_estimator=None,
     base_estimator_params:dict=None,
+    post_transformer:TransformerMixin=None,
+    post_transformer_params:dict=None,
     add_smote=True,
     is_smotenc=False,
     smote_params:dict=None,
@@ -760,6 +796,19 @@ def _create_pipeline(
             add_const=add_const,
         )
         pipeline.append(("df_transformer", df_transformer))
+
+    if post_transformer is not None:
+        post_transformer_params = post_transformer_params or {}
+        pipeline.append(
+            (
+                post_transformer.__name__,
+                init_with_random_state(
+                    post_transformer,
+                    random_state,
+                    **post_transformer_params,
+                )
+            )
+        )
 
     if add_smote:
         smote_params = smote_params or {} # If None, use default SMOTE[NC] parameters
@@ -812,7 +861,7 @@ def has_random_state(
     cls,
     random_state_name:str='random_state',
 ):
-    """Check if the class (of the estimator) has a random_state parameter in its constructor."""
+    """Check if the class (of the estimator or transformer) has a random_state parameter in its constructor."""
     try:
         sig = inspect.signature(cls.__init__)
         return random_state_name in sig.parameters
@@ -821,7 +870,7 @@ def has_random_state(
         return False
 
 def init_with_random_state(cls, random_state, **estimator_params):
-    """Initialize the estimator with a random state."""
+    """Initialize the estimator (or transformer) with a random state."""
     random_state_names = ['random_state', 'seed']
     for random_state_name in random_state_names:
         if has_random_state(cls, random_state_name=random_state_name):
@@ -832,7 +881,7 @@ def init_with_random_state(cls, random_state, **estimator_params):
     return cls(**estimator_params)
 
  
-# TODO: Proceed checking and testing this model and BetaVAEEncoder
+# TODO: Proceed checking and testing this model and BetaVAEncoder
 # Variational Autoencoder Model
 # Inspired by https://github.com/AntixK/PyTorch-VAE/blob/master/models/vanilla_vae.py
 class VAE(nn.Module):
@@ -958,12 +1007,13 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         early_stopping:bool=True,
         early_stopping_patience:int=10,
         early_stopping_min_delta:float=1e-3,
-        device:str=None,
+        device_name:str=None,
         seed:int=RANDOM_STATE,
         verbose:bool=False,
     ):
         self.VAE_class = VAE_class
-        self.VAE_params = VAE_params
+        # self.VAE_params = deepcopy(VAE_params) if VAE_params else {}
+        self.VAE_params = {} if VAE_params is None else VAE_params
         self.batch_size = batch_size
         self.shuffle = shuffle
         self.beta_start = beta_start
@@ -988,12 +1038,13 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             }
         else:
             self.scheduler_params = scheduler_params or {}
-            
+        
+        self.device_name = device_name
         # Prepare device
-        if device is None:
+        if self.device_name is None:
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         else:
-            self.device = torch.device(device)
+            self.device = torch.device(self.device_name)
         self.verbose = verbose
         self.seed = seed
         if self.seed:
@@ -1062,16 +1113,14 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         )
         
         # VAE_params should be updated
-        if self.VAE_params is None:
-            self.VAE_params = {}
-        self.VAE_params = {
+        vae_params = {
             **self.VAE_params,
             'input_dim': input_dim,
             'verbose': self.verbose,
         }
         if self.verbose:
-            print(f"VAE_params: {self.VAE_params}")
-        self.model = self.VAE_class(**self.VAE_params).to(self.device)
+            print(f"VAE_params: {vae_params}")
+        self.model = self.VAE_class(**vae_params).to(self.device)
         
         optimizer = torch.optim.Adam(
             self.model.parameters(),
@@ -1094,7 +1143,15 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         mean_reconstr_loss = MeanMetric().to(self.device)
         mean_kl_divergence = MeanMetric().to(self.device)
         
-        for epoch in range(self.max_epochs):
+        epoch_bar = trange(
+            self.max_epochs,
+            desc="Epochs",
+            disable=not self.verbose,
+        )
+        
+        all_metrics = []
+        
+        for epoch in epoch_bar:
             self.model.train() # Set model to training mode
             
             for batch_X in loader:
@@ -1126,6 +1183,21 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             epoch_reconstr_loss = mean_reconstr_loss.compute().item()
             epoch_kl_divergence = mean_kl_divergence.compute().item()
             
+            epoch_metrics = {
+                'Epoch': epoch,
+                'Total Loss': epoch_loss,
+                'Reconstr. Loss': epoch_reconstr_loss,
+                'KL divergence': epoch_kl_divergence,
+                'beta': beta,
+            }
+            
+            postfix = {
+                'Total Loss': f"{epoch_loss:.4f}",
+                'Reconstr. Loss': f"{epoch_reconstr_loss:.4f}",
+                'KL divergence': f"{epoch_kl_divergence:.4f}",
+                'beta': f"{beta:.2f}",
+            }
+            
             self.model.eval() # Set model to evaluation mode
             if val_tensor is not None:
                 with torch.no_grad():
@@ -1135,23 +1207,43 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                             x_reconstr, val_tensor, mu, log_sigma2, beta
                         )
                     )
+                
+                epoch_metrics.update({
+                    'Val Total Loss': val_loss.item(),
+                    'Val Reconstr. Loss': val_reconstr_loss.item(),
+                    'Val KL divergence': val_kl_divergence.item(),
+                }) 
+                postfix.update({
+                    'Val Total Loss': f"{val_loss.item():.4f}",
+                    'Val Reconstr. Loss': f"{val_reconstr_loss.item():.4f}",
+                    'Val KL divergence': f"{val_kl_divergence.item():.4f}",
+                }) 
+                    
                 scheduler.step(val_loss.item())
-            if self.verbose:
-                # Print training metrics
-                print(
-                    f"Epoch {epoch}/{self.max_epochs}, "
-                    f"Loss: {epoch_loss:.4f}, "
-                    f"Reconstr Loss: {epoch_reconstr_loss:.4f}, "
-                    f"KL Divergence: {epoch_kl_divergence:.4f}, "
-                    f"Beta: {beta:.2f}"
-                )
-                if val_tensor is not None:
-                    # Print validation metrics
-                    print(
-                        f"\tVal Loss: {val_loss.item():.4f}, "
-                        f"Val Reconstr Loss: {val_reconstr_loss.item():.4f}, "
-                        f"Val KL Divergence: {val_kl_divergence.item():.4f}"
-                    )
+            # if self.verbose:
+            #     # Print training metrics
+            #     print(
+            #         f"Epoch {epoch}/{self.max_epochs}, "
+            #         f"Loss: {epoch_loss:.4f}, "
+            #         f"Reconstr Loss: {epoch_reconstr_loss:.4f}, "
+            #         f"KL Divergence: {epoch_kl_divergence:.4f}, "
+            #         f"Beta: {beta:.2f}"
+            #     )
+            #     if val_tensor is not None:
+            #         # Print validation metrics
+            #         print(
+            #             f"\tVal Loss: {val_loss.item():.4f}, "
+            #             f"Val Reconstr Loss: {val_reconstr_loss.item():.4f}, "
+            #             f"Val KL Divergence: {val_kl_divergence.item():.4f}"
+            #         )
+            
+            all_metrics.append(epoch_metrics)
+            
+            postfix_str = "\t".join([
+                f"{key}: {value}" for key, value in postfix.items()
+            ])
+            
+            epoch_bar.set_postfix_str(postfix_str)
             
             # Reset metrics
             mean_loss.reset()
@@ -1165,9 +1257,41 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                 else:
                     patience_counter += 1
                 if patience_counter >= self.early_stopping_patience:
-                    print(f"Early stopping at epoch {epoch}.")
+                    if self.verbose:
+                        print(f"Early stopping at epoch {epoch}.")
                     break
-                         
+        
+        if self.verbose:
+            metrics_df = pd.DataFrame(all_metrics)
+            fig, axes = plt.subplots(3, 1, figsize=(4, 7), sharex=True, dpi=300)
+            
+            total_loss_metric_names = ['Total Loss']
+            reconstr_loss_metric_names = ['Reconstr. Loss']
+            kl_divergence_metric_names = ['KL divergence']
+            if val_tensor is not None:
+                total_loss_metric_names.append('Val Total Loss')
+                reconstr_loss_metric_names.append('Val Reconstr. Loss')
+                kl_divergence_metric_names.append('Val KL divergence')
+            
+            metrics_df.plot(x='Epoch', y=total_loss_metric_names, ax=axes[0])
+            
+            metrics_df.plot(x='Epoch', y=reconstr_loss_metric_names, ax=axes[1])
+            metrics_df.plot(x='Epoch', y=kl_divergence_metric_names, ax=axes[2])
+            
+            beta_ax = axes[2].twinx()
+            metrics_df.plot(x='Epoch', y='beta', linestyle='--', color='black', ax=beta_ax)
+            beta_ax.set_ylabel('Beta')
+            beta_ax.legend(loc='best')
+            
+            axes[0].set_title('Total Loss')
+            axes[1].set_title('Reconstr. Loss')
+            axes[2].set_title('KL divergence')
+            for i, ax in enumerate(axes):
+                ax.legend(["Train", "Val"])
+                ax.set_ylabel('Loss')
+                ax.set_ylim(0, None)   
+                
+            fig.tight_layout()
                 
     def transform(self, X):
         X_tensor = self._to_tensor(X, to_device=True)
@@ -1515,7 +1639,7 @@ def deep_update_estimator_params(
     Returns:
         A dictionary containing the estimator parameters (including unchanged).
     """
-    original_params = copy.deepcopy(
+    original_params = deepcopy(
         ml_pipe._pipeline_params['init_estimator_params']
     )
     deep_update(original_params, suggested_params)
