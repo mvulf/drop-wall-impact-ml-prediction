@@ -38,6 +38,7 @@ from sklearn.base import BaseEstimator, TransformerMixin, ClassifierMixin
 from imblearn.pipeline import Pipeline
 from imblearn.over_sampling import SMOTE, SMOTENC
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.decomposition import PCA
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import (
     make_scorer,
@@ -48,7 +49,7 @@ from sklearn.metrics import (
     roc_auc_score,
     balanced_accuracy_score,
 )
-from sklearn.model_selection import train_test_split, cross_validate, StratifiedKFold, ParameterGrid
+from sklearn.model_selection import train_test_split, cross_validate, StratifiedKFold, KFold, ParameterGrid
 
 import statsmodels.api as sm
 from statsmodels.api import Logit
@@ -173,8 +174,8 @@ class MLPipeline:
         base_estimator=None,
         base_estimator_params:dict=None,
         model_postfix="",
-        post_transformer=None,
-        post_transformer_params:dict=None,
+        dim_transformer=None,
+        dim_transformer_params:dict=None,
         features_to_drop: tuple = (
             "Re",
             "We",
@@ -229,7 +230,11 @@ class MLPipeline:
             init_base_estimator_params = base_estimator_params.copy()
         else:
             init_base_estimator_params = {}
-            
+        
+        if not(dim_transformer_params is None):
+            init_dim_transformer_params = dim_transformer_params.copy()
+        else:
+            init_dim_transformer_params = {}
             
         # Add features choice depending on the target
         if minmax_features is None:
@@ -299,8 +304,9 @@ class MLPipeline:
             "base_estimator": base_estimator,
             "base_estimator_params": base_estimator_params,
             "init_base_estimator_params": init_base_estimator_params,
-            "post_transformer": post_transformer,
-            "post_transformer_params": post_transformer_params,
+            "dim_transformer": dim_transformer,
+            "dim_transformer_params": dim_transformer_params,
+            "init_dim_transformer_params": init_dim_transformer_params,
             "source_features": source_features,
             "features_to_drop": features_to_drop,
             "log_features": _drop_features(log_features, features_to_drop),
@@ -380,6 +386,89 @@ class MLPipeline:
 
         self.step_metrics = [] # for step 
         self.metric_results = [] # for run
+       
+    def step_transformer(
+        self,
+        dim_transformer=None,
+        dim_transformer_params:dict=None,
+        shuffle:bool=True,
+        verbose=False,
+    ):
+        self._pipeline_params['verbose'] = verbose
+        dim_transformer_class = self._pipeline_params['dim_transformer']
+        
+        if dim_transformer is not None:
+            self._pipeline_params['dim_transformer'] = dim_transformer_class
+        if dim_transformer_params is not None:
+            self._pipeline_params['dim_transformer_params'] = dim_transformer_params
+            
+        # Create full pipeline
+        self.pipe = _create_pipeline(**self._pipeline_params)
+        
+        # Find step with VAE, or PCA or other dimentionality reduction transformer
+        for i, step in enumerate(self.pipe.steps):
+            if isinstance(step[1], dim_transformer_class):
+                dim_transformer = self.pipe[i]
+                pre_transformers = self.pipe[:i]
+        
+        if dim_transformer is None:
+            raise ValueError(
+                "No dimensionality reduction transformer found in the pipeline"
+            )
+        
+        X_train_full, _ = self.get_X_y(self.train) # train dataset
+        
+        n_splits = self._params["cv_folds"]
+        cv = KFold(
+            n_splits=n_splits,
+            shuffle=shuffle,
+            random_state=self._pipeline_params['random_state'],
+        )
+        
+        metrics_train = np.zeros(n_splits)
+        metrics_val = np.zeros(n_splits)
+        
+        if len(self.scoring_metrics) != 1:
+            raise ValueError(
+                f"Only one scoring metric is allowed, but received: {self.scoring_metrics}"
+            )
+        
+        metric_name = list(self.scoring_metrics.keys())[0]
+        metric = self.scoring_metrics[metric_name]
+        
+        for i, (train_idx, val_idx) in enumerate(cv.split(X_train_full)):
+            if isinstance(X_train_full, pd.DataFrame):
+                X_train, X_val = X_train_full.iloc[train_idx], X_train_full.iloc[val_idx]
+            else:
+                X_train, X_val = X_train_full[train_idx], X_train_full[val_idx]
+            
+            X_train_preproc = pre_transformers.fit_transform(X_train)
+            X_val_preproc = pre_transformers.transform(X_val)
+            
+            dim_transformer.fit(X_train_preproc)
+            X_train_reconstr = dim_transformer.inverse_transform(
+                dim_transformer.transform(X_train_preproc)
+            )
+            X_val_reconstr = dim_transformer.inverse_transform(
+                dim_transformer.transform(X_val_preproc)
+            )
+            
+            # MSE by default
+            metrics_train[i] = metric(X_train_preproc, X_train_reconstr) 
+            metrics_val[i] = metric(X_val_preproc, X_val_reconstr)
+        
+        # Get average from CV metric on train set
+        if self._params["step_scoring_average"] == "median":
+            score_train = np.median(metrics_train)
+            score_val = np.median(metrics_val)
+        elif self._params["step_scoring_average"] == "mean":
+            score_train = np.mean(metrics_train)
+            score_val = np.mean(metrics_val)
+        else:
+            raise ValueError(f"Invalid step_scoring_average: {self._params['step_scoring_average']}")
+
+        return score_val, score_train # score
+    
         
     def step(
         self,
@@ -387,8 +476,8 @@ class MLPipeline:
         estimator_params:dict=None,
         base_estimator=None,
         base_estimator_params:dict=None,
-        post_transformer=None,
-        post_transformer_params:dict=None,
+        dim_transformer=None,
+        dim_transformer_params:dict=None,
         add_smote=None,
         is_smotenc=None,
         smote_params=None,
@@ -410,10 +499,10 @@ class MLPipeline:
             self._pipeline_params['base_estimator'] = base_estimator
         if base_estimator_params is not None:
             self._pipeline_params['base_estimator_params'] = base_estimator_params
-        if post_transformer is not None:
-            self._pipeline_params['post_transformer'] = post_transformer
-        if post_transformer_params is not None:
-            self._pipeline_params['post_transformer_params'] = post_transformer_params
+        if dim_transformer is not None:
+            self._pipeline_params['dim_transformer'] = dim_transformer
+        if dim_transformer_params is not None:
+            self._pipeline_params['dim_transformer_params'] = dim_transformer_params
             
         # Create full pipeline
         self.pipe = _create_pipeline(**self._pipeline_params)
@@ -529,21 +618,22 @@ class MLPipeline:
             params_dict['estimator_params']['model_class'] = (
                 params_dict['estimator_params']['model_class'].__name__
             )
-        # Remove init_estimator_params from params_dict
+        # Remove init_//_params from params_dict
         params_dict.pop('init_estimator_params', None)
         params_dict.pop('init_base_estimator_params', None)
+        params_dict.pop('init_dim_transformer_params', None)
         # Process base_estimator if it is used
         if params_dict['base_estimator'] is not None:
             params_dict['base_estimator'] = params_dict['base_estimator'].__name__
         else:
             params_dict.pop('base_estimator', None)
             params_dict.pop('base_estimator_params', None)
-        # Process post_transformer if it is used
-        if params_dict['post_transformer'] is not None:
-            params_dict['post_transformer'] = params_dict['post_transformer'].__name__
+        # Process dim_transformer if it is used
+        if params_dict['dim_transformer'] is not None:
+            params_dict['dim_transformer'] = params_dict['dim_transformer'].__name__
         else:
-            params_dict.pop('post_transformer', None)
-            params_dict.pop('post_transformer_params', None)
+            params_dict.pop('dim_transformer', None)
+            params_dict.pop('dim_transformer_params', None)
         
         df["params"] = str(params_dict)
 
@@ -759,8 +849,8 @@ def _create_pipeline(
     estimator_params:dict=None,
     base_estimator=None,
     base_estimator_params:dict=None,
-    post_transformer:TransformerMixin=None,
-    post_transformer_params:dict=None,
+    dim_transformer:TransformerMixin=None,
+    dim_transformer_params:dict=None,
     add_smote=True,
     is_smotenc=False,
     smote_params:dict=None,
@@ -797,15 +887,15 @@ def _create_pipeline(
         )
         pipeline.append(("df_transformer", df_transformer))
 
-    if post_transformer is not None:
-        post_transformer_params = post_transformer_params or {}
+    if dim_transformer is not None:
+        dim_transformer_params = dim_transformer_params or {}
         pipeline.append(
             (
-                post_transformer.__name__,
+                dim_transformer.__name__,
                 init_with_random_state(
-                    post_transformer,
+                    dim_transformer,
                     random_state,
-                    **post_transformer_params,
+                    **dim_transformer_params,
                 )
             )
         )
@@ -1626,6 +1716,20 @@ def _drop_features(features, features_to_drop, inplace=False):
     return tuple(features)
 
 
+def deep_update_dim_transformer_params(
+    ml_pipe:MLPipeline,
+    suggested_params:dict,
+)->dict:
+    """Deep update of the dimension transformer parameters.
+    """
+    original_params = deepcopy(
+        ml_pipe._pipeline_params['init_dim_transformer_params']
+    )
+    deep_update(original_params, suggested_params)
+    
+    return original_params
+
+
 def deep_update_estimator_params(
     ml_pipe:MLPipeline,
     suggested_params:dict,
@@ -1660,7 +1764,6 @@ def deep_update(original, updates):
             deep_update(original[key], value)
         else:
             original[key] = value
-    
 
 def update_estimator_params(
     ml_pipe:MLPipeline,
