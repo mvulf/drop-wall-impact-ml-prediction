@@ -80,7 +80,6 @@ RANDOM_STATE = 42
 # METRICS = ['f1_macro', 'roc_auc', 'balanced_accuracy']
 METRICS = ['f1_score', 'accuracy']
 
-
 class OptunaOptimizer:
     def __init__(
         self, 
@@ -108,7 +107,7 @@ class OptunaOptimizer:
             ),
         )
         
-    def optimize(self, n_trials:int):
+    def optimize(self, n_trials:int, **kwargs):
         """Optimize the objective function.
 
         Args:
@@ -120,6 +119,7 @@ class OptunaOptimizer:
         self.study.optimize(
             self.objective,
             n_trials=n_trials,
+            **kwargs,
         )
 
 
@@ -416,7 +416,8 @@ class MLPipeline:
                 "No dimensionality reduction transformer found in the pipeline"
             )
         
-        X_train_full, _ = self.get_X_y(self.train) # train dataset
+        # y_train_full is used for SMOTE
+        X_train_full, y_train_full = self.get_X_y(self.train) # train dataset
         
         n_splits = self._params["cv_folds"]
         cv = KFold(
@@ -435,26 +436,33 @@ class MLPipeline:
         
         metric_name = list(self.scoring_metrics.keys())[0]
         metric = self.scoring_metrics[metric_name]
-        
+
         for i, (train_idx, val_idx) in enumerate(cv.split(X_train_full)):
             if isinstance(X_train_full, pd.DataFrame):
                 X_train, X_val = X_train_full.iloc[train_idx], X_train_full.iloc[val_idx]
             else:
                 X_train, X_val = X_train_full[train_idx], X_train_full[val_idx]
             
-            X_train_preproc = pre_transformers.fit_transform(X_train)
-            X_val_preproc = pre_transformers.transform(X_val)
+            y_train, y_val = y_train_full[train_idx], y_train_full[val_idx]
             
-            dim_transformer.fit(X_train_preproc)
+            # X_train_preproc = pre_transformers.fit_transform(X_train)
+            X_train_resampled, y_train_resampled = (
+                pre_transformers.fit_resample(X_train, y_train)
+            )
+            
+            # No need in SMOTE for validation set
+            X_val_preproc = pre_transformers[:-1].transform(X_val)
+            
+            dim_transformer.fit(X_train_resampled)
             X_train_reconstr = dim_transformer.inverse_transform(
-                dim_transformer.transform(X_train_preproc)
+                dim_transformer.transform(X_train_resampled)
             )
             X_val_reconstr = dim_transformer.inverse_transform(
                 dim_transformer.transform(X_val_preproc)
             )
             
             # MSE by default
-            metrics_train[i] = metric(X_train_preproc, X_train_reconstr) 
+            metrics_train[i] = metric(X_train_resampled, X_train_reconstr) 
             metrics_val[i] = metric(X_val_preproc, X_val_reconstr)
         
         # Get average from CV metric on train set
@@ -887,19 +895,6 @@ def _create_pipeline(
         )
         pipeline.append(("df_transformer", df_transformer))
 
-    if dim_transformer is not None:
-        dim_transformer_params = dim_transformer_params or {}
-        pipeline.append(
-            (
-                dim_transformer.__name__,
-                init_with_random_state(
-                    dim_transformer,
-                    random_state,
-                    **dim_transformer_params,
-                )
-            )
-        )
-
     if add_smote:
         smote_params = smote_params or {} # If None, use default SMOTE[NC] parameters
         
@@ -919,6 +914,19 @@ def _create_pipeline(
                         'random_state': random_state,
                         **smote_params,   
                     }
+                )
+            )
+        )
+    
+    if dim_transformer is not None:
+        dim_transformer_params = dim_transformer_params or {}
+        pipeline.append(
+            (
+                dim_transformer.__name__,
+                init_with_random_state(
+                    dim_transformer,
+                    random_state,
+                    **dim_transformer_params,
                 )
             )
         )
@@ -1310,22 +1318,6 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
                 }) 
                     
                 scheduler.step(val_loss.item())
-            # if self.verbose:
-            #     # Print training metrics
-            #     print(
-            #         f"Epoch {epoch}/{self.max_epochs}, "
-            #         f"Loss: {epoch_loss:.4f}, "
-            #         f"Reconstr Loss: {epoch_reconstr_loss:.4f}, "
-            #         f"KL Divergence: {epoch_kl_divergence:.4f}, "
-            #         f"Beta: {beta:.2f}"
-            #     )
-            #     if val_tensor is not None:
-            #         # Print validation metrics
-            #         print(
-            #             f"\tVal Loss: {val_loss.item():.4f}, "
-            #             f"Val Reconstr Loss: {val_reconstr_loss.item():.4f}, "
-            #             f"Val KL Divergence: {val_kl_divergence.item():.4f}"
-            #         )
             
             all_metrics.append(epoch_metrics)
             
@@ -1340,7 +1332,7 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             mean_reconstr_loss.reset()
             mean_kl_divergence.reset()
             
-            if self.early_stopping:
+            if self.early_stopping and beta == self.beta_end:
                 if val_loss < best_loss:
                     best_loss = val_loss
                     patience_counter = 0

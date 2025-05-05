@@ -11,7 +11,14 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/notebooks",  // Set the working directory here
-            "justMyCode": false  // This allows stepping into external libraries
+            "justMyCode": false,  // This allows stepping into external libraries
+
+            "env": {
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1"
+            },
+            "pythonArgs": [
+                "-Xfrozen_modules=off"
+            ]
         }
     ]
 }
