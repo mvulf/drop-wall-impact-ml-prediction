@@ -57,7 +57,7 @@ from statsmodels.api import Logit
 import torch  # Import PyTorch library for tensor computations
 import torch.nn as nn  # Import neural network modules
 import torch.nn.functional as F  # Import functional API for activation and loss functions
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader, TensorDataset, Dataset
 
 from pytorch_tabular import TabularModel
 from pytorch_tabular.config import DataConfig, OptimizerConfig, TrainerConfig
@@ -453,7 +453,8 @@ class MLPipeline:
             # No need in SMOTE for validation set
             X_val_preproc = pre_transformers[:-1].transform(X_val)
             
-            dim_transformer.fit(X_train_resampled)
+            # dim_transformer.fit(X_train_resampled)
+            dim_transformer.fit(X_train_resampled, y_train_resampled)
             X_train_reconstr = dim_transformer.inverse_transform(
                 dim_transformer.transform(X_train_resampled)
             )
@@ -978,6 +979,104 @@ def init_with_random_state(cls, random_state, **estimator_params):
             } # If random_state or SEED is in estimator_params, it will overwrite the random_state
     return cls(**estimator_params)
 
+
+class AugmentedDataset(Dataset):
+    def __init__(
+        self,
+        X_tensor:torch.Tensor,
+        y_tensor:torch.Tensor,
+        mixup_prob: float = 0.5,
+        beta_distribution_params: tuple = (0.4, 0.4),
+        noise_std: float = 0.01,
+        apply_noise: bool = True,
+    ):
+        """Initialize an augmented dataset for mixup and optional noise augmentation.
+
+        Args:
+            X_tensor: Input features of shape (n_samples, n_features).
+            y_tensor: Target labels of shape (n_samples,).
+            mixup_prob: Probability of applying mixup augmentation. Defaults to 0.5.
+            beta_distribution_params: Parameters (alpha, beta) for the Beta distribution used in mixup. Defaults to (0.4, 0.4).
+            noise_std: Standard deviation of Gaussian noise to add. Defaults to 0.01.
+            apply_noise: Whether to apply Gaussian noise augmentation. Defaults to True.
+
+        Extra attributes:
+            class_indices (dict): Mapping from each class label to indices for same-class mixup sampling.
+        """
+        self.X = X_tensor
+        self.y = y_tensor
+        
+        self.mixup_prob = mixup_prob
+        self.beta_distribution_params = beta_distribution_params
+        self.noise_std = noise_std
+        self.apply_noise = apply_noise
+        
+        self.class_indices = self._build_class_indices()
+        
+    def _build_class_indices(self):
+        """Build indices for each class. It is used for Mixup with the same class samples."""
+        sorted_y, sorted_idx = torch.sort(self.y)
+        # Get unique classes and their counts
+        unique_classes, counts = torch.unique_consecutive(
+            sorted_y,
+            return_counts=True,
+        )
+        
+        class_indices = {}
+        idx_start = 0
+        # Get indices for each class based on sorted_idx and counts
+        for cls, count in zip(unique_classes.tolist(), counts.tolist()):
+            idx_end = idx_start + count
+            class_indices[cls] = sorted_idx[idx_start:idx_end]
+            idx_start = idx_end
+        
+        return class_indices
+      
+        
+    def __len__(self):
+        return len(self.X)
+    
+    
+    # NOTE: it mixes up only with the same class samples
+    def __getitem__(self, idx:int):
+        """Retrieve an augmented data sample with same-class mixup and optional Gaussian noise.
+
+        Args:
+            idx: Index of the sample to retrieve.
+
+        Returns:
+            torch.Tensor: Augmented feature tensor at the specified index.
+        """
+        
+        x = self.X[idx]
+        y = self.y[idx]
+        
+        if torch.rand(1).item() < self.mixup_prob:
+            # Random second index for Mixup (from the same class)
+            same_class_indices = self.class_indices[int(y.item())]
+            # No mixup if there is only one sample in the class
+            if len(same_class_indices) > 1:
+                # Avoid mixing with self
+                j = idx
+                while j == idx:
+                    j = same_class_indices[
+                        int(
+                            torch.randint(
+                                0, len(same_class_indices), (1,)
+                            ).item()
+                        )
+                    ]
+                x2 = self.X[j]
+                
+                lam = np.random.beta(*self.beta_distribution_params)
+                x = lam * x + (1 - lam) * x2
+        
+        if self.apply_noise:
+            x += torch.randn_like(x) * self.noise_std
+        
+        return x, y
+        
+
  
 # TODO: Proceed checking and testing this model and BetaVAEncoder
 # Variational Autoencoder Model
@@ -1105,6 +1204,7 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         early_stopping:bool=True,
         early_stopping_patience:int=10,
         early_stopping_min_delta:float=1e-3,
+        augmented_dataset_params:dict=None,
         device_name:str=None,
         seed:int=RANDOM_STATE,
         verbose:bool=False,
@@ -1147,6 +1247,15 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         self.seed = seed
         if self.seed:
             self.set_seed(self.seed)
+            
+        # self.augmented_dataset_params = {
+        #     "mixup_prob": 0.5,
+        #     "beta_distribution_params": (0.4, 0.4),
+        #     "noise_std": 0.01,
+        #     "apply_noise": True,
+        # }
+        # self.VAE_params = {} if VAE_params is None else VAE_params
+        self.augmented_dataset_params = {} if augmented_dataset_params is None else augmented_dataset_params
         
     def set_seed(self, seed:int):
         random.seed(seed)
@@ -1181,7 +1290,11 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         return X
         
         
-    def fit(self, X, y=None):
+    def fit(self, X, y):
+        # NOTE: y is used for Mixup only!
+        if y is None:
+            raise ValueError("y is None")
+        
         input_dim = X.shape[1]
 
         # If scheduler Plateau or early stopping is used, split data into train and validation sets
@@ -1189,8 +1302,8 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             self.scheduler_class == torch.optim.lr_scheduler.ReduceLROnPlateau
             or self.early_stopping
         ):
-            X_train, X_val = train_test_split(
-                X, test_size=0.1, random_state=self.seed,
+            X_train, X_val, y_train, y_val = train_test_split(
+                X, y, test_size=0.1, random_state=self.seed,
             )
             val_tensor = self._to_tensor(X_val, to_device=True)
         else:
@@ -1198,7 +1311,19 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             val_tensor = None
         
         X_tensor = self._to_tensor(X_train, to_device=False) # Better to keep on CPU for the DataLoader
-        dataset = TensorDataset(X_tensor)
+        # dataset = TensorDataset(X_tensor)
+        y_tensor = self._to_tensor(y_train, to_device=False)
+        
+        dataset = AugmentedDataset(
+            X_tensor=X_tensor,
+            y_tensor=y_tensor,
+            **self.augmented_dataset_params,
+            # mixup_prob=self.mixup_prob,
+            # beta_distribution_params=self.beta_distribution_params,
+            # noise_std=self.noise_std,
+            # apply_noise=self.apply_noise,
+        )
+        
         # DataLoader for training batches (with fixed seed for reproducibility)
         generator = torch.Generator()
         if self.seed:
@@ -1252,8 +1377,9 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
         for epoch in epoch_bar:
             self.model.train() # Set model to training mode
             
-            for batch_X in loader:
-                X = batch_X[0].to(self.device)
+            for batch in loader:
+                X_batch, _ = batch
+                X = X_batch.to(self.device)
                 step += 1
                 beta = min(
                     self.beta_end,
@@ -1332,7 +1458,8 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             mean_reconstr_loss.reset()
             mean_kl_divergence.reset()
             
-            if self.early_stopping and beta == self.beta_end:
+            # if self.early_stopping and beta == self.beta_end:
+            if self.early_stopping:
                 if val_loss < best_loss:
                     best_loss = val_loss
                     patience_counter = 0
@@ -1382,7 +1509,7 @@ class BetaVAEncoder(BaseEstimator, TransformerMixin):
             Z, _ = self.model.encode(X_tensor) # Need only mu
         return Z.cpu().numpy()
     
-    def fit_transform(self, X, y=None):
+    def fit_transform(self, X, y):
         self.fit(X, y)
         return self.transform(X)
     
