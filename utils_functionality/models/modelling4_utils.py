@@ -66,6 +66,8 @@ from torchmetrics import MeanMetric
 
 import optuna
 
+import copy
+
 from IPython.display import display
 import matplotlib.pyplot as plt
 
@@ -628,7 +630,7 @@ class MLPipeline:
         df["model"] = self.model_name
         
         # Replace estimator with its name
-        params_dict = self._pipeline_params.copy()
+        params_dict =copy.deepcopy(self._pipeline_params)
         params_dict['estimator'] = params_dict['estimator'].__name__
         # If model_class is in params_dict['estimator_params'], 
         # replace model_class in estimator_params with its name
@@ -1633,10 +1635,11 @@ class PytorchTabularEstimator(BaseEstimator, ClassifierMixin):
 
 # Wrapper for Statsmodel
 class StatsModelsEstimator(BaseEstimator):
-    def __init__(self, model_class, **init_params):
+    def __init__(self, model_class, verbose=True, **init_params):
         self.model_class = model_class
         self.__name__ = model_class.__name__
         self.init_params = init_params
+        self.verbose = verbose
 
     def fit(self, X, y, **fit_params):
         self.classes_ = np.unique(y)
@@ -1645,7 +1648,14 @@ class StatsModelsEstimator(BaseEstimator):
         fit_method = fit_params.pop("fit_method", "fit")
         # getattr - retrieve proper method with name `fit_method`,
         # Then, apply this method with **fit_params
-        self.results_ = getattr(self.model_, fit_method)(**fit_params)
+        fit_fn = getattr(self.model_, fit_method)
+        
+        if self.verbose:
+            self.results_ = fit_fn(**fit_params)
+        else:
+            # Redirect stdout to None to suppress output
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.results_ = fit_fn(**fit_params)
         return self
 
     def predict(self, X, level=0.5, **predict_params):
@@ -1658,8 +1668,13 @@ class StatsModelsEstimator(BaseEstimator):
         return y_pred
 
     def predict_proba(self, X, **predict_params):
+        
+        probs = self.results_.predict(exog=X, **predict_params)
+        if hasattr(probs, 'to_numpy'):
+            probs = probs.to_numpy()
+
         prob = (
-            self.results_.predict(exog=X, **predict_params).to_numpy().reshape((-1, 1))
+            probs.reshape((-1, 1))
         )
         y_pred_proba = np.hstack([1 - prob, prob])
         # y_pred_proba = prob
