@@ -283,6 +283,7 @@ class MLPipeline:
             path_data=path_data,
             target=target,
             target_set=target_set,
+            verbose=self.verbose,
         )
 
         # Split train and test
@@ -290,6 +291,7 @@ class MLPipeline:
             df=self.full_df,
             target=target,
             path_data=path_data,
+            verbose=self.verbose,
         )
 
         # Get features
@@ -342,7 +344,9 @@ class MLPipeline:
             )
 
         # Create full pipeline
-        self.pipe = _create_pipeline(**self._pipeline_params)
+        self.pipe = _create_pipeline(
+            verbose=self.verbose, **self._pipeline_params
+        )
 
         # Get pipeline name
         estimator_class_name = self.pipe.steps[-1][-1].__class__.__name__
@@ -403,7 +407,9 @@ class MLPipeline:
             self._pipeline_params['dim_transformer_params'] = dim_transformer_params
             
         # Create full pipeline
-        self.pipe = _create_pipeline(**self._pipeline_params)
+        self.pipe = _create_pipeline(
+            **self._pipeline_params
+        )
         
         # Find step with VAE, or PCA or other dimentionality reduction transformer
         for i, step in enumerate(self.pipe.steps):
@@ -514,7 +520,9 @@ class MLPipeline:
             self._pipeline_params['dim_transformer_params'] = dim_transformer_params
             
         # Create full pipeline
-        self.pipe = _create_pipeline(**self._pipeline_params)
+        self.pipe = _create_pipeline(
+            **self._pipeline_params
+        )
         
         X_train, y_train = self.get_X_y(self.train) # train dataset
         
@@ -577,7 +585,8 @@ class MLPipeline:
             X=X_train,
             y=y_train,
         )
-        self.get_summary()
+        if verbose:
+            self.get_summary()
 
         # Predict on train, test and save metrics
         metric_results_list.insert(
